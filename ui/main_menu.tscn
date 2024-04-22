@@ -28,9 +28,13 @@ alignment = 1
 
 [node name="BtnStartGame" parent="VBoxContainer" instance=ExtResource("2_xrjr0")]
 layout_mode = 2
+focus_neighbor_top = NodePath("../BtnQuitGame")
+focus_neighbor_bottom = NodePath("../BtnQuitGame")
 
 [node name="BtnQuitGame" parent="VBoxContainer" instance=ExtResource("3_cpcmm")]
 layout_mode = 2
+focus_neighbor_top = NodePath("../BtnStartGame")
+focus_neighbor_bottom = NodePath("../BtnStartGame")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
