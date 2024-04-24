@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ck8nky4yvgr03"
-path.s3tc="res://.godot/imported/box_Cube_color logo.png-a960484eacc536f30295e326b94e6985.s3tc.ctex"
+path.s3tc="res://.godot/imported/box_Cube_color logo.png-82719f0ca927aa42dbab31cb5a23f759.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://props/box/box_Cube_color logo.png"
-dest_files=["res://.godot/imported/box_Cube_color logo.png-a960484eacc536f30295e326b94e6985.s3tc.ctex"]
+source_file="res://models/box/box_Cube_color logo.png"
+dest_files=["res://.godot/imported/box_Cube_color logo.png-82719f0ca927aa42dbab31cb5a23f759.s3tc.ctex"]
 
 [params]
 

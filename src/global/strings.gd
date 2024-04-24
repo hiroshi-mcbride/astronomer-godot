@@ -4,3 +4,5 @@ extends Node
 
 # Node names
 static var player:StringName = &"Player"
+
+# Method names
