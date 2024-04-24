@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c8u8ct3pr0atm"]
+[gd_scene load_steps=10 format=3 uid="uid://c8u8ct3pr0atm"]
 
 [ext_resource type="Script" path="res://src/world.gd" id="1_2i7x0"]
 [ext_resource type="PackedScene" uid="uid://ceui73yjsebp0" path="res://player/player.tscn" id="1_xbrf3"]
@@ -22,6 +22,10 @@ size = Vector2(16, 16)
 [sub_resource type="BoxShape3D" id="BoxShape3D_6wl5g"]
 size = Vector3(16, 0.499512, 16)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_xu0pp"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_o2abs"]
+
 [node name="World" type="Node3D"]
 process_mode = 1
 script = ExtResource("1_2i7x0")
@@ -44,3 +48,44 @@ mesh = SubResource("PlaneMesh_2vr42")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ground"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.250244, 0)
 shape = SubResource("BoxShape3D_6wl5g")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.08055, 0.622894, 0)
+visible = false
+use_collision = true
+
+[node name="RigidBody3D2" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03366, -3.91688)
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D2"]
+shape = SubResource("BoxShape3D_xu0pp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D2/CollisionShape3D"]
+mesh = SubResource("BoxMesh_o2abs")
+
+[node name="RigidBody3D3" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.54016, 1.03366, -3.96665)
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D3"]
+shape = SubResource("BoxShape3D_xu0pp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D3/CollisionShape3D"]
+mesh = SubResource("BoxMesh_o2abs")
+
+[node name="RigidBody3D4" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.54016, 2.52209, -3.96665)
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D4"]
+shape = SubResource("BoxShape3D_xu0pp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D4/CollisionShape3D"]
+mesh = SubResource("BoxMesh_o2abs")
