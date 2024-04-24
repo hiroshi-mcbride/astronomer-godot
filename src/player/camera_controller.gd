@@ -1,6 +1,8 @@
-class_name CameraController extends Camera3D
+class_name CameraController extends Node3D
 
 @onready var player_data = owner.player_data
+@onready var camera = $".."
+
 
 @onready var max_up_angle : float = player_data.max_up_angle
 @onready var max_down_angle : float = player_data.max_down_angle
@@ -17,6 +19,9 @@ class_name CameraController extends Camera3D
 
 var input_vector : Vector2
 var angular_velocity : Vector2
+
+func _enter_tree():
+	owner = $"../.."
 
 func _physics_process(delta):
 	var gamepad_look = Input.get_vector("look_left", "look_right", "look_up", "look_down") 
@@ -41,7 +46,7 @@ func _physics_process(delta):
 	
 	
 	# rotate the camera if looking up/down
-	rotate_object_local(Vector3(1,0,0), angular_velocity.x)
+	camera.rotate_object_local(Vector3(1,0,0), angular_velocity.x)
 	# rotate the owner if looking left/right
 	owner.rotate_object_local(Vector3(0,1,0), angular_velocity.y)
 	
