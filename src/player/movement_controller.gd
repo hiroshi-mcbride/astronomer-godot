@@ -8,8 +8,25 @@ class_name MovementController extends CharacterBody3D
 
 @onready var ground_check = $GroundCheck
 
+#object picking variables
+@onready var interaction = $Camera3D/Interaction
+@onready var hand = $Camera3D/Hand
+
+var picked_object
+var pull_power = 4
+#end of object picking variables
+
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var is_grounded
+
+func pick_object():
+	var collider = interaction.get_collider()
+	if collider != null and collider is RigidBody3D:
+		picked_object = collider
+
+func drop_object():
+	if picked_object != null:
+		picked_object = null
 
 func _physics_process(delta):
 	is_grounded = ground_check.is_colliding()
@@ -25,8 +42,19 @@ func _physics_process(delta):
 	
 	velocity.y -= gravity * delta
 	move_and_slide()
+	
+	if picked_object != null:
+		var a = picked_object.global_transform.origin
+		var b = hand.global_transform.origin
+		picked_object.set_linear_velocity((b-a)*pull_power)
 
 func _unhandled_input(event):
 	if event.is_action_pressed("jump") and is_grounded:
 		velocity.y = jump_strength
 	pass
+	
+	if Input.is_action_just_pressed("interact"):
+		if picked_object == null:
+			pick_object()
+		elif picked_object != null:
+			drop_object()
