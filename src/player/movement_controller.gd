@@ -9,11 +9,15 @@ class_name MovementController extends CharacterBody3D
 @onready var ground_check = $GroundCheck
 
 #object picking variables
-@onready var interaction = $Camera3D/Interaction
-@onready var hand = $Camera3D/Hand
+@onready var interaction = $Camera3D/InteractionNode/Interaction
+@onready var hand = $Camera3D/InteractionNode/Hand
+@onready var cam_control = $Camera3D/CameraController
+@onready var joint = $Camera3D/InteractionNode/Generic6DOFJoint3D
+@onready var staticbody = $Camera3D/InteractionNode/StaticBody3D
 
 var picked_object
 var pull_power = 4
+var rotation_power = 0.05
 #end of object picking variables
 
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -23,10 +27,19 @@ func pick_object():
 	var collider = interaction.get_collider()
 	if collider != null and collider is RigidBody3D:
 		picked_object = collider
+		joint.set_node_b(picked_object.get_path())
 
 func drop_object():
 	if picked_object != null:
 		picked_object = null
+		joint.set_node_b(joint.get_path())
+
+func rotate_object(event):
+	if picked_object != null:
+		if event is InputEventMouseMotion:
+			print("rotating")
+			staticbody.rotate_x(deg_to_rad(event.relative.y * rotation_power))
+			staticbody.rotate_y(deg_to_rad(event.relative.x * rotation_power))
 
 func _physics_process(delta):
 	is_grounded = ground_check.is_colliding()
@@ -58,3 +71,9 @@ func _unhandled_input(event):
 			pick_object()
 		elif picked_object != null:
 			drop_object()
+	
+	if Input.is_action_just_pressed("rclick"):
+		cam_control.process_mode = Node.PROCESS_MODE_DISABLED
+		rotate_object(event)
+	if Input.is_action_just_released("rclick"):
+		cam_control.process_mode = Node.PROCESS_MODE_INHERIT
