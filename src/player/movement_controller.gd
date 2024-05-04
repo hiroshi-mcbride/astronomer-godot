@@ -5,9 +5,7 @@ class_name MovementController extends CharacterBody3D
 @onready var speed : float = player_data.speed
 @onready var jump_strength : float = player_data.jump_strength
 @onready var friction : float = player_data.friction
-
 @onready var ground_check = $GroundCheck
-
 
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var is_grounded

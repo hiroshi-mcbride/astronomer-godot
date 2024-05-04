@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cahbrik61swll"]
 
 [ext_resource type="PackedScene" uid="uid://lce0gnk8wi1" path="res://models/box/box.glb" id="1_o4xsb"]
-[ext_resource type="Script" path="res://src/box/box_drop_detection.gd" id="2_k2nv5"]
+[ext_resource type="Script" path="res://src/packing/box_item_detection.gd" id="2_ds60c"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gb1rb"]
 size = Vector3(0.360352, 0.36301, 0.560547)
@@ -18,10 +18,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0114866, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.180826, 0)
 shape = SubResource("BoxShape3D_gb1rb")
 
-[node name="BoxDropDetection" type="Area3D" parent="."]
+[node name="ItemDetection" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.366993, 0)
 collision_mask = 2
-script = ExtResource("2_k2nv5")
+script = ExtResource("2_ds60c")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="BoxDropDetection"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ItemDetection"]
 shape = SubResource("BoxShape3D_hi46a")
