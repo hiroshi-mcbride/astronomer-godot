@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://ceui73yjsebp0"]
+[gd_scene load_steps=7 format=3 uid="uid://ceui73yjsebp0"]
 
 [ext_resource type="Script" path="res://src/player/movement_controller.gd" id="1_cxsam"]
 [ext_resource type="Script" path="res://src/player/camera_controller.gd" id="2_ekj78"]
 [ext_resource type="Resource" uid="uid://b2w403ddgxxaw" path="res://player/player_data.tres" id="2_s6mr0"]
+[ext_resource type="Script" path="res://src/player/interaction_controller.gd" id="4_5mipo"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_acval"]
 
@@ -21,21 +22,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.59636, 0)
 [node name="CameraController" type="Node3D" parent="Camera3D"]
 script = ExtResource("2_ekj78")
 
-[node name="InteractionNode" type="Node3D" parent="Camera3D"]
+[node name="InteractionController" type="Node3D" parent="Camera3D"]
+script = ExtResource("4_5mipo")
 
-[node name="Interaction" type="RayCast3D" parent="Camera3D/InteractionNode"]
+[node name="InteractionRaycast" type="RayCast3D" parent="Camera3D/InteractionController"]
 target_position = Vector3(0, 0, -5)
 
-[node name="Hand" type="Marker3D" parent="Camera3D/InteractionNode"]
+[node name="Hand" type="Marker3D" parent="Camera3D/InteractionController"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.91104)
 
-[node name="Generic6DOFJoint3D" type="Generic6DOFJoint3D" parent="Camera3D/InteractionNode"]
+[node name="Generic6DOFJoint3D" type="Generic6DOFJoint3D" parent="Camera3D/InteractionController"]
 node_a = NodePath("../StaticBody3D")
 linear_limit_x/enabled = false
 linear_limit_y/enabled = false
 linear_limit_z/enabled = false
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Camera3D/InteractionNode"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Camera3D/InteractionController"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.911)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
