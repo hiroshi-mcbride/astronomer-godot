@@ -12,12 +12,14 @@ var rotation_power = 0.05
 
 func pick_object():
 	var collider = interaction_raycast.get_collider()
-	if collider != null and collider is RigidBody3D:
+	if collider != null and collider is Holdable:
 		picked_object = collider
+		picked_object.is_held = true
 		joint.set_node_b(picked_object.get_path())
 
 func drop_object():
 	if picked_object != null:
+		picked_object.is_held = false
 		picked_object = null
 		joint.set_node_b(joint.get_path())
 

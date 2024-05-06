@@ -1,27 +1,47 @@
-[gd_scene load_steps=5 format=3 uid="uid://cahbrik61swll"]
+[gd_scene load_steps=6 format=3 uid="uid://cahbrik61swll"]
 
 [ext_resource type="PackedScene" uid="uid://lce0gnk8wi1" path="res://models/box/box.glb" id="1_o4xsb"]
-[ext_resource type="Script" path="res://src/packing/box_item_detection.gd" id="2_ds60c"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gb1rb"]
-size = Vector3(0.360352, 0.36301, 0.560547)
+size = Vector3(1.11035, 0.074707, 1.71191)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3ufpq"]
+size = Vector3(0.0630951, 1.02039, 1.7168)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_agxvc"]
+size = Vector3(0.986328, 1.03217, 0.0505066)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hi46a"]
-size = Vector3(0.786865, 0.262695, 0.92749)
+size = Vector3(1.14063, 0.262695, 1.72168)
 
 [node name="Box" type="RigidBody3D"]
 
 [node name="BoxModel" parent="." instance=ExtResource("1_o4xsb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0114866, 0)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0.0114866, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.180826, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00382404, 0)
 shape = SubResource("BoxShape3D_gb1rb")
 
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.524025, 0.552179, 0)
+shape = SubResource("BoxShape3D_3ufpq")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.523479, 0.550951, 0)
+shape = SubResource("BoxShape3D_3ufpq")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.555896, 0.831955)
+shape = SubResource("BoxShape3D_agxvc")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.555896, -0.833343)
+shape = SubResource("BoxShape3D_agxvc")
+
 [node name="ItemDetection" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.366993, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0566, 0)
 collision_mask = 2
-script = ExtResource("2_ds60c")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ItemDetection"]
 shape = SubResource("BoxShape3D_hi46a")

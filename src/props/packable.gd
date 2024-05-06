@@ -1,16 +1,9 @@
-class_name Packable extends RigidBody3D
+class_name Packable extends Holdable
 
 var box_detected : bool = false
 
-signal dropped()
-
-func _ready():
-	pass
-	#freeze_mode = RigidBody3D.FREEZE_MODE_STATIC
-
 func _on_dropped():
-	if box_detected:
-		pass
+	super._on_dropped()
 
 func set_box_detected(value : bool):
 	box_detected = value
