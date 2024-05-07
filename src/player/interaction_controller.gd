@@ -6,7 +6,7 @@ extends Node3D
 @onready var joint = $Generic6DOFJoint3D
 @onready var staticbody = $StaticBody3D
 
-var picked_object
+var picked_object : Holdable
 var pull_power = 4
 var rotation_power = 0.05
 
@@ -14,12 +14,12 @@ func pick_object():
 	var collider = interaction_raycast.get_collider()
 	if collider != null and collider is Holdable:
 		picked_object = collider
-		picked_object.is_held = true
+		picked_object.picked.emit()
 		joint.set_node_b(picked_object.get_path())
 
 func drop_object():
 	if picked_object != null:
-		picked_object.is_held = false
+		picked_object.dropped.emit()
 		picked_object = null
 		joint.set_node_b(joint.get_path())
 
@@ -40,6 +40,7 @@ func _unhandled_input(event):
 	if Input.is_action_just_pressed("interact"):
 		if picked_object == null:
 			pick_object()
+		
 		elif picked_object != null:
 			drop_object()
 	

@@ -1,11 +1,17 @@
-[gd_scene load_steps=10 format=3 uid="uid://c8u8ct3pr0atm"]
+[gd_scene load_steps=13 format=3 uid="uid://c8u8ct3pr0atm"]
 
 [ext_resource type="Script" path="res://src/world.gd" id="1_2i7x0"]
 [ext_resource type="PackedScene" uid="uid://ceui73yjsebp0" path="res://player/player.tscn" id="1_xbrf3"]
+[ext_resource type="Script" path="res://src/props/packable.gd" id="3_r66ro"]
+[ext_resource type="PackedScene" uid="uid://cahbrik61swll" path="res://props/box.tscn" id="4_parmu"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gvmi2"]
+sky_top_color = Color(0.560784, 0.627451, 0.780392, 1)
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+sky_curve = 0.0609189
+sky_energy_multiplier = 1.2
 ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+sun_curve = 0.139955
 
 [sub_resource type="Sky" id="Sky_n2fhj"]
 sky_material = SubResource("ProceduralSkyMaterial_gvmi2")
@@ -13,52 +19,67 @@ sky_material = SubResource("ProceduralSkyMaterial_gvmi2")
 [sub_resource type="Environment" id="Environment_4oo7x"]
 background_mode = 2
 sky = SubResource("Sky_n2fhj")
+ambient_light_source = 3
+ambient_light_color = Color(1, 1, 0.964706, 1)
+reflected_light_source = 2
 tonemap_mode = 2
+ssao_enabled = true
+ssao_radius = 0.69
+ssao_intensity = 0.0
+ssil_enabled = true
+ssil_radius = 1.08
+ssil_intensity = 1.31
 glow_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.01
+volumetric_fog_emission = Color(1, 1, 1, 1)
+volumetric_fog_sky_affect = 0.0
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_2vr42"]
-size = Vector2(16, 16)
+[sub_resource type="BoxMesh" id="BoxMesh_ylruu"]
+size = Vector3(1024, 0.5, 1024)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6wl5g"]
-size = Vector3(16, 0.499512, 16)
+size = Vector3(1024, 0.5, 1024)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xu0pp"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_o2abs"]
 
+[sub_resource type="FogMaterial" id="FogMaterial_380kl"]
+density = 0.1
+emission = Color(0.943981, 0.947409, 0.855627, 1)
+edge_fade = 0.0707107
+
 [node name="World" type="Node3D"]
 process_mode = 1
 script = ExtResource("1_2i7x0")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
-shadow_enabled = true
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_4oo7x")
 
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(0.953191, 0.26186, -0.151185, 0, 0.5, 0.866025, 0.30237, -0.825487, 0.476595, 0, 0, 0)
+light_color = Color(1, 1, 0.984314, 1)
+shadow_enabled = true
+
 [node name="Player" parent="." instance=ExtResource("1_xbrf3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.62912, 0, -0.215848)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.274367, 0, -0.634436)
 
 [node name="ground" type="StaticBody3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="ground"]
-mesh = SubResource("PlaneMesh_2vr42")
+mesh = SubResource("BoxMesh_ylruu")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ground"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.250244, 0)
 shape = SubResource("BoxShape3D_6wl5g")
-
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.08055, 0.622894, 0)
-visible = false
-use_collision = true
 
 [node name="RigidBody3D2" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03366, -3.91688)
+collision_layer = 3
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
+script = ExtResource("3_r66ro")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D2"]
 shape = SubResource("BoxShape3D_xu0pp")
@@ -68,9 +89,11 @@ mesh = SubResource("BoxMesh_o2abs")
 
 [node name="RigidBody3D3" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.54016, 1.03366, -3.96665)
+collision_layer = 3
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
+script = ExtResource("3_r66ro")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D3"]
 shape = SubResource("BoxShape3D_xu0pp")
@@ -80,12 +103,22 @@ mesh = SubResource("BoxMesh_o2abs")
 
 [node name="RigidBody3D4" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.54016, 2.52209, -3.96665)
+collision_layer = 3
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
+script = ExtResource("3_r66ro")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D4"]
 shape = SubResource("BoxShape3D_xu0pp")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D4/CollisionShape3D"]
 mesh = SubResource("BoxMesh_o2abs")
+
+[node name="FogVolume" type="FogVolume" parent="."]
+visible = false
+shape = 4
+material = SubResource("FogMaterial_380kl")
+
+[node name="Box" parent="." instance=ExtResource("4_parmu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.19529, 0.25, 0.000333071)
