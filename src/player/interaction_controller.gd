@@ -10,6 +10,8 @@ var picked_object : Holdable
 var pull_power = 4
 var rotation_power = 0.05
 
+signal grab_box
+
 func pick_object():
 	var collider = interaction_raycast.get_collider()
 	if collider != null and collider is Holdable:
@@ -51,8 +53,18 @@ func _unhandled_input(event):
 		elif picked_object != null:
 			drop_object()
 	
+	if Input.is_action_just_pressed("grab_box"):
+		if picked_object == null:
+			#spawn box
+			grab_box.emit()
+	
+	#is code below still relevant? --> rotation leftovers
 	if Input.is_action_just_pressed("rclick"):
 		camera_controller.process_mode = Node.PROCESS_MODE_DISABLED
 		rotate_object(event)
 	if Input.is_action_just_released("rclick"):
 		camera_controller.process_mode = Node.PROCESS_MODE_INHERIT
+
+
+func _on_player_hold_box(newBox):
+	picked_object = newBox

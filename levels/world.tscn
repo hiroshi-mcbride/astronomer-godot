@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://c8u8ct3pr0atm"]
+[gd_scene load_steps=15 format=3 uid="uid://c8u8ct3pr0atm"]
 
 [ext_resource type="Script" path="res://src/world.gd" id="1_2i7x0"]
 [ext_resource type="PackedScene" uid="uid://ceui73yjsebp0" path="res://player/player.tscn" id="1_xbrf3"]
 [ext_resource type="Script" path="res://src/props/packable.gd" id="3_r66ro"]
 [ext_resource type="PackedScene" uid="uid://cahbrik61swll" path="res://props/box.tscn" id="4_parmu"]
+[ext_resource type="Script" path="res://levels/BoxSpawner.gd" id="5_68ur7"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gvmi2"]
 sky_top_color = Color(0.560784, 0.627451, 0.780392, 1)
@@ -128,3 +129,9 @@ material = SubResource("FogMaterial_380kl")
 
 [node name="Box" parent="." instance=ExtResource("4_parmu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.19529, 0.25, 0.000333071)
+
+[node name="BoxSpawner" type="Node" parent="."]
+script = ExtResource("5_68ur7")
+
+[connection signal="make_box" from="Player" to="BoxSpawner" method="_on_player_make_box"]
+[connection signal="box_made" from="BoxSpawner" to="Player" method="_on_box_spawner_box_made"]
