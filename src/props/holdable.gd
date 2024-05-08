@@ -6,13 +6,15 @@ signal picked()
 signal dropped()
 
 func _ready():
+	can_sleep = false
 	freeze_mode = RigidBody3D.FREEZE_MODE_STATIC
 	picked.connect(_on_picked)
 	dropped.connect(_on_dropped)
 
 func _on_picked():
 	is_held = true
+	#get_node("CollisionShape3D").disabled = true
 
 func _on_dropped():
 	is_held = false
-
+	#get_node("CollisionShape3D").disabled = false

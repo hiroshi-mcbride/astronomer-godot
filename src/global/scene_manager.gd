@@ -3,6 +3,7 @@ class_name SceneManager extends Node
 const MAIN_MENU_SCENE : PackedScene = preload("res://ui/main_menu.tscn")
 const WORLD_SCENE : PackedScene = preload("res://levels/world.tscn")
 const PAUSE_MENU_SCENE : PackedScene = preload("res://ui/pause_menu.tscn")
+const HUD = preload("res://ui/hud.tscn")
 
 @onready var canvas_layer = $CanvasLayer
 
@@ -17,6 +18,7 @@ func _ready():
 func _on_game_started():
 	load_scene(WORLD_SCENE, self)
 	load_scene(PAUSE_MENU_SCENE, canvas_layer)
+	load_scene(HUD, canvas_layer)
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
 	GlobalSignals.game_quit.connect(_on_game_quit)

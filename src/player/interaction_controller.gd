@@ -13,6 +13,7 @@ var rotation_power = 0.05
 func pick_object():
 	var collider = interaction_raycast.get_collider()
 	if collider != null and collider is Holdable:
+		GlobalSignals.mouse_over_exited.emit()
 		picked_object = collider
 		picked_object.picked.emit()
 		joint.set_node_b(picked_object.get_path())
@@ -31,6 +32,12 @@ func rotate_object(event):
 			staticbody.rotate_y(deg_to_rad(event.relative.x * rotation_power))
 
 func _physics_process(delta):
+	var collider = interaction_raycast.get_collider()
+	if collider != null and picked_object == null and collider is Holdable:
+		GlobalSignals.mouse_over_entered.emit()
+	elif collider == null or not collider is Holdable or picked_object != null:
+		GlobalSignals.mouse_over_exited.emit()
+	
 	if picked_object != null:
 		var a = picked_object.global_transform.origin
 		var b = hand.global_transform.origin

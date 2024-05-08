@@ -1,5 +1,8 @@
 class_name Packable extends Holdable
 
+func _on_picked():
+	super._on_picked()
+
 func _on_dropped():
 	super._on_dropped()
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c8u8ct3pr0atm"]
+[gd_scene load_steps=14 format=3 uid="uid://c8u8ct3pr0atm"]
 
 [ext_resource type="Script" path="res://src/world.gd" id="1_2i7x0"]
 [ext_resource type="PackedScene" uid="uid://ceui73yjsebp0" path="res://player/player.tscn" id="1_xbrf3"]
@@ -35,15 +35,21 @@ volumetric_fog_density = 0.01
 volumetric_fog_emission = Color(1, 1, 1, 1)
 volumetric_fog_sky_affect = 0.0
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1tipx"]
+albedo_color = Color(0.54, 0.54, 0.54, 1)
+
 [sub_resource type="BoxMesh" id="BoxMesh_ylruu"]
+material = SubResource("StandardMaterial3D_1tipx")
 size = Vector3(1024, 0.5, 1024)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6wl5g"]
 size = Vector3(1024, 0.5, 1024)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xu0pp"]
+size = Vector3(0.5, 0.5, 0.5)
 
 [sub_resource type="BoxMesh" id="BoxMesh_o2abs"]
+size = Vector3(0.5, 0.5, 0.5)
 
 [sub_resource type="FogMaterial" id="FogMaterial_380kl"]
 density = 0.1
