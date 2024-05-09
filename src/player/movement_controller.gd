@@ -7,7 +7,7 @@ class_name MovementController extends CharacterBody3D
 @onready var friction : float = player_data.friction
 @onready var ground_check = $GroundCheck
 
-signal make_box
+signal make_box()
 signal hold_box
 
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -34,7 +34,8 @@ func _unhandled_input(event):
 
 
 func _on_interaction_controller_grab_box():
-	make_box.emit()
+	var hand_pos = $Camera3D/InteractionController/Hand.global_position
+	make_box.emit(hand_pos)
 
 
 func _on_box_spawner_box_made(newBox):
