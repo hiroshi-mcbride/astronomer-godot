@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://ceui73yjsebp0" path="res://player/player.tscn" id="1_xbrf3"]
 [ext_resource type="Script" path="res://src/props/packable.gd" id="3_r66ro"]
 [ext_resource type="PackedScene" uid="uid://cahbrik61swll" path="res://props/box.tscn" id="4_parmu"]
-[ext_resource type="Script" path="res://levels/BoxSpawner.gd" id="5_68ur7"]
+[ext_resource type="PackedScene" uid="uid://c4k1ds7c31w2c" path="res://props/box_spawner.tscn" id="5_7gn7g"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gvmi2"]
 sky_top_color = Color(0.560784, 0.627451, 0.780392, 1)
@@ -46,16 +46,16 @@ size = Vector3(1024, 0.5, 1024)
 [sub_resource type="BoxShape3D" id="BoxShape3D_6wl5g"]
 size = Vector3(1024, 0.5, 1024)
 
+[sub_resource type="FogMaterial" id="FogMaterial_380kl"]
+density = 0.1
+emission = Color(0.943981, 0.947409, 0.855627, 1)
+edge_fade = 0.0707107
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_xu0pp"]
 size = Vector3(0.5, 0.5, 0.5)
 
 [sub_resource type="BoxMesh" id="BoxMesh_o2abs"]
 size = Vector3(0.5, 0.5, 0.5)
-
-[sub_resource type="FogMaterial" id="FogMaterial_380kl"]
-density = 0.1
-emission = Color(0.943981, 0.947409, 0.855627, 1)
-edge_fade = 0.0707107
 
 [node name="World" type="Node3D"]
 process_mode = 1
@@ -80,48 +80,6 @@ mesh = SubResource("BoxMesh_ylruu")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ground"]
 shape = SubResource("BoxShape3D_6wl5g")
 
-[node name="RigidBody3D2" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03366, -3.91688)
-collision_layer = 3
-axis_lock_angular_x = true
-axis_lock_angular_y = true
-axis_lock_angular_z = true
-script = ExtResource("3_r66ro")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D2"]
-shape = SubResource("BoxShape3D_xu0pp")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D2/CollisionShape3D"]
-mesh = SubResource("BoxMesh_o2abs")
-
-[node name="RigidBody3D3" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.54016, 1.03366, -3.96665)
-collision_layer = 3
-axis_lock_angular_x = true
-axis_lock_angular_y = true
-axis_lock_angular_z = true
-script = ExtResource("3_r66ro")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D3"]
-shape = SubResource("BoxShape3D_xu0pp")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D3/CollisionShape3D"]
-mesh = SubResource("BoxMesh_o2abs")
-
-[node name="RigidBody3D4" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.54016, 2.52209, -3.96665)
-collision_layer = 3
-axis_lock_angular_x = true
-axis_lock_angular_y = true
-axis_lock_angular_z = true
-script = ExtResource("3_r66ro")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D4"]
-shape = SubResource("BoxShape3D_xu0pp")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D4/CollisionShape3D"]
-mesh = SubResource("BoxMesh_o2abs")
-
 [node name="FogVolume" type="FogVolume" parent="."]
 visible = false
 shape = 4
@@ -130,8 +88,121 @@ material = SubResource("FogMaterial_380kl")
 [node name="Box" parent="." instance=ExtResource("4_parmu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.19529, 0.25, 0.000333071)
 
-[node name="BoxSpawner" type="Node" parent="."]
-script = ExtResource("5_68ur7")
+[node name="BoxSpawner" parent="." instance=ExtResource("5_7gn7g")]
+
+[node name="TestBlocks" type="Node" parent="."]
+
+[node name="RigidBody3D2" type="RigidBody3D" parent="TestBlocks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03366, -3.91688)
+collision_layer = 3
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+script = ExtResource("3_r66ro")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TestBlocks/RigidBody3D2"]
+shape = SubResource("BoxShape3D_xu0pp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TestBlocks/RigidBody3D2/CollisionShape3D"]
+mesh = SubResource("BoxMesh_o2abs")
+
+[node name="RigidBody3D3" type="RigidBody3D" parent="TestBlocks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.54016, 1.03366, -3.96665)
+collision_layer = 3
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+script = ExtResource("3_r66ro")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TestBlocks/RigidBody3D3"]
+shape = SubResource("BoxShape3D_xu0pp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TestBlocks/RigidBody3D3/CollisionShape3D"]
+mesh = SubResource("BoxMesh_o2abs")
+
+[node name="RigidBody3D4" type="RigidBody3D" parent="TestBlocks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.54016, 2.52209, -3.96665)
+collision_layer = 3
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+script = ExtResource("3_r66ro")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TestBlocks/RigidBody3D4"]
+shape = SubResource("BoxShape3D_xu0pp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TestBlocks/RigidBody3D4/CollisionShape3D"]
+mesh = SubResource("BoxMesh_o2abs")
+
+[node name="RigidBody3D5" type="RigidBody3D" parent="TestBlocks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03366, -4.59445)
+collision_layer = 3
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+script = ExtResource("3_r66ro")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TestBlocks/RigidBody3D5"]
+shape = SubResource("BoxShape3D_xu0pp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TestBlocks/RigidBody3D5/CollisionShape3D"]
+mesh = SubResource("BoxMesh_o2abs")
+
+[node name="RigidBody3D6" type="RigidBody3D" parent="TestBlocks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.54016, 1.03366, -4.64422)
+collision_layer = 3
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+script = ExtResource("3_r66ro")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TestBlocks/RigidBody3D6"]
+shape = SubResource("BoxShape3D_xu0pp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TestBlocks/RigidBody3D6/CollisionShape3D"]
+mesh = SubResource("BoxMesh_o2abs")
+
+[node name="RigidBody3D7" type="RigidBody3D" parent="TestBlocks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.54016, 2.52209, -4.64422)
+collision_layer = 3
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+script = ExtResource("3_r66ro")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TestBlocks/RigidBody3D7"]
+shape = SubResource("BoxShape3D_xu0pp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TestBlocks/RigidBody3D7/CollisionShape3D"]
+mesh = SubResource("BoxMesh_o2abs")
+
+[node name="RigidBody3D8" type="RigidBody3D" parent="TestBlocks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.725494, 2.52209, -3.96665)
+collision_layer = 3
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+script = ExtResource("3_r66ro")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TestBlocks/RigidBody3D8"]
+shape = SubResource("BoxShape3D_xu0pp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TestBlocks/RigidBody3D8/CollisionShape3D"]
+mesh = SubResource("BoxMesh_o2abs")
+
+[node name="RigidBody3D9" type="RigidBody3D" parent="TestBlocks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.725494, 2.52209, -4.64422)
+collision_layer = 3
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+script = ExtResource("3_r66ro")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TestBlocks/RigidBody3D9"]
+shape = SubResource("BoxShape3D_xu0pp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TestBlocks/RigidBody3D9/CollisionShape3D"]
+mesh = SubResource("BoxMesh_o2abs")
 
 [connection signal="make_box" from="Player" to="BoxSpawner" method="_on_player_make_box"]
 [connection signal="box_made" from="BoxSpawner" to="Player" method="_on_box_spawner_box_made"]

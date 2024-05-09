@@ -13,9 +13,8 @@ func _ready():
 	max_items = contents.get_children().size()
 
 func _on_item_entered(body):
-	if body is Packable: #add that the player should press the interact button (+prompt "deposit in box")
-		body.pack(self)
-		if item_count < max_items:
+	if body is Packable and item_count < max_items: #add that the player should press the interact button (+prompt "deposit in box")
+			body.pack(self)
 			var i = contents.get_child(item_count) as Node3D
 			i.visible = true
 			item_count += 1
