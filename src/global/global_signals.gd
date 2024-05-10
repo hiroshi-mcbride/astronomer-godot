@@ -10,7 +10,10 @@ enum Type {
 	DEPOSIT_ITEM,
 	BOX_FULL,
 	ITEM_DETECTED,
-	ITEM_EXITED
+	ITEM_EXITED,
+	SPAWN_BOX,
+	HOLD_BOX,
+	NO_BOX_LEFT
 }
 
 signal game_started()
@@ -23,6 +26,9 @@ signal deposit_item()
 signal box_full()
 signal item_detected()
 signal item_exited()
+signal spawn_box()
+signal hold_box()
+signal no_box_left()
 
 var signals = { 
 	Type.START_GAME : game_started,
@@ -35,4 +41,7 @@ var signals = {
 	Type.BOX_FULL : box_full,
 	Type.ITEM_DETECTED: item_detected,
 	Type.ITEM_EXITED: item_exited,
+	Type.SPAWN_BOX: spawn_box,
+	Type.HOLD_BOX: hold_box,
+	Type.NO_BOX_LEFT: no_box_left,
 }

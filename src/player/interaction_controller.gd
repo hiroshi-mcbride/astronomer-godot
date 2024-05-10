@@ -12,11 +12,10 @@ var rotation_power = 0.05
 
 var depositable_item = false
 
-signal grab_box #replace with global signal
-
 func _ready():
 	GlobalSignals.item_detected.connect(_on_item_near_box)
 	GlobalSignals.item_exited.connect(_on_item_exited_box)
+	GlobalSignals.hold_box.connect(_on_hold_box)
 
 func pick_object():
 	var collider = interaction_raycast.get_collider()
@@ -63,8 +62,8 @@ func _unhandled_input(event):
 	
 	if Input.is_action_just_pressed("grab_box"):
 		if picked_object == null:
-			#spawn box
-			grab_box.emit()
+			var hand_pos = $Hand.global_position 
+			GlobalSignals.spawn_box.emit(hand_pos) #tell box_spawner to spawn box in hand
 	
 	#is code below still relevant? --> rotation leftovers
 	if Input.is_action_just_pressed("rclick"):
@@ -74,7 +73,7 @@ func _unhandled_input(event):
 		camera_controller.process_mode = Node.PROCESS_MODE_INHERIT
 
 
-func _on_player_hold_box(newBox):
+func _on_hold_box(newBox):
 	picked_object = newBox
 
 func _on_item_near_box():

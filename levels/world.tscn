@@ -203,6 +203,3 @@ shape = SubResource("BoxShape3D_xu0pp")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="TestBlocks/RigidBody3D9/CollisionShape3D"]
 mesh = SubResource("BoxMesh_o2abs")
-
-[connection signal="make_box" from="Player" to="BoxSpawner" method="_on_player_make_box"]
-[connection signal="box_made" from="BoxSpawner" to="Player" method="_on_box_spawner_box_made"]

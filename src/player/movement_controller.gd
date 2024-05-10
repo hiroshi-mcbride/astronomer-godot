@@ -7,9 +7,6 @@ class_name MovementController extends CharacterBody3D
 @onready var friction : float = player_data.friction
 @onready var ground_check = $GroundCheck
 
-signal make_box() #replace with global signal if possible
-signal hold_box #replace with global signal if possible
-
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var is_grounded
 
@@ -31,12 +28,3 @@ func _physics_process(delta):
 func _unhandled_input(event):
 	if event.is_action_pressed("jump") and is_grounded:
 		velocity.y = jump_strength
-
-
-func _on_interaction_controller_grab_box():
-	var hand_pos = $Camera3D/InteractionController/Hand.global_position
-	make_box.emit(hand_pos)
-
-
-func _on_box_spawner_box_made(newBox):
-	hold_box.emit(newBox)

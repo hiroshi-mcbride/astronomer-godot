@@ -48,6 +48,3 @@ shape = SubResource("CapsuleShape3D_acval")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
 shape = SubResource("CylinderShape3D_8gm5d")
 target_position = Vector3(0, -0.125, 0)
-
-[connection signal="hold_box" from="." to="Camera3D/InteractionController" method="_on_player_hold_box"]
-[connection signal="grab_box" from="Camera3D/InteractionController" to="." method="_on_interaction_controller_grab_box"]
