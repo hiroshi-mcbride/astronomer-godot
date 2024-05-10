@@ -11,7 +11,7 @@ var item = null
 
 func _enter_tree():
 	body_entered.connect(_on_item_entered)
-	body_entered.connect(_on_item_exited)
+	body_exited.connect(_on_item_exited)
 
 func _ready():
 	max_items = contents.get_children().size()
@@ -19,11 +19,14 @@ func _ready():
 func _on_item_entered(body):
 	#item_detected = true
 	item = body
+	if item is Packable and item_count < max_items:
+		GlobalSignals.deposit_item.emit()
+	elif item is Packable and item_count >= max_items:
+		GlobalSignals.box_full.emit()
 
 func _on_item_exited(body):
 	#item_detected = false
-	if body is Packable:
-		pass
+	GlobalSignals.item_exited.emit()
 
 func _unhandled_input(event):
 	if Input.is_action_just_pressed("interact"):

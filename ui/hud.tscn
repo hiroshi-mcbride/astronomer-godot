@@ -29,20 +29,86 @@ mouse_filter = 2
 texture = ExtResource("1_piso6")
 stretch_mode = 3
 
-[node name="Label" type="Label" parent="."]
+[node name="Pop Up\'s" type="Node" parent="."]
+script = ExtResource("2_m23u7")
+
+[node name="Pick Up" type="Label" parent="Pop Up\'s"]
 visible = false
-layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -28.0
-offset_top = -180.0
-offset_right = 28.0
+offset_left = -55.5
+offset_top = -202.0
+offset_right = 55.5
 offset_bottom = -157.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 32
 text = "Pick up"
-script = ExtResource("2_m23u7")
+
+[node name="Close Box" type="Label" parent="Pop Up\'s"]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -75.0
+offset_top = -143.0
+offset_right = 75.0
+offset_bottom = -98.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = "Close Box"
+
+[node name="Deposit" type="Label" parent="Pop Up\'s"]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -75.0
+offset_top = -202.0
+offset_right = 75.0
+offset_bottom = -157.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = "Deposit"
+
+[node name="Box Full" type="Label" parent="Pop Up\'s"]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -75.0
+offset_top = -202.0
+offset_right = 75.0
+offset_bottom = -157.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = "Box Full"
+
+[node name="Boxes left" type="Label" parent="."]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 31.0
+offset_right = 102.0
+offset_bottom = 54.0
+text = "Boxes left
+"
+
+[node name="Closed boxes" type="Label" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 76.0
+offset_right = 126.0
+offset_bottom = 99.0
+text = "Closed Boxes"

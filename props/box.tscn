@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://cahbrik61swll"]
 
-[ext_resource type="Script" path="res://src/props/holdable.gd" id="1_gf4b3"]
+[ext_resource type="Script" path="res://src/props/moving_box.gd" id="1_ardnm"]
 [ext_resource type="PackedScene" uid="uid://lce0gnk8wi1" path="res://models/box/box.glb" id="1_o4xsb"]
 [ext_resource type="Script" path="res://src/props/box_item_detection.gd" id="2_nrle3"]
 
@@ -25,7 +25,7 @@ size = Vector3(0.305, 0.25, 0.305)
 [node name="Box" type="RigidBody3D"]
 mass = 7.18
 physics_material_override = SubResource("PhysicsMaterial_wmtcp")
-script = ExtResource("1_gf4b3")
+script = ExtResource("1_ardnm")
 
 [node name="BoxModel" parent="." instance=ExtResource("1_o4xsb")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.0114866, 0)

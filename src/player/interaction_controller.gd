@@ -36,7 +36,7 @@ func rotate_object(event):
 func _physics_process(delta):
 	var collider = interaction_raycast.get_collider()
 	if collider != null and picked_object == null and collider is Holdable:
-		GlobalSignals.mouse_over_entered.emit()
+		GlobalSignals.mouse_over_entered.emit(collider)
 	elif collider == null or not collider is Holdable or picked_object != null:
 		GlobalSignals.mouse_over_exited.emit()
 	
