@@ -7,8 +7,8 @@ class_name MovementController extends CharacterBody3D
 @onready var friction : float = player_data.friction
 @onready var ground_check = $GroundCheck
 
-signal make_box()
-signal hold_box
+signal make_box() #replace with global signal if possible
+signal hold_box #replace with global signal if possible
 
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var is_grounded

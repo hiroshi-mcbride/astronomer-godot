@@ -13,8 +13,6 @@ func _ready():
 
 func _on_picked():
 	is_held = true
-	#get_node("CollisionShape3D").disabled = true
 
 func _on_dropped():
 	is_held = false
-	#get_node("CollisionShape3D").disabled = false

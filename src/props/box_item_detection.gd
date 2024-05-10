@@ -5,8 +5,6 @@ class_name BoxItemDetection extends Area3D
 var item_count : int
 var max_items : int
 
-var item_detected : bool
-
 var item = null
 
 func _enter_tree():
@@ -23,8 +21,7 @@ func _on_item_entered(body):
 		GlobalSignals.item_detected.emit() #lets interaction_controller know that the held item can be deposited
 
 func _on_item_exited(body):
-	#item_detected = false
-	GlobalSignals.item_exited.emit()
+	GlobalSignals.item_exited.emit() #held item can no longer be deposited
 
 func pack_item():
 	if item is Packable and item_count < max_items:

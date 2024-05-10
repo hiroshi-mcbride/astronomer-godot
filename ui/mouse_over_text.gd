@@ -5,6 +5,7 @@ func _ready():
 	GlobalSignals.mouse_over_entered.connect(_on_mouse_entered)
 	GlobalSignals.mouse_over_exited.connect(_on_mouse_exited)
 	
+	#signals to do with moving box
 	GlobalSignals.item_detected.connect(_on_item_detected)
 	GlobalSignals.box_full.connect(_on_box_full)
 	GlobalSignals.item_exited.connect(_on_item_exited)

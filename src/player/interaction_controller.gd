@@ -12,7 +12,7 @@ var rotation_power = 0.05
 
 var depositable_item = false
 
-signal grab_box
+signal grab_box #replace with global signal
 
 func _ready():
 	GlobalSignals.item_detected.connect(_on_item_near_box)
