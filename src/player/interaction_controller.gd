@@ -70,13 +70,14 @@ func _unhandled_input(event):
 			GlobalSignals.spawn_box.emit(hand_pos) #tell box_spawner to spawn box in hand
 	
 	if Input.is_action_just_pressed(("close_box")) and picked_object is MovingBox:
-		GlobalSignals.close_box.emit(picked_object)
+		if picked_object != null:
+			GlobalSignals.close_box.emit(picked_object)
 	
 	#is code below still relevant? --> rotation leftovers
-	if Input.is_action_just_pressed("rclick"):
+	if Input.is_action_just_pressed("rotate"): #not currently set in projectsettings
 		camera_controller.process_mode = Node.PROCESS_MODE_DISABLED
 		rotate_object(event)
-	if Input.is_action_just_released("rclick"):
+	if Input.is_action_just_released("rotate"):
 		camera_controller.process_mode = Node.PROCESS_MODE_INHERIT
 
 
