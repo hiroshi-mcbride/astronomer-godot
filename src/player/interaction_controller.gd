@@ -24,10 +24,14 @@ func pick_object():
 		picked_object = collider
 		picked_object.picked.emit()
 		joint.set_node_b(picked_object.get_path())
+		if picked_object is MovingBox:
+			GlobalSignals.box_held.emit()
 
 func drop_object():
 	if picked_object != null:
 		picked_object.dropped.emit()
+		if picked_object is MovingBox:
+			GlobalSignals.box_dropped.emit()
 		picked_object = null
 		joint.set_node_b(joint.get_path())
 
@@ -64,6 +68,9 @@ func _unhandled_input(event):
 		if picked_object == null:
 			var hand_pos = $Hand.global_position 
 			GlobalSignals.spawn_box.emit(hand_pos) #tell box_spawner to spawn box in hand
+	
+	if Input.is_action_just_pressed(("close_box")) and picked_object is MovingBox:
+		GlobalSignals.close_box.emit(picked_object)
 	
 	#is code below still relevant? --> rotation leftovers
 	if Input.is_action_just_pressed("rclick"):

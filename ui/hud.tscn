@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://cna6soy52kwhf"]
+[gd_scene load_steps=4 format=3 uid="uid://cna6soy52kwhf"]
 
+[ext_resource type="Script" path="res://ui/hud.gd" id="1_du6my"]
 [ext_resource type="Texture2D" uid="uid://guesfwbbr2ul" path="res://ui/dot.png" id="1_piso6"]
 [ext_resource type="Script" path="res://ui/mouse_over_text.gd" id="2_m23u7"]
 
@@ -11,6 +12,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+script = ExtResource("1_du6my")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -60,7 +62,7 @@ offset_bottom = -112.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 32
-text = "Close Box"
+text = "Right Click To Close Box"
 
 [node name="Deposit" type="Label" parent="Pop Up\'s"]
 visible = false
@@ -110,16 +112,16 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 32
 text = "No Boxes Left"
 
-[node name="Boxes left" type="Label" parent="."]
+[node name="Boxes Left" type="Label" parent="."]
 layout_mode = 0
 offset_left = 25.0
 offset_top = 31.0
 offset_right = 102.0
 offset_bottom = 54.0
-text = "Boxes left
+text = "Boxes Left
 "
 
-[node name="Closed boxes" type="Label" parent="."]
+[node name="Closed Boxes" type="Label" parent="."]
 layout_mode = 0
 offset_left = 24.0
 offset_top = 76.0

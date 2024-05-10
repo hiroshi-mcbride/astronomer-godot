@@ -13,7 +13,12 @@ enum Type {
 	ITEM_EXITED,
 	SPAWN_BOX,
 	HOLD_BOX,
-	NO_BOX_LEFT
+	NO_BOX_LEFT,
+	BOX_COUNT,
+	CLOSE_BOX,
+	BOX_CLOSED,
+	BOX_HELD,
+	BOX_DROPPED,
 }
 
 signal game_started()
@@ -29,6 +34,11 @@ signal item_exited()
 signal spawn_box()
 signal hold_box()
 signal no_box_left()
+signal box_count()
+signal close_box()
+signal box_closed()
+signal box_held()
+signal box_dropped()
 
 var signals = { 
 	Type.START_GAME : game_started,
@@ -44,4 +54,9 @@ var signals = {
 	Type.SPAWN_BOX: spawn_box,
 	Type.HOLD_BOX: hold_box,
 	Type.NO_BOX_LEFT: no_box_left,
+	Type.BOX_COUNT: box_count,
+	Type.CLOSE_BOX: close_box,
+	Type.BOX_CLOSED: box_closed,
+	Type.BOX_HELD: box_held,
+	Type.BOX_DROPPED: box_dropped,
 }
