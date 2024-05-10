@@ -10,7 +10,13 @@ var picked_object : Holdable
 var pull_power = 4
 var rotation_power = 0.05
 
+var depositable_item = false
+
 signal grab_box
+
+func _ready():
+	GlobalSignals.item_detected.connect(_on_item_near_box)
+	GlobalSignals.item_exited.connect(_on_item_exited_box)
 
 func pick_object():
 	var collider = interaction_raycast.get_collider()
@@ -50,7 +56,9 @@ func _unhandled_input(event):
 		if picked_object == null:
 			pick_object()
 		
-		elif picked_object != null:
+		elif picked_object != null and depositable_item == true: #check if item is depositable
+			GlobalSignals.deposit_item.emit()
+		elif picked_object != null and depositable_item == false:
 			drop_object()
 	
 	if Input.is_action_just_pressed("grab_box"):
@@ -68,3 +76,9 @@ func _unhandled_input(event):
 
 func _on_player_hold_box(newBox):
 	picked_object = newBox
+
+func _on_item_near_box():
+	depositable_item = true
+
+func _on_item_exited_box():
+	depositable_item = false

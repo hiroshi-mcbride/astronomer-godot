@@ -15,25 +15,23 @@ func _enter_tree():
 
 func _ready():
 	max_items = contents.get_children().size()
+	GlobalSignals.deposit_item.connect(pack_item)
 
 func _on_item_entered(body):
-	#item_detected = true
 	item = body
-	if item is Packable and item_count < max_items:
-		GlobalSignals.deposit_item.emit()
-	elif item is Packable and item_count >= max_items:
-		GlobalSignals.box_full.emit()
+	if item is Packable:
+		GlobalSignals.item_detected.emit() #lets interaction_controller know that the held item can be deposited
 
 func _on_item_exited(body):
 	#item_detected = false
 	GlobalSignals.item_exited.emit()
 
-func _unhandled_input(event):
-	if Input.is_action_just_pressed("interact"):
-		if item != null:
-			if item is Packable and item_count < max_items:  #!! items still get packed even if they move out of the collider !!
-				item.pack(self)
-				var i = contents.get_child(item_count) as Node3D
-				i.visible = true
-				item_count += 1
-				item = null
+func pack_item():
+	if item is Packable and item_count < max_items:
+		item.pack(self)
+		var i = contents.get_child(item_count) as Node3D
+		i.visible = true
+		item_count += 1
+		item = null
+	elif item_count >= max_items:
+		GlobalSignals.box_full.emit() #activates UI

@@ -9,6 +9,7 @@ enum Type {
 	MOUSE_OVER_EXITED,
 	DEPOSIT_ITEM,
 	BOX_FULL,
+	ITEM_DETECTED,
 	ITEM_EXITED
 }
 
@@ -20,6 +21,7 @@ signal mouse_over_entered()
 signal mouse_over_exited()
 signal deposit_item()
 signal box_full()
+signal item_detected()
 signal item_exited()
 
 var signals = { 
@@ -31,5 +33,6 @@ var signals = {
 	Type.MOUSE_OVER_EXITED : mouse_over_exited,
 	Type.DEPOSIT_ITEM : deposit_item,
 	Type.BOX_FULL : box_full,
+	Type.ITEM_DETECTED: item_detected,
 	Type.ITEM_EXITED: item_exited,
 }
