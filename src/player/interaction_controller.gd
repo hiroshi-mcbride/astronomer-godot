@@ -72,6 +72,9 @@ func _unhandled_input(event):
 	if Input.is_action_just_pressed(("close_box")) and picked_object is MovingBox:
 		if picked_object != null:
 			GlobalSignals.close_box.emit(picked_object)
+			
+	if Input.is_action_just_pressed("fullscreen"):
+		swap_fullscreen_mode()
 	
 	#is code below still relevant? --> rotation leftovers
 	if Input.is_action_just_pressed("rotate"): #not currently set in projectsettings
@@ -79,7 +82,13 @@ func _unhandled_input(event):
 		rotate_object(event)
 	if Input.is_action_just_released("rotate"):
 		camera_controller.process_mode = Node.PROCESS_MODE_INHERIT
+		
 
+func swap_fullscreen_mode(): #credits to jeroenheijmans on de godotengine forum https://forum.godotengine.org/t/how-to-toggle-fullscreen-from-code/27368/2
+	if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_MAXIMIZED:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED) 
 
 func _on_hold_box(newBox):
 	picked_object = newBox

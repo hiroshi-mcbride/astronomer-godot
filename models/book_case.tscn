@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://mb1h2eqd3oiv"]
+
+[ext_resource type="PackedScene" uid="uid://cmuoe7ijs2vr8" path="res://models/bookcase1.glb" id="1_4u8b7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hfvvn"]
+size = Vector3(0.511719, 0.0373535, 1.32242)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o31fe"]
+size = Vector3(0.019043, 2.14977, 1.29138)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4p6f1"]
+size = Vector3(0.479431, 2.15666, 0.0257225)
+
+[node name="BookCase" type="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.215851, 0)
+
+[node name="FloorCollision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0200652, 0.0110399, 0.0332073)
+shape = SubResource("BoxShape3D_hfvvn")
+
+[node name="FloorCollision2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0200652, 0.482969, 0.0332073)
+shape = SubResource("BoxShape3D_hfvvn")
+
+[node name="FloorCollision3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0200652, 0.891681, 0.0332073)
+shape = SubResource("BoxShape3D_hfvvn")
+
+[node name="FloorCollision4" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0200652, 1.32043, 0.0332073)
+shape = SubResource("BoxShape3D_hfvvn")
+
+[node name="FloorCollision5" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0200652, 1.74469, 0.0332073)
+shape = SubResource("BoxShape3D_hfvvn")
+
+[node name="FloorCollision6" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0200652, 2.1556, 0.0332073)
+shape = SubResource("BoxShape3D_hfvvn")
+
+[node name="WallCollisionWide2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.228241, 1.09957, 0.0338743)
+shape = SubResource("BoxShape3D_o31fe")
+
+[node name="WallCollisionNarrow" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0209656, 1.1022, 0.67357)
+shape = SubResource("BoxShape3D_4p6f1")
+
+[node name="WallCollisionNarrow3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0209656, 1.1022, -0.605537)
+shape = SubResource("BoxShape3D_4p6f1")
+
+[node name="bookcase1" parent="." instance=ExtResource("1_4u8b7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0223851, 0, 0.0343935)

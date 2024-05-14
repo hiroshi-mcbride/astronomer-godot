@@ -23,7 +23,9 @@ size = Vector3(0.789063, 0.722168, 1.24219)
 size = Vector3(0.305, 0.25, 0.305)
 
 [node name="Box" type="RigidBody3D"]
-mass = 7.18
+axis_lock_angular_x = true
+axis_lock_angular_z = true
+mass = 15.0
 physics_material_override = SubResource("PhysicsMaterial_wmtcp")
 script = ExtResource("1_ardnm")
 
