@@ -75,14 +75,6 @@ func _unhandled_input(event):
 			
 	if Input.is_action_just_pressed("fullscreen"):
 		swap_fullscreen_mode()
-	
-	#is code below still relevant? --> rotation leftovers
-	if Input.is_action_just_pressed("rotate"): #not currently set in projectsettings
-		camera_controller.process_mode = Node.PROCESS_MODE_DISABLED
-		rotate_object(event)
-	if Input.is_action_just_released("rotate"):
-		camera_controller.process_mode = Node.PROCESS_MODE_INHERIT
-		
 
 func swap_fullscreen_mode(): #credits to jeroenheijmans on de godotengine forum https://forum.godotengine.org/t/how-to-toggle-fullscreen-from-code/27368/2
 	if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_MAXIMIZED:
