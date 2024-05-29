@@ -1,9 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://cahbrik61swll"]
+[gd_scene load_steps=10 format=3 uid="uid://cahbrik61swll"]
 
 [ext_resource type="Script" path="res://src/props/moving_box.gd" id="1_ardnm"]
 [ext_resource type="PackedScene" uid="uid://lce0gnk8wi1" path="res://models/box/box.glb" id="1_o4xsb"]
 [ext_resource type="Script" path="res://src/props/box_item_detection.gd" id="2_nrle3"]
-[ext_resource type="PackedScene" uid="uid://dmtud740nux23" path="res://models/box_closed.glb" id="3_6cxps"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wmtcp"]
 absorbent = true
@@ -30,12 +29,8 @@ mass = 15.0
 physics_material_override = SubResource("PhysicsMaterial_wmtcp")
 script = ExtResource("1_ardnm")
 
-[node name="BoxModel" parent="." instance=ExtResource("1_o4xsb")]
+[node name="box_open" parent="." instance=ExtResource("1_o4xsb")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.0114866, 0)
-
-[node name="box_closed" parent="." instance=ExtResource("3_6cxps")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
-visible = false
 
 [node name="FloorCollision" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00382404, 0)

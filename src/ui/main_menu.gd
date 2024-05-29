@@ -10,3 +10,13 @@ func _ready():
 
 func _on_game_started():
 	queue_free()
+
+func _unhandled_input(event):
+		if Input.is_action_just_pressed("fullscreen"):
+			swap_fullscreen_mode()
+
+func swap_fullscreen_mode(): #credits to jeroenheijmans on de godotengine forum https://forum.godotengine.org/t/how-to-toggle-fullscreen-from-code/27368/2
+	if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_MAXIMIZED:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)

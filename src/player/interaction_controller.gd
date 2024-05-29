@@ -71,7 +71,8 @@ func _unhandled_input(event):
 	
 	if Input.is_action_just_pressed(("close_box")) and picked_object is MovingBox:
 		if picked_object != null:
-			GlobalSignals.close_box.emit(picked_object)
+			var hand_pos = $Hand.global_position 
+			GlobalSignals.close_box.emit(picked_object, hand_pos)
 			
 	if Input.is_action_just_pressed("fullscreen"):
 		swap_fullscreen_mode()

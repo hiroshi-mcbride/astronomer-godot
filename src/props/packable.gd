@@ -1,5 +1,7 @@
 class_name Packable extends Holdable
 
+#!!! note: Box will only detect items whose collision is set to layer 2 !!!
+
 func _on_picked():
 	super._on_picked()
 

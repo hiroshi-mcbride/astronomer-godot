@@ -31,3 +31,4 @@ func _on_game_quit():
 func load_scene(scene:PackedScene, parent:Node):
 	var loaded_scene = scene.instantiate()
 	parent.add_child(loaded_scene)
+	#DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN) #give better location

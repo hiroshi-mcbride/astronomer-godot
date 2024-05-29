@@ -49,6 +49,6 @@ func _on_box_held():
 func _on_box_dropped():
 	get_node("Close Box").visible = false
 
-func _on_box_closed(): #not currently in use
+func _on_box_closed(): 
 	get_node("No Boxes Left").visible = false
 	get_node("Close Box").visible = false

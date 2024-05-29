@@ -7,9 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://c4k1ds7c31w2c" path="res://props/box_spawner.tscn" id="5_7gn7g"]
 [ext_resource type="PackedScene" uid="uid://mb1h2eqd3oiv" path="res://models/book_case.tscn" id="7_fijbu"]
 [ext_resource type="PackedScene" uid="uid://c7qhtel584pgr" path="res://models/book.tscn" id="7_xnf1r"]
-[ext_resource type="PackedScene" uid="uid://cj7g2x4866xb4" path="res://models/helium_tank.glb" id="9_08hl6"]
-[ext_resource type="PackedScene" uid="uid://t7l7kvwshwat" path="res://models/walking_cane.glb" id="11_h0glx"]
+[ext_resource type="PackedScene" uid="uid://cwg0o4ekrvb5r" path="res://props/cane.tscn" id="10_0e5s3"]
 [ext_resource type="PackedScene" uid="uid://bmuvphbx6qjih" path="res://models/House/house.tscn" id="11_ikium"]
+[ext_resource type="PackedScene" uid="uid://dnu8ooumqo5wv" path="res://props/helium_flask.tscn" id="11_ktot3"]
 [ext_resource type="PackedScene" uid="uid://u405j31lvb2l" path="res://props/urn.tscn" id="11_qw30u"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gvmi2"]
@@ -43,7 +43,7 @@ volumetric_fog_emission = Color(1, 1, 1, 1)
 volumetric_fog_sky_affect = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1tipx"]
-albedo_color = Color(0.54, 0.54, 0.54, 1)
+albedo_color = Color(0.262745, 0.345098, 0.286275, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_ylruu"]
 material = SubResource("StandardMaterial3D_1tipx")
@@ -243,14 +243,14 @@ transform = Transform3D(1, 0, 0, 0, -0.00216417, 0.999998, 0, -0.999998, -0.0021
 [node name="RigidBody3D6" parent="Books" instance=ExtResource("7_xnf1r")]
 transform = Transform3D(0.936311, -0.351171, -0.000759995, -3.49262e-12, -0.00216417, 0.999998, -0.351172, -0.936309, -0.00202634, -2.11596, 0.827309, 0.956389)
 
-[node name="helium_tank" parent="." instance=ExtResource("9_08hl6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.14152, 0.25, 2.70883)
-
-[node name="walking_cane" parent="." instance=ExtResource("11_h0glx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.55948, 0.25, 2.59915)
-
 [node name="Urn" parent="." instance=ExtResource("11_qw30u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.58587, 0.341999, 3.06241)
 
 [node name="house" parent="." instance=ExtResource("11_ikium")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.300329, 0)
+
+[node name="cane" parent="." instance=ExtResource("10_0e5s3")]
+transform = Transform3D(0.373133, 0, -0.927778, 0, 1, 0, 0.927778, 0, 0.373133, -1.63303, 0.478543, 1.82828)
+
+[node name="helium_flask" parent="." instance=ExtResource("11_ktot3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.508637, 1.62076)

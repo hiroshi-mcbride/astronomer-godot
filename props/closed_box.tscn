@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://c37vt7cblvqfd"]
+
+[ext_resource type="Script" path="res://src/props/holdable.gd" id="1_3ketm"]
+[ext_resource type="PackedScene" uid="uid://dmtud740nux23" path="res://models/box_closed.glb" id="2_u6uup"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1j4jq"]
+size = Vector3(0.67, 0.747036, 1.11)
+
+[node name="closed_box" type="RigidBody3D"]
+axis_lock_angular_x = true
+axis_lock_angular_z = true
+script = ExtResource("1_3ketm")
+
+[node name="box_closed" parent="." instance=ExtResource("2_u6uup")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000501633, 0.35133, -0.00402713)
+shape = SubResource("BoxShape3D_1j4jq")

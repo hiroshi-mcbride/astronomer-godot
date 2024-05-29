@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://x4s2ep6qs1n2"]
+
+[ext_resource type="ArrayMesh" uid="uid://dkxj1hgox3ilt" path="res://models/House/house hole_Cube_032.res" id="1_dp8ho"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_02qki"]
+size = Vector3(1.02979, 2.02344, 0.106476)
+
+[node name="Door" type="RigidBody3D"]
+axis_lock_linear_x = true
+axis_lock_linear_y = true
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_z = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.9848, 1.09041, 1.9194)
+shape = SubResource("BoxShape3D_02qki")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.38583, 1.66169, 1.98841)
+mesh = ExtResource("1_dp8ho")
