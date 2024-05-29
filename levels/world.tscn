@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://c8u8ct3pr0atm"]
+[gd_scene load_steps=21 format=3 uid="uid://c8u8ct3pr0atm"]
 
 [ext_resource type="Script" path="res://src/world.gd" id="1_2i7x0"]
 [ext_resource type="PackedScene" uid="uid://ceui73yjsebp0" path="res://player/player.tscn" id="1_xbrf3"]
@@ -7,6 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://c4k1ds7c31w2c" path="res://props/box_spawner.tscn" id="5_7gn7g"]
 [ext_resource type="PackedScene" uid="uid://mb1h2eqd3oiv" path="res://models/book_case.tscn" id="7_fijbu"]
 [ext_resource type="PackedScene" uid="uid://c7qhtel584pgr" path="res://models/book.tscn" id="7_xnf1r"]
+[ext_resource type="PackedScene" uid="uid://cj7g2x4866xb4" path="res://models/helium_tank.glb" id="9_08hl6"]
+[ext_resource type="PackedScene" uid="uid://t7l7kvwshwat" path="res://models/walking_cane.glb" id="11_h0glx"]
+[ext_resource type="PackedScene" uid="uid://bmuvphbx6qjih" path="res://models/House/house.tscn" id="11_ikium"]
+[ext_resource type="PackedScene" uid="uid://u405j31lvb2l" path="res://props/urn.tscn" id="11_qw30u"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gvmi2"]
 sky_top_color = Color(0.560784, 0.627451, 0.780392, 1)
@@ -88,14 +92,14 @@ shape = 4
 material = SubResource("FogMaterial_380kl")
 
 [node name="Box" parent="." instance=ExtResource("4_parmu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.19529, 0.25, 0.000333071)
+transform = Transform3D(-0.124329, 0, 0.992241, 0, 1, 0, -0.992241, 0, -0.124329, 0.383425, 0.25, -3.56634)
 
 [node name="BoxSpawner" parent="." instance=ExtResource("5_7gn7g")]
 
 [node name="TestBlocks" type="Node" parent="."]
 
 [node name="RigidBody3D2" type="RigidBody3D" parent="TestBlocks"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03366, -3.91688)
+transform = Transform3D(0.665282, 0, -0.746592, 0, 1, 0, 0.746592, 0, 0.665282, 2.46148, 1.03366, -3.19658)
 collision_layer = 3
 axis_lock_angular_x = true
 axis_lock_angular_y = true
@@ -109,7 +113,7 @@ shape = SubResource("BoxShape3D_xu0pp")
 mesh = SubResource("BoxMesh_o2abs")
 
 [node name="RigidBody3D3" type="RigidBody3D" parent="TestBlocks"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.54016, 1.03366, -3.96665)
+transform = Transform3D(0.665282, 0, -0.746592, 0, 1, 0, 0.746592, 0, 0.665282, 3.52328, 1.03366, -2.07982)
 collision_layer = 3
 axis_lock_angular_x = true
 axis_lock_angular_y = true
@@ -123,7 +127,7 @@ shape = SubResource("BoxShape3D_xu0pp")
 mesh = SubResource("BoxMesh_o2abs")
 
 [node name="RigidBody3D4" type="RigidBody3D" parent="TestBlocks"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.54016, 2.52209, -3.96665)
+transform = Transform3D(0.665282, 0, -0.746592, 0, 1, 0, 0.746592, 0, 0.665282, 3.52328, 2.52209, -2.07982)
 collision_layer = 3
 axis_lock_angular_x = true
 axis_lock_angular_y = true
@@ -137,7 +141,7 @@ shape = SubResource("BoxShape3D_xu0pp")
 mesh = SubResource("BoxMesh_o2abs")
 
 [node name="RigidBody3D5" type="RigidBody3D" parent="TestBlocks"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03366, -4.59445)
+transform = Transform3D(0.665282, 0, -0.746592, 0, 1, 0, 0.746592, 0, 0.665282, 2.96735, 1.03366, -3.64736)
 collision_layer = 3
 axis_lock_angular_x = true
 axis_lock_angular_y = true
@@ -151,7 +155,7 @@ shape = SubResource("BoxShape3D_xu0pp")
 mesh = SubResource("BoxMesh_o2abs")
 
 [node name="RigidBody3D6" type="RigidBody3D" parent="TestBlocks"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.54016, 1.03366, -4.64422)
+transform = Transform3D(0.665282, 0, -0.746592, 0, 1, 0, 0.746592, 0, 0.665282, 4.02915, 1.03366, -2.5306)
 collision_layer = 3
 axis_lock_angular_x = true
 axis_lock_angular_y = true
@@ -165,7 +169,7 @@ shape = SubResource("BoxShape3D_xu0pp")
 mesh = SubResource("BoxMesh_o2abs")
 
 [node name="RigidBody3D7" type="RigidBody3D" parent="TestBlocks"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.54016, 2.52209, -4.64422)
+transform = Transform3D(0.665282, 0, -0.746592, 0, 1, 0, 0.746592, 0, 0.665282, 4.02915, 2.52209, -2.5306)
 collision_layer = 3
 axis_lock_angular_x = true
 axis_lock_angular_y = true
@@ -179,7 +183,7 @@ shape = SubResource("BoxShape3D_xu0pp")
 mesh = SubResource("BoxMesh_o2abs")
 
 [node name="RigidBody3D8" type="RigidBody3D" parent="TestBlocks"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.725494, 2.52209, -3.96665)
+transform = Transform3D(0.665282, 0, -0.746592, 0, 1, 0, 0.746592, 0, 0.665282, 2.9813, 2.52209, -2.68805)
 collision_layer = 3
 axis_lock_angular_x = true
 axis_lock_angular_y = true
@@ -193,7 +197,7 @@ shape = SubResource("BoxShape3D_xu0pp")
 mesh = SubResource("BoxMesh_o2abs")
 
 [node name="RigidBody3D9" type="RigidBody3D" parent="TestBlocks"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.725494, 2.52209, -4.64422)
+transform = Transform3D(0.665282, 0, -0.746592, 0, 1, 0, 0.746592, 0, 0.665282, 3.48717, 2.52209, -3.13882)
 collision_layer = 3
 axis_lock_angular_x = true
 axis_lock_angular_y = true
@@ -206,33 +210,47 @@ shape = SubResource("BoxShape3D_xu0pp")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="TestBlocks/RigidBody3D9/CollisionShape3D"]
 mesh = SubResource("BoxMesh_o2abs")
 
-[node name="RigidBody3D2" parent="." instance=ExtResource("7_xnf1r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.11596, 0.348892, -0.467905)
-
-[node name="RigidBody3D3" parent="." instance=ExtResource("7_xnf1r")]
-transform = Transform3D(1, 0, 0, 0, -0.00216417, 0.999998, 0, -0.999998, -0.00216417, -2.11596, 0.456899, 0.956389)
-
-[node name="RigidBody3D4" parent="." instance=ExtResource("7_xnf1r")]
-transform = Transform3D(0.992269, 0.124103, 0.000268582, 0, -0.00216417, 0.999998, 0.124104, -0.992267, -0.00214744, -2.11596, 0.593731, 0.956389)
-
-[node name="RigidBody3D5" parent="." instance=ExtResource("7_xnf1r")]
-transform = Transform3D(1, 0, 0, 0, -0.00216417, 0.999998, 0, -0.999998, -0.00216417, -2.11132, 0.716352, 0.984187)
-
-[node name="RigidBody3D6" parent="." instance=ExtResource("7_xnf1r")]
-transform = Transform3D(0.936311, -0.351171, -0.000759995, -3.49262e-12, -0.00216417, 0.999998, -0.351172, -0.936309, -0.00202634, -2.11596, 0.827309, 0.956389)
-
 [node name="BookCase" parent="." instance=ExtResource("7_fijbu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.2786, -1)
 mass = 100.0
 
-[node name="Book" parent="." instance=ExtResource("7_xnf1r")]
+[node name="Books" type="Node" parent="."]
+
+[node name="Book" parent="Books" instance=ExtResource("7_xnf1r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9094, 0.794755, -0.870771)
 
-[node name="Book2" parent="." instance=ExtResource("7_xnf1r")]
+[node name="Book2" parent="Books" instance=ExtResource("7_xnf1r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9094, 0.794755, -0.968668)
 
-[node name="Book3" parent="." instance=ExtResource("7_xnf1r")]
+[node name="Book3" parent="Books" instance=ExtResource("7_xnf1r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9094, 0.794755, -1.06004)
 
-[node name="Book4" parent="." instance=ExtResource("7_xnf1r")]
+[node name="Book4" parent="Books" instance=ExtResource("7_xnf1r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9094, 0.794755, -1.16428)
+
+[node name="RigidBody3D2" parent="Books" instance=ExtResource("7_xnf1r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.11596, 0.348892, -0.467905)
+
+[node name="RigidBody3D3" parent="Books" instance=ExtResource("7_xnf1r")]
+transform = Transform3D(1, 0, 0, 0, -0.00216417, 0.999998, 0, -0.999998, -0.00216417, -2.11596, 0.456899, 0.956389)
+
+[node name="RigidBody3D4" parent="Books" instance=ExtResource("7_xnf1r")]
+transform = Transform3D(0.992269, 0.124103, 0.000268582, 0, -0.00216417, 0.999998, 0.124104, -0.992267, -0.00214744, -2.11596, 0.593731, 0.956389)
+
+[node name="RigidBody3D5" parent="Books" instance=ExtResource("7_xnf1r")]
+transform = Transform3D(1, 0, 0, 0, -0.00216417, 0.999998, 0, -0.999998, -0.00216417, 0.960571, -0.428019, 4.20057)
+
+[node name="RigidBody3D6" parent="Books" instance=ExtResource("7_xnf1r")]
+transform = Transform3D(0.936311, -0.351171, -0.000759995, -3.49262e-12, -0.00216417, 0.999998, -0.351172, -0.936309, -0.00202634, -2.11596, 0.827309, 0.956389)
+
+[node name="helium_tank" parent="." instance=ExtResource("9_08hl6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.14152, 0.25, 2.70883)
+
+[node name="walking_cane" parent="." instance=ExtResource("11_h0glx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.55948, 0.25, 2.59915)
+
+[node name="Urn" parent="." instance=ExtResource("11_qw30u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.58587, 0.341999, 3.06241)
+
+[node name="house" parent="." instance=ExtResource("11_ikium")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.300329, 0)

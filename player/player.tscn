@@ -17,7 +17,7 @@ script = ExtResource("1_cxsam")
 player_data = ExtResource("2_s6mr0")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.65, -0.187924)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.65, -0.188)
 
 [node name="CameraController" type="Node3D" parent="Camera3D"]
 script = ExtResource("2_ekj78")

@@ -1,5 +1,7 @@
 class_name BoxItemDetection extends Area3D
 
+#!!! note: Box will only detect items whose collision is set to layer 2 !!!
+
 @onready var contents = $"../Contents"
 
 var item_count : int

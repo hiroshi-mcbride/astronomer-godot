@@ -27,8 +27,8 @@ func count_boxes():
 	boxes_left = max_boxes - boxes_in_scene
 	GlobalSignals.box_count.emit(boxes_left)
 
-func close_box(box):
+func close_box(box_instance):
 	GlobalSignals.box_closed.emit()
-	box.queue_free()
+	box_instance.queue_free()
 	boxes_in_scene -= 1
 	count_boxes()
