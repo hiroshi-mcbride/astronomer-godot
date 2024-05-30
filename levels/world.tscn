@@ -1,16 +1,19 @@
-[gd_scene load_steps=21 format=3 uid="uid://c8u8ct3pr0atm"]
+[gd_scene load_steps=24 format=3 uid="uid://c8u8ct3pr0atm"]
 
 [ext_resource type="Script" path="res://src/world.gd" id="1_2i7x0"]
 [ext_resource type="PackedScene" uid="uid://ceui73yjsebp0" path="res://player/player.tscn" id="1_xbrf3"]
 [ext_resource type="Script" path="res://src/props/packable.gd" id="3_r66ro"]
 [ext_resource type="PackedScene" uid="uid://cahbrik61swll" path="res://props/box.tscn" id="4_parmu"]
 [ext_resource type="PackedScene" uid="uid://c4k1ds7c31w2c" path="res://props/box_spawner.tscn" id="5_7gn7g"]
-[ext_resource type="PackedScene" uid="uid://mb1h2eqd3oiv" path="res://models/book_case.tscn" id="7_fijbu"]
+[ext_resource type="PackedScene" uid="uid://mb1h2eqd3oiv" path="res://props/book_case.tscn" id="6_6bjww"]
 [ext_resource type="PackedScene" uid="uid://c7qhtel584pgr" path="res://models/book.tscn" id="7_xnf1r"]
 [ext_resource type="PackedScene" uid="uid://cwg0o4ekrvb5r" path="res://props/cane.tscn" id="10_0e5s3"]
 [ext_resource type="PackedScene" uid="uid://bmuvphbx6qjih" path="res://models/House/house.tscn" id="11_ikium"]
 [ext_resource type="PackedScene" uid="uid://dnu8ooumqo5wv" path="res://props/helium_flask.tscn" id="11_ktot3"]
 [ext_resource type="PackedScene" uid="uid://u405j31lvb2l" path="res://props/urn.tscn" id="11_qw30u"]
+[ext_resource type="PackedScene" uid="uid://br8vlnjxyhtub" path="res://props/chair.tscn" id="12_g6das"]
+[ext_resource type="PackedScene" uid="uid://b0bd6g6ea5bl3" path="res://props/desk.tscn" id="13_q8n0d"]
+[ext_resource type="PackedScene" uid="uid://bvbfjnbn1le1g" path="res://props/telescope.tscn" id="14_v4kcv"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gvmi2"]
 sky_top_color = Color(0.560784, 0.627451, 0.780392, 1)
@@ -76,7 +79,7 @@ light_color = Color(1, 1, 0.984314, 1)
 shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_xbrf3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.274367, 0, -0.634436)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.274367, 0, 2.58058)
 
 [node name="ground" type="StaticBody3D" parent="."]
 
@@ -210,9 +213,8 @@ shape = SubResource("BoxShape3D_xu0pp")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="TestBlocks/RigidBody3D9/CollisionShape3D"]
 mesh = SubResource("BoxMesh_o2abs")
 
-[node name="BookCase" parent="." instance=ExtResource("7_fijbu")]
+[node name="BookCase" parent="." instance=ExtResource("6_6bjww")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.2786, -1)
-mass = 100.0
 
 [node name="Books" type="Node" parent="."]
 
@@ -254,3 +256,12 @@ transform = Transform3D(0.373133, 0, -0.927778, 0, 1, 0, 0.927778, 0, 0.373133, 
 
 [node name="helium_flask" parent="." instance=ExtResource("11_ktot3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.508637, 1.62076)
+
+[node name="Chair" parent="." instance=ExtResource("12_g6das")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.372633, 0)
+
+[node name="Desk" parent="." instance=ExtResource("13_q8n0d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.372633, 0)
+
+[node name="Telescope" parent="." instance=ExtResource("14_v4kcv")]
+transform = Transform3D(0.199881, 0, 0.97982, 0, 1, 0, -0.97982, 0, 0.199881, -0.555108, 0.334467, 0.667614)

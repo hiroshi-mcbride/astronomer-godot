@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://mb1h2eqd3oiv"]
 
-[ext_resource type="PackedScene" uid="uid://cmuoe7ijs2vr8" path="res://models/bookcase1.glb" id="1_4u8b7"]
+[ext_resource type="PackedScene" uid="uid://cmuoe7ijs2vr8" path="res://models/bookcase1.glb" id="1_84gum"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hfvvn"]
 size = Vector3(0.511719, 0.0373535, 1.32242)
@@ -13,6 +13,7 @@ size = Vector3(0.479431, 2.15666, 0.0257225)
 
 [node name="BookCase" type="RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.215851, 0)
+mass = 100.0
 
 [node name="FloorCollision" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0200652, 0.0110399, 0.0332073)
@@ -50,5 +51,5 @@ shape = SubResource("BoxShape3D_4p6f1")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0209656, 1.1022, -0.605537)
 shape = SubResource("BoxShape3D_4p6f1")
 
-[node name="bookcase1" parent="." instance=ExtResource("1_4u8b7")]
+[node name="bookcase1" parent="." instance=ExtResource("1_84gum")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0223851, 0, 0.0343935)
