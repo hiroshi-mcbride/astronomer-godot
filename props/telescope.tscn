@@ -12,6 +12,7 @@ height = 2.72968
 
 [node name="Telescope" type="RigidBody3D"]
 mass = 200.0
+freeze = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.960736, 0)

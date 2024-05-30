@@ -10,6 +10,7 @@ height = 0.48519
 [node name="Urn" type="RigidBody3D"]
 transform = Transform3D(1, -2.1165e-05, -0.000768421, 2.3637e-05, 0.999995, 0.00322578, 0.000768348, -0.0032258, 0.999995, 0, 0, 0)
 collision_layer = 3
+mass = 15.0
 script = ExtResource("1_4mdr6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

@@ -9,6 +9,7 @@ height = 0.862051
 
 [node name="helium_flask" type="RigidBody3D"]
 collision_layer = 3
+mass = 10.0
 script = ExtResource("1_tf5r2")
 
 [node name="helium_tank" parent="." instance=ExtResource("1_c3hgo")]
