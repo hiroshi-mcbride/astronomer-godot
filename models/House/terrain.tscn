@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmg5g4oyov3i2"]
+
+[ext_resource type="PackedScene" uid="uid://cfl3liogux1t6" path="res://models/House/terrain.glb" id="1_73ctj"]
+
+[node name="terrain" instance=ExtResource("1_73ctj")]
+
+[node name="Icosphere_013" parent="." index="0"]
+layers = 4
