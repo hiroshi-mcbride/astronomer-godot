@@ -1,7 +1,7 @@
 extends Node
 
-@onready var box = preload("res://props/box.tscn")
-@onready var closed_box = preload("res://props/closed_box.tscn")
+@onready var box = preload("res://models/box/box.glb")
+@onready var closed_box = preload("res://models/box/box_closed.glb")
 
 var max_boxes = 3
 var boxes_in_scene = 0

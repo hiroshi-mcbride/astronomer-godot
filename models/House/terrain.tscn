@@ -1,8 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://dmg5g4oyov3i2"]
+[gd_scene load_steps=3 format=3 uid="uid://dmg5g4oyov3i2"]
 
 [ext_resource type="PackedScene" uid="uid://cfl3liogux1t6" path="res://models/House/terrain.glb" id="1_73ctj"]
+[ext_resource type="PackedScene" uid="uid://bm4n04vn6eo5k" path="res://models/House/terrain (1).glb" id="2_ka8ra"]
 
 [node name="terrain" instance=ExtResource("1_73ctj")]
 
 [node name="Icosphere_013" parent="." index="0"]
+visible = false
 layers = 4
+
+[node name="terrain (1)" parent="." index="1" instance=ExtResource("2_ka8ra")]

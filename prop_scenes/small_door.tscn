@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://83ye3g564ltp"]
+
+[ext_resource type="Script" path="res://src/props/door.gd" id="1_igqmt"]
+[ext_resource type="ArrayMesh" uid="uid://dfsa4n1ydrla4" path="res://models/House/meshes/house hole_Cube_042.res" id="2_x8qfh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dsdoi"]
+size = Vector3(0.942612, 1.01656, 0.102997)
+
+[node name="small_door" type="RigidBody3D"]
+axis_lock_linear_x = true
+axis_lock_linear_y = true
+axis_lock_linear_z = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+axis_lock_linear_x = true
+axis_lock_linear_y = true
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_z = true
+script = ExtResource("1_igqmt")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+transform = Transform3D(0.0810135, 0, 0, 0, 0.0810135, 0, 0, 0, 0.0408964, 0, 0.790932, 0)
+mesh = ExtResource("2_x8qfh")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.491146, 0.500661, -0.0416107)
+shape = SubResource("BoxShape3D_dsdoi")

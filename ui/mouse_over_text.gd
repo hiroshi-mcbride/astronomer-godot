@@ -20,13 +20,17 @@ func _ready():
 	get_node("Deposit").visible = false
 	get_node("Box Full").visible = false
 	get_node("No Boxes Left").visible = false
+	#get_node("Open").visible = false
 
 func _on_mouse_entered(collider):
 	if collider is Holdable:
 		get_node("Pick Up").visible = true
+	#if collider is Door:
+		#get_node("Open").visible = true
 
 func _on_mouse_exited():
 	get_node("Pick Up").visible = false
+	#get_node("Open").visible = false
 
 func _on_item_detected():
 	get_node("Deposit").visible = true

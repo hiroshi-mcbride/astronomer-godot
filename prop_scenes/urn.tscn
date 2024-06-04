@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://u405j31lvb2l"]
+
+[ext_resource type="Script" path="res://src/props/packable.gd" id="1_4mdr6"]
+[ext_resource type="PackedScene" uid="uid://d077ck7rd1dxr" path="res://models/Props/Urn.glb" id="1_v76to"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nycik"]
+radius = 0.186123
+height = 0.48519
+
+[node name="Urn" type="RigidBody3D"]
+transform = Transform3D(1, -2.1165e-05, -0.000768421, 2.3637e-05, 0.999995, 0.00322578, 0.000768348, -0.0032258, 0.999995, 0, 0, 0)
+collision_layer = 3
+mass = 15.0
+script = ExtResource("1_4mdr6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.247234, 0)
+shape = SubResource("CapsuleShape3D_nycik")
+
+[node name="UrnModel" parent="CollisionShape3D" instance=ExtResource("1_v76to")]
+transform = Transform3D(1, 4.54747e-13, 0, -2.27374e-13, 1, 0, 0, 0, 1, -2.27374e-13, -0.247234, 0)

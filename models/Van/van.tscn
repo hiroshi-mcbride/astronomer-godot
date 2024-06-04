@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://b284ht6hyonvl"]
+
+[ext_resource type="PackedScene" uid="uid://btijedknbyj4l" path="res://models/Van/VANglb.glb" id="1_q72qt"]
+
+[node name="van" instance=ExtResource("1_q72qt")]
+
+[node name="door_rear_left_grp_001" parent="Sketchfab_model/fda76ce0bc864173b7f726f5e1e3a41d_fbx/RootNode/geo_grp_painter1_001" index="2"]
+transform = Transform3D(-0.241092, 2.69369e-14, 0.970502, 0.0292991, 0.999544, 0.00727847, -0.97006, 0.0301896, -0.240982, -47.0337, -4.54486e-12, -163.746)
+
+[node name="door_rear_right_grp_001" parent="Sketchfab_model/fda76ce0bc864173b7f726f5e1e3a41d_fbx/RootNode/geo_grp_painter1_001" index="3"]
+transform = Transform3D(-0.390506, -4.50494e-09, -0.9206, -0.0348581, 0.999282, 0.0147864, 0.91994, 0.0378646, -0.390226, 62.4242, -0.254905, -168.667)
+
+[node name="pCube80_van_european_delivery_glass_shd_0" parent="Sketchfab_model/fda76ce0bc864173b7f726f5e1e3a41d_fbx/RootNode/geo_grp_painter1_001/door_rear_right_grp_001/pCube80_001" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, -3.38813e-21, 0, 3.38813e-21, 1, 0, 0, 0)

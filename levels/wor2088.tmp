@@ -1,0 +1,430 @@
+[gd_scene load_steps=25 format=3 uid="uid://c8u8ct3pr0atm"]
+
+[ext_resource type="Script" path="res://src/world.gd" id="1_2i7x0"]
+[ext_resource type="PackedScene" uid="uid://ceui73yjsebp0" path="res://player/player.tscn" id="1_xbrf3"]
+[ext_resource type="Script" path="res://src/props/packable.gd" id="3_r66ro"]
+[ext_resource type="PackedScene" uid="uid://c4k1ds7c31w2c" path="res://prop_scenes/box_spawner.tscn" id="3_t04rl"]
+[ext_resource type="PackedScene" uid="uid://cahbrik61swll" path="res://prop_scenes/box.tscn" id="4_30gx1"]
+[ext_resource type="PackedScene" uid="uid://mb1h2eqd3oiv" path="res://prop_scenes/book_case.tscn" id="6_ul800"]
+[ext_resource type="PackedScene" uid="uid://br8vlnjxyhtub" path="res://prop_scenes/chair.tscn" id="7_xvrh8"]
+[ext_resource type="PackedScene" uid="uid://b0bd6g6ea5bl3" path="res://prop_scenes/desk.tscn" id="8_mt8ys"]
+[ext_resource type="PackedScene" uid="uid://bvbfjnbn1le1g" path="res://prop_scenes/telescope.tscn" id="9_36p2y"]
+[ext_resource type="PackedScene" uid="uid://u405j31lvb2l" path="res://prop_scenes/urn.tscn" id="10_mmw61"]
+[ext_resource type="PackedScene" uid="uid://bmuvphbx6qjih" path="res://models/House/house.tscn" id="11_ikium"]
+[ext_resource type="PackedScene" uid="uid://cwg0o4ekrvb5r" path="res://prop_scenes/cane.tscn" id="11_pwgms"]
+[ext_resource type="PackedScene" uid="uid://dnu8ooumqo5wv" path="res://prop_scenes/helium_flask.tscn" id="12_kva7c"]
+[ext_resource type="PackedScene" uid="uid://c7qhtel584pgr" path="res://models/Props/book.tscn" id="13_ytlnl"]
+[ext_resource type="PackedScene" uid="uid://btijedknbyj4l" path="res://models/Van/VANglb.glb" id="15_mt5j7"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gvmi2"]
+sky_top_color = Color(0.164706, 0.219608, 0.443137, 1)
+sky_horizon_color = Color(0.882353, 0.501961, 0.243137, 1)
+sky_curve = 0.0609189
+sky_energy_multiplier = 1.2
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+sun_curve = 0.139955
+
+[sub_resource type="Sky" id="Sky_n2fhj"]
+sky_material = SubResource("ProceduralSkyMaterial_gvmi2")
+
+[sub_resource type="Environment" id="Environment_4oo7x"]
+background_mode = 2
+sky = SubResource("Sky_n2fhj")
+ambient_light_source = 3
+reflected_light_source = 2
+tonemap_mode = 3
+ssao_enabled = true
+ssao_radius = 0.69
+ssao_intensity = 0.0
+ssil_enabled = true
+ssil_radius = 1.08
+ssil_intensity = 1.31
+sdfgi_enabled = true
+glow_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.01
+volumetric_fog_albedo = Color(0.431373, 0.156863, 0.643137, 1)
+volumetric_fog_emission = Color(0.462745, 0.329412, 0.643137, 1)
+volumetric_fog_sky_affect = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1tipx"]
+albedo_color = Color(0.262745, 0.345098, 0.286275, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ylruu"]
+material = SubResource("StandardMaterial3D_1tipx")
+size = Vector3(1024, 0.5, 1024)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6wl5g"]
+size = Vector3(1024, 0.5, 1024)
+
+[sub_resource type="FogMaterial" id="FogMaterial_380kl"]
+density = 0.1
+emission = Color(0.943981, 0.947409, 0.855627, 1)
+edge_fade = 0.0707107
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xu0pp"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_o2abs"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[node name="World" type="Node3D"]
+process_mode = 1
+script = ExtResource("1_2i7x0")
+
+[node name="Lighting" type="Node" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Lighting"]
+environment = SubResource("Environment_4oo7x")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lighting"]
+transform = Transform3D(0.633579, -0.272339, 0.724161, 0.414189, 0.909968, -0.0201637, -0.653472, 0.312715, 0.689336, -5.11239, 5.07802, 8.69475)
+light_color = Color(0.921569, 0.545098, 0.129412, 1)
+shadow_enabled = true
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="Lighting"]
+transform = Transform3D(0.233052, 0.238462, -0.942774, -0.0059157, 0.969799, 0.243835, 0.972446, -0.0512491, 0.227424, -1.08611, 3.02465, 14.3361)
+light_color = Color(0.317647, 0.133333, 0.564706, 1)
+light_energy = 0.692
+light_cull_mask = 4294967291
+shadow_enabled = true
+
+[node name="DirectionalLight3D3" type="DirectionalLight3D" parent="Lighting"]
+transform = Transform3D(-0.296988, -0.234542, 0.925629, -0.0059157, 0.969799, 0.243836, -0.954863, 0.0669406, -0.289406, -1.08611, 3.02465, 14.3361)
+light_color = Color(0.776471, 0.564706, 0.0941176, 1)
+light_energy = 0.692
+light_cull_mask = 4294967291
+shadow_enabled = true
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.78189, 2.35365, 3.74834)
+light_color = Color(1, 0.537255, 0.0509804, 1)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.59557, 14.3438, 4.2375)
+light_color = Color(1, 0.537255, 0.0509804, 1)
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="Lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.35049, 15.2358, 4.2375)
+light_color = Color(0.439216, 0.0627451, 0.713726, 1)
+
+[node name="Player" parent="." instance=ExtResource("1_xbrf3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.57929, 0, 18.0655)
+
+[node name="BoxSpawner" parent="." instance=ExtResource("3_t04rl")]
+
+[node name="ground" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ground"]
+mesh = SubResource("BoxMesh_ylruu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground"]
+shape = SubResource("BoxShape3D_6wl5g")
+
+[node name="FogVolume" type="FogVolume" parent="."]
+visible = false
+shape = 4
+material = SubResource("FogMaterial_380kl")
+
+[node name="Box" parent="." instance=ExtResource("4_30gx1")]
+transform = Transform3D(-0.124329, 0, 0.992241, 0, 1, 0, -0.992241, 0, -0.124329, 2.16044, 0.495626, -5.03505)
+
+[node name="house" parent="." instance=ExtResource("11_ikium")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.300329, 0)
+
+[node name="Furniture" type="Node" parent="."]
+
+[node name="BookCase" parent="Furniture" instance=ExtResource("6_ul800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.16853, 0.388649, -1.01193)
+
+[node name="Chair" parent="Furniture" instance=ExtResource("7_xvrh8")]
+transform = Transform3D(0.0013264, 0, 0.999999, 0, 1, 0, -0.999999, 0, 0.0013264, 0.0298105, 0.372633, 0.119803)
+
+[node name="Desk" parent="Furniture" instance=ExtResource("8_mt8ys")]
+transform = Transform3D(0.0013264, 0, 0.999999, 0, 1, 0, -0.999999, 0, 0.0013264, 0.0298105, 0.372633, 0.119803)
+
+[node name="Telescope" parent="Furniture" instance=ExtResource("9_36p2y")]
+transform = Transform3D(-0.979554, 0, 0.20118, 0, 1, 0, -0.20118, 0, -0.979554, 0.696688, 0.334467, 0.675796)
+
+[node name="Moveable Objects" type="Node" parent="."]
+
+[node name="Urn" parent="Moveable Objects" instance=ExtResource("10_mmw61")]
+transform = Transform3D(0.0013264, 0, 0.999999, 0, 1, 0, -0.999999, 0, 0.0013264, -0.456764, 1.35188, -0.735496)
+
+[node name="cane" parent="Moveable Objects" instance=ExtResource("11_pwgms")]
+transform = Transform3D(0.410195, -0.209662, -0.887571, -0.127359, 0.95051, -0.283389, 0.903061, 0.229285, 0.363192, 5.17978, 0.478543, 1.15889)
+
+[node name="helium_flask" parent="Moveable Objects" instance=ExtResource("12_kva7c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.76234, 6.0334, -2.06568)
+
+[node name="helium_flask2" parent="Moveable Objects" instance=ExtResource("12_kva7c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.76234, 6.0334, -2.34148)
+
+[node name="helium_flask3" parent="Moveable Objects" instance=ExtResource("12_kva7c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.00064, 6.0334, -2.01666)
+
+[node name="helium_flask4" parent="Moveable Objects" instance=ExtResource("12_kva7c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.00064, 6.0334, -1.73459)
+
+[node name="helium_flask5" parent="Moveable Objects" instance=ExtResource("12_kva7c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.25592, 6.0334, -1.73459)
+
+[node name="Books" type="Node" parent="Moveable Objects"]
+
+[node name="Book" parent="Moveable Objects/Books" instance=ExtResource("13_ytlnl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.02817, 0.895347, -0.870771)
+
+[node name="Book2" parent="Moveable Objects/Books" instance=ExtResource("13_ytlnl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.02817, 0.895347, -0.968668)
+
+[node name="Book3" parent="Moveable Objects/Books" instance=ExtResource("13_ytlnl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.02817, 0.895347, -1.06004)
+
+[node name="Book4" parent="Moveable Objects/Books" instance=ExtResource("13_ytlnl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.02817, 0.895347, -1.16428)
+
+[node name="RigidBody3D2" parent="Moveable Objects/Books" instance=ExtResource("13_ytlnl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.06525, 0.477672, -0.467905)
+
+[node name="RigidBody3D3" parent="Moveable Objects/Books" instance=ExtResource("13_ytlnl")]
+transform = Transform3D(1, 0, 0, 0, -0.00216417, 0.999998, 0, -0.999998, -0.00216417, -5.06026, 0.81031, -2.1988)
+
+[node name="RigidBody3D4" parent="Moveable Objects/Books" instance=ExtResource("13_ytlnl")]
+transform = Transform3D(0.992269, 0.124103, 0.000268582, 0, -0.00216417, 0.999998, 0.124104, -0.992267, -0.00214744, -5.06026, 0.947142, -2.1988)
+
+[node name="RigidBody3D5" parent="Moveable Objects/Books" instance=ExtResource("13_ytlnl")]
+transform = Transform3D(1, 0, 0, 0, -0.00216417, 0.999998, 0, -0.999998, -0.00216417, -5.05823, 0.562596, -1.10911)
+
+[node name="RigidBody3D6" parent="Moveable Objects/Books" instance=ExtResource("13_ytlnl")]
+transform = Transform3D(0.936311, -0.351171, -0.000759995, -3.49262e-12, -0.00216417, 0.999998, -0.351172, -0.936309, -0.00202634, -5.06026, 1.18072, -2.1988)
+
+[node name="TestBlocks" type="Node" parent="."]
+
+[node name="RigidBody3D2" type="RigidBody3D" parent="TestBlocks"]
+transform = Transform3D(0.997284, 0, -0.0736564, 0, 1, 0, 0.0736564, 0, 0.997284, 5.50941, 1.03366, -3.86004)
+collision_layer = 3
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+script = ExtResource("3_r66ro")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TestBlocks/RigidBody3D2"]
+shape = SubResource("BoxShape3D_xu0pp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TestBlocks/RigidBody3D2/CollisionShape3D"]
+mesh = SubResource("BoxMesh_o2abs")
+
+[node name="RigidBody3D3" type="RigidBody3D" parent="TestBlocks"]
+transform = Transform3D(0.997284, 0, -0.0736564, 0, 1, 0, 0.0736564, 0, 0.997284, 7.04905, 1.03366, -3.79623)
+collision_layer = 3
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+script = ExtResource("3_r66ro")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TestBlocks/RigidBody3D3"]
+shape = SubResource("BoxShape3D_xu0pp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TestBlocks/RigidBody3D3/CollisionShape3D"]
+mesh = SubResource("BoxMesh_o2abs")
+
+[node name="RigidBody3D4" type="RigidBody3D" parent="TestBlocks"]
+transform = Transform3D(0.997284, 0, -0.0736564, 0, 1, 0, 0.0736564, 0, 0.997284, 7.04905, 2.52209, -3.79623)
+collision_layer = 3
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+script = ExtResource("3_r66ro")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TestBlocks/RigidBody3D4"]
+shape = SubResource("BoxShape3D_xu0pp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TestBlocks/RigidBody3D4/CollisionShape3D"]
+mesh = SubResource("BoxMesh_o2abs")
+
+[node name="RigidBody3D5" type="RigidBody3D" parent="TestBlocks"]
+transform = Transform3D(0.997284, 0, -0.0736564, 0, 1, 0, 0.0736564, 0, 0.997284, 5.55932, 1.03366, -4.53577)
+collision_layer = 3
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+script = ExtResource("3_r66ro")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TestBlocks/RigidBody3D5"]
+shape = SubResource("BoxShape3D_xu0pp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TestBlocks/RigidBody3D5/CollisionShape3D"]
+mesh = SubResource("BoxMesh_o2abs")
+
+[node name="RigidBody3D6" type="RigidBody3D" parent="TestBlocks"]
+transform = Transform3D(0.997284, 0, -0.0736564, 0, 1, 0, 0.0736564, 0, 0.997284, 7.09896, 1.03366, -4.47196)
+collision_layer = 3
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+script = ExtResource("3_r66ro")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TestBlocks/RigidBody3D6"]
+shape = SubResource("BoxShape3D_xu0pp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TestBlocks/RigidBody3D6/CollisionShape3D"]
+mesh = SubResource("BoxMesh_o2abs")
+
+[node name="RigidBody3D7" type="RigidBody3D" parent="TestBlocks"]
+transform = Transform3D(0.997284, 0, -0.0736564, 0, 1, 0, 0.0736564, 0, 0.997284, 7.09896, 2.52209, -4.47196)
+collision_layer = 3
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+script = ExtResource("3_r66ro")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TestBlocks/RigidBody3D7"]
+shape = SubResource("BoxShape3D_xu0pp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TestBlocks/RigidBody3D7/CollisionShape3D"]
+mesh = SubResource("BoxMesh_o2abs")
+
+[node name="RigidBody3D8" type="RigidBody3D" parent="TestBlocks"]
+transform = Transform3D(0.997284, 0, -0.0736564, 0, 1, 0, 0.0736564, 0, 0.997284, 6.2366, 2.52209, -3.85624)
+collision_layer = 3
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+script = ExtResource("3_r66ro")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TestBlocks/RigidBody3D8"]
+shape = SubResource("BoxShape3D_xu0pp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TestBlocks/RigidBody3D8/CollisionShape3D"]
+mesh = SubResource("BoxMesh_o2abs")
+
+[node name="RigidBody3D9" type="RigidBody3D" parent="TestBlocks"]
+transform = Transform3D(0.997284, 0, -0.0736564, 0, 1, 0, 0.0736564, 0, 0.997284, 6.28651, 2.52209, -4.53197)
+collision_layer = 3
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+script = ExtResource("3_r66ro")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TestBlocks/RigidBody3D9"]
+shape = SubResource("BoxShape3D_xu0pp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TestBlocks/RigidBody3D9/CollisionShape3D"]
+mesh = SubResource("BoxMesh_o2abs")
+
+[node name="RigidBody3D10" type="RigidBody3D" parent="TestBlocks"]
+transform = Transform3D(0.997284, 0, -0.0736564, 0, 1, 0, 0.0736564, 0, 0.997284, 6.17335, 1.65944, -3.86004)
+collision_layer = 3
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+script = ExtResource("3_r66ro")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TestBlocks/RigidBody3D10"]
+shape = SubResource("BoxShape3D_xu0pp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TestBlocks/RigidBody3D10/CollisionShape3D"]
+mesh = SubResource("BoxMesh_o2abs")
+
+[node name="RigidBody3D11" type="RigidBody3D" parent="TestBlocks"]
+transform = Transform3D(0.997284, 0, -0.0736564, 0, 1, 0, 0.0736564, 0, 0.997284, 7.71299, 1.65944, -3.79623)
+collision_layer = 3
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+script = ExtResource("3_r66ro")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TestBlocks/RigidBody3D11"]
+shape = SubResource("BoxShape3D_xu0pp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TestBlocks/RigidBody3D11/CollisionShape3D"]
+mesh = SubResource("BoxMesh_o2abs")
+
+[node name="RigidBody3D12" type="RigidBody3D" parent="TestBlocks"]
+transform = Transform3D(0.997284, 0, -0.0736564, 0, 1, 0, 0.0736564, 0, 0.997284, 7.71299, 3.14787, -3.79623)
+collision_layer = 3
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+script = ExtResource("3_r66ro")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TestBlocks/RigidBody3D12"]
+shape = SubResource("BoxShape3D_xu0pp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TestBlocks/RigidBody3D12/CollisionShape3D"]
+mesh = SubResource("BoxMesh_o2abs")
+
+[node name="RigidBody3D13" type="RigidBody3D" parent="TestBlocks"]
+transform = Transform3D(0.997284, 0, -0.0736564, 0, 1, 0, 0.0736564, 0, 0.997284, 6.22326, 1.65944, -4.53577)
+collision_layer = 3
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+script = ExtResource("3_r66ro")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TestBlocks/RigidBody3D13"]
+shape = SubResource("BoxShape3D_xu0pp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TestBlocks/RigidBody3D13/CollisionShape3D"]
+mesh = SubResource("BoxMesh_o2abs")
+
+[node name="RigidBody3D14" type="RigidBody3D" parent="TestBlocks"]
+transform = Transform3D(0.997284, 0, -0.0736564, 0, 1, 0, 0.0736564, 0, 0.997284, 7.7629, 1.65944, -4.47196)
+collision_layer = 3
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+script = ExtResource("3_r66ro")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TestBlocks/RigidBody3D14"]
+shape = SubResource("BoxShape3D_xu0pp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TestBlocks/RigidBody3D14/CollisionShape3D"]
+mesh = SubResource("BoxMesh_o2abs")
+
+[node name="RigidBody3D15" type="RigidBody3D" parent="TestBlocks"]
+transform = Transform3D(0.997284, 0, -0.0736564, 0, 1, 0, 0.0736564, 0, 0.997284, 7.7629, 3.14787, -4.47196)
+collision_layer = 3
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+script = ExtResource("3_r66ro")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TestBlocks/RigidBody3D15"]
+shape = SubResource("BoxShape3D_xu0pp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TestBlocks/RigidBody3D15/CollisionShape3D"]
+mesh = SubResource("BoxMesh_o2abs")
+
+[node name="RigidBody3D16" type="RigidBody3D" parent="TestBlocks"]
+transform = Transform3D(0.997284, 0, -0.0736564, 0, 1, 0, 0.0736564, 0, 0.997284, 6.90054, 3.14787, -3.85624)
+collision_layer = 3
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+script = ExtResource("3_r66ro")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TestBlocks/RigidBody3D16"]
+shape = SubResource("BoxShape3D_xu0pp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TestBlocks/RigidBody3D16/CollisionShape3D"]
+mesh = SubResource("BoxMesh_o2abs")
+
+[node name="RigidBody3D17" type="RigidBody3D" parent="TestBlocks"]
+transform = Transform3D(0.997284, 0, -0.0736564, 0, 1, 0, 0.0736564, 0, 0.997284, 6.95045, 3.14787, -4.53197)
+collision_layer = 3
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+script = ExtResource("3_r66ro")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TestBlocks/RigidBody3D17"]
+shape = SubResource("BoxShape3D_xu0pp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TestBlocks/RigidBody3D17/CollisionShape3D"]
+mesh = SubResource("BoxMesh_o2abs")
+
+[node name="VANglb" parent="." instance=ExtResource("15_mt5j7")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.49612, 0.25, 8.65199)
+
+[editable path="Player"]
