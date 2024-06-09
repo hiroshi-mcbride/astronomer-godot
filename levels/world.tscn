@@ -108,8 +108,34 @@ light_color = Color(1, 0.537255, 0.0509804, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.35049, 15.2358, 4.2375)
 light_color = Color(0.439216, 0.0627451, 0.713726, 1)
 
+[node name="LightingInside" type="Node" parent="."]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="LightingInside"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.21821, 0)
+light_energy = 1.538
+shadow_enabled = true
+omni_range = 17.977
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="LightingInside"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.27109, 3.14228, -0.936499)
+light_energy = 0.717
+shadow_enabled = true
+omni_range = 17.977
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="LightingInside"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.40511, 0)
+light_energy = 0.898
+shadow_enabled = true
+omni_range = 17.977
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="LightingInside"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.350216, 1.91559, -0.188765)
+light_color = Color(1, 0.529412, 0.227451, 1)
+light_energy = 2.231
+omni_range = 2.782
+
 [node name="Player" parent="." instance=ExtResource("1_xbrf3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.57929, 0, 18.0655)
+transform = Transform3D(0.902698, 0, -0.430275, 0, 1, 0, 0.430275, 0, 0.902698, 11.7595, 0, 4.6465)
 
 [node name="BoxSpawner" parent="." instance=ExtResource("3_t04rl")]
 

@@ -6,7 +6,7 @@
 height = 7.06715
 radius = 1.03518
 
-[node name="Elevator" type="RigidBody3D"]
+[node name="Elevator" type="StaticBody3D"]
 
 [node name="ElevatorMesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.81229, 0, 0, 0, 1.81229, 0, 0, 0, 1.81229, 0, -1.77411, 0)
