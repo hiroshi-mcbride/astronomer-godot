@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://c8u8ct3pr0atm"]
+[gd_scene load_steps=26 format=3 uid="uid://c8u8ct3pr0atm"]
 
 [ext_resource type="Script" path="res://src/world.gd" id="1_2i7x0"]
 [ext_resource type="PackedScene" uid="uid://ceui73yjsebp0" path="res://player/player.tscn" id="1_xbrf3"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://dnu8ooumqo5wv" path="res://prop_scenes/helium_flask.tscn" id="12_kva7c"]
 [ext_resource type="PackedScene" uid="uid://c7qhtel584pgr" path="res://models/Props/book.tscn" id="13_ytlnl"]
 [ext_resource type="PackedScene" uid="uid://b284ht6hyonvl" path="res://models/Van/van.tscn" id="15_v3rwe"]
+[ext_resource type="PackedScene" uid="uid://bli5oai7c5bwl" path="res://levels/balloon_scene.tscn" id="16_hc2fb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gvmi2"]
 sky_top_color = Color(0.164706, 0.219608, 0.443137, 1)
@@ -47,11 +48,11 @@ volumetric_fog_albedo = Color(0.431373, 0.156863, 0.643137, 1)
 volumetric_fog_emission = Color(0.462745, 0.329412, 0.643137, 1)
 volumetric_fog_sky_affect = 0.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1tipx"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4a63o"]
 albedo_color = Color(0.262745, 0.345098, 0.286275, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_ylruu"]
-material = SubResource("StandardMaterial3D_1tipx")
+material = SubResource("StandardMaterial3D_4a63o")
 size = Vector3(1024, 0.5, 1024)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6wl5g"]
@@ -499,5 +500,8 @@ light_color = Color(1, 0.839216, 0.25098, 1)
 light_energy = 3.672
 spot_range = 9.01271
 spot_angle = 14.9951
+
+[node name="BalloonScene" parent="." instance=ExtResource("16_hc2fb")]
+transform = Transform3D(-0.992405, 0, 0.123013, 0, 1, 0, -0.123013, 0, -0.992405, 6.57191, 0, 11.9832)
 
 [editable path="Player"]

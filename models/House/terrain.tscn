@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dmg5g4oyov3i2"]
+[gd_scene load_steps=4 format=3 uid="uid://dmg5g4oyov3i2"]
 
 [ext_resource type="PackedScene" uid="uid://cfl3liogux1t6" path="res://models/House/terrain.glb" id="1_73ctj"]
 [ext_resource type="PackedScene" uid="uid://bm4n04vn6eo5k" path="res://models/House/terrain (1).glb" id="2_ka8ra"]
+[ext_resource type="ArrayMesh" uid="uid://ba6av15yge4so" path="res://models/House/meshes/terrain (1)_Icosphere_016.res" id="3_uuxnd"]
 
 [node name="terrain" instance=ExtResource("1_73ctj")]
 
@@ -10,3 +11,8 @@ visible = false
 layers = 4
 
 [node name="terrain (1)" parent="." index="1" instance=ExtResource("2_ka8ra")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="2"]
+transform = Transform3D(0.0219019, 0.0118284, -1.22535, 0.00459979, 0.333565, 0.0478178, 0.181045, -0.0099058, 0.147022, 0, 0.0498762, 5.41121)
+visible = false
+mesh = ExtResource("3_uuxnd")
