@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dnu8ooumqo5wv" path="res://prop_scenes/helium_flask.tscn" id="1_qrxle"]
 [ext_resource type="PackedScene" uid="uid://u405j31lvb2l" path="res://prop_scenes/urn.tscn" id="2_dm1dl"]
 [ext_resource type="Script" path="res://src/props/PuzzleElement.gd" id="2_mdrff"]
-[ext_resource type="Script" path="res://src/props/ItemDetection.gd" id="7_uewgt"]
+[ext_resource type="Script" path="res://src/props/any_detection.gd" id="4_qjuyu"]
 [ext_resource type="PackedScene" uid="uid://d077ck7rd1dxr" path="res://models/Props/Urn.glb" id="7_ycs8v"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_tpjcl"]
@@ -24,6 +24,7 @@ size = Vector3(3.03592, 1, 1.31055)
 
 [node name="Balloon" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.634374, 0)
+collision_layer = 3
 script = ExtResource("2_mdrff")
 index = 1
 
@@ -35,6 +36,7 @@ shape = SubResource("SphereShape3D_l2bds")
 
 [node name="Vessel" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.99216, 0.751873, 0)
+collision_layer = 3
 script = ExtResource("2_mdrff")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Vessel"]
@@ -67,7 +69,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.492081, 0, 0.0126953)
 shape = SubResource("BoxShape3D_ocnyl")
 
 [node name="Area3D" type="Area3D" parent="WorkBench"]
-script = ExtResource("7_uewgt")
+collision_mask = 2
+script = ExtResource("4_qjuyu")
+isPuzzle = true
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="WorkBench/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.498258, 0.958229, 0.0126953)

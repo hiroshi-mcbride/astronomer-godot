@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://oyeetf15p6g5"]
+
+[ext_resource type="Script" path="res://src/props/any_detection.gd" id="1_55icy"]
+
+[node name="Trigger" type="Node3D"]
+
+[node name="Area3D" type="Area3D" parent="."]
+script = ExtResource("1_55icy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]

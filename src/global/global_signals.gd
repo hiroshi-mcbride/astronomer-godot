@@ -19,6 +19,8 @@ enum Type {
 	BOX_CLOSED,
 	BOX_HELD,
 	BOX_DROPPED,
+	WRONG_ITEM,
+	TUTORIAL,
 }
 
 signal game_started()
@@ -39,6 +41,8 @@ signal close_box()
 signal box_closed()
 signal box_held()
 signal box_dropped()
+signal wrong_item()
+signal tutorial()
 
 var signals = { 
 	Type.START_GAME : game_started,
@@ -59,4 +63,6 @@ var signals = {
 	Type.BOX_CLOSED: box_closed,
 	Type.BOX_HELD: box_held,
 	Type.BOX_DROPPED: box_dropped,
+	Type.WRONG_ITEM: wrong_item,
+	Type.TUTORIAL: tutorial,
 }

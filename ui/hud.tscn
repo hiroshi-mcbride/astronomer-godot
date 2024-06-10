@@ -143,3 +143,11 @@ offset_left = 24.0
 offset_top = 76.0
 offset_right = 126.0
 offset_bottom = 99.0
+
+[node name="Announcements" type="Label" parent="."]
+layout_mode = 0
+offset_left = 883.0
+offset_top = 195.0
+offset_right = 985.0
+offset_bottom = 218.0
+horizontal_alignment = 1

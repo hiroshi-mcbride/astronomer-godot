@@ -63,7 +63,7 @@ func _unhandled_input(event):
 		
 		elif picked_object != null and depositable_item == true: #check if item is depositable
 			GlobalSignals.deposit_item.emit()
-			#drop_object()
+			
 		elif picked_object != null and depositable_item == false:
 			drop_object()
 	
