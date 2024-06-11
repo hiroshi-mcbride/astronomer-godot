@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bli5oai7c5bwl"]
+[gd_scene load_steps=18 format=3 uid="uid://bli5oai7c5bwl"]
 
 [ext_resource type="PackedScene" uid="uid://dnu8ooumqo5wv" path="res://prop_scenes/helium_flask.tscn" id="1_qrxle"]
 [ext_resource type="PackedScene" uid="uid://u405j31lvb2l" path="res://prop_scenes/urn.tscn" id="2_dm1dl"]
@@ -6,18 +6,19 @@
 [ext_resource type="Script" path="res://src/props/PuzzleElement.gd" id="2_mdrff"]
 [ext_resource type="ArrayMesh" uid="uid://dto7tpgpgvxye" path="res://models/Furniture/BalloonMeshes/balloon_Cylinder_004.res" id="2_tamxr"]
 [ext_resource type="Script" path="res://src/props/any_detection.gd" id="4_qjuyu"]
+[ext_resource type="ArrayMesh" uid="uid://duhm6u2nsv05q" path="res://models/Furniture/BalloonMeshes/balloon_Cylinder_006.res" id="7_47ifk"]
 [ext_resource type="PackedScene" uid="uid://baeebak1cnej4" path="res://models/balloon.tscn" id="7_w0yyq"]
-[ext_resource type="PackedScene" uid="uid://d077ck7rd1dxr" path="res://models/Props/Urn.glb" id="7_ycs8v"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ynkyr"]
-size = Vector3(0.619141, 0.280762, 1.25195)
+[ext_resource type="ArrayMesh" uid="uid://bhdrii2c8ly34" path="res://models/Furniture/BalloonMeshes/balloon_Sphere.res" id="8_jjhbl"]
+[ext_resource type="ArrayMesh" uid="uid://d1ykquwjkn2x8" path="res://models/Furniture/BalloonMeshes/balloon_Cylinder_005.res" id="9_a02kj"]
+[ext_resource type="ArrayMesh" uid="uid://clg56gpkq4j4c" path="res://models/Furniture/BalloonMeshes/balloon_Cube_024.res" id="10_ts5gs"]
+[ext_resource type="ArrayMesh" uid="uid://d2go51jhrtjh3" path="res://models/Furniture/BalloonMeshes/balloon_Cube_027.res" id="11_w4a78"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_q02kw"]
 height = 0.400615
 radius = 0.747598
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_37dq2"]
-height = 2.5342
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ncxx3"]
+height = 2.36732
 
 [sub_resource type="BoxMesh" id="BoxMesh_s6727"]
 
@@ -25,11 +26,7 @@ height = 2.5342
 size = Vector3(5.78657, 0.355957, 3.87448)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qkao4"]
-size = Vector3(5.92486, 1, 3.89621)
-
-[sub_resource type="BoxMesh" id="BoxMesh_yw6ys"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_tpjcl"]
+size = Vector3(5.92486, 2.77295, 3.89621)
 
 [node name="BalloonScene" type="Node3D"]
 
@@ -43,16 +40,12 @@ index = 1
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.478479, 0)
 mesh = ExtResource("2_k421r")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Balloon"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0241699, -0.488311, 0.702393)
-shape = SubResource("BoxShape3D_ynkyr")
-
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Balloon"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0198056, -0.4284, -0.501199)
 shape = SubResource("CylinderShape3D_q02kw")
 
 [node name="Gondola" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.99216, 0.751873, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.99216, 1.35705, 0)
 collision_layer = 3
 script = ExtResource("2_mdrff")
 
@@ -61,7 +54,7 @@ mesh = ExtResource("2_tamxr")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Gondola"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0624354, 0)
-shape = SubResource("CapsuleShape3D_37dq2")
+shape = SubResource("CylinderShape3D_ncxx3")
 
 [node name="helium_flask" parent="." instance=ExtResource("1_qrxle")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.29322, 0.634374, 0)
@@ -74,7 +67,7 @@ script = ExtResource("2_mdrff")
 index = 3
 
 [node name="WorkBench" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.42513, -8.75229)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.42513, -4.77457)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="WorkBench"]
 transform = Transform3D(5.90485, 0, 0, 0, 0.453189, 0, 0, 0, 3.97792, 0.486001, -0.379552, -0.540949)
@@ -90,35 +83,72 @@ script = ExtResource("4_qjuyu")
 isPuzzle = true
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="WorkBench/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.450015, 0.409797, -0.509476)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.450015, 1.29627, -0.509476)
 shape = SubResource("BoxShape3D_qkao4")
 
 [node name="Puzzle" type="Node3D" parent="WorkBench"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.882506, 2.74409)
 
-[node name="Vessel" type="MeshInstance3D" parent="WorkBench/Puzzle"]
-transform = Transform3D(0.481579, 0, 0, 0, 0.779435, 0, 0, 0, 0.455385, 0.000991702, 1.74764, -2.46683)
+[node name="Gondola" type="MeshInstance3D" parent="WorkBench/Puzzle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.388564, 1.92557, -2.46683)
 visible = false
-mesh = SubResource("BoxMesh_yw6ys")
+mesh = ExtResource("7_47ifk")
 skeleton = NodePath("")
 
 [node name="Balloon" type="MeshInstance3D" parent="WorkBench/Puzzle"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.850613, 1.46543, -2.78389)
+transform = Transform3D(-0.724432, 1.51621, -0.040216, -0.0101888, 0.039702, 1.68036, 1.51671, 0.72446, -0.00792033, 1.44369, 0.940468, -3.57516)
 visible = false
-mesh = SubResource("SphereMesh_tpjcl")
+mesh = ExtResource("2_k421r")
 skeleton = NodePath("")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="WorkBench/Puzzle"]
-transform = Transform3D(3.705, 0, 0, 0, 3.705, 0, 0, 0, 3.705, 0.0898592, 4.08592, -2.78389)
+[node name="BalloonFull" type="MeshInstance3D" parent="WorkBench/Puzzle"]
+transform = Transform3D(2.07866, 0, 0, 0, 2.07866, 0, 0, 0, 2.07866, -0.372636, 8.82623, -2.48578)
 visible = false
-mesh = SubResource("SphereMesh_tpjcl")
+mesh = ExtResource("8_jjhbl")
 skeleton = NodePath("")
 
-[node name="UrnModel" parent="WorkBench/Puzzle" instance=ExtResource("7_ycs8v")]
-transform = Transform3D(1, 4.54747e-13, 0, -2.27374e-13, 1, 0, 0, 0, 1, -2.27374e-13, 1.45414, -2.27172)
+[node name="Urn" type="MeshInstance3D" parent="WorkBench/Puzzle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.362755, 2.15414, -2.46139)
 visible = false
+mesh = ExtResource("9_a02kj")
+
+[node name="HolderClosed" type="MeshInstance3D" parent="WorkBench/Puzzle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.186, 0.55, 12.557)
+visible = false
+mesh = ExtResource("10_ts5gs")
+
+[node name="HolderOpen" type="MeshInstance3D" parent="WorkBench/Puzzle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.186, 0.55, 12.557)
+mesh = ExtResource("11_w4a78")
+
+[node name="GondolaClosed" type="MeshInstance3D" parent="WorkBench/Puzzle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.388564, 1.92557, -2.46683)
+visible = false
+mesh = ExtResource("2_tamxr")
+skeleton = NodePath("")
 
 [node name="balloon2" parent="." instance=ExtResource("7_w0yyq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.1811, 0.0890927, 6.55174)
+
+[node name="urn" parent="balloon2" index="0"]
+visible = false
+
+[node name="Gondola closed" parent="balloon2" index="1"]
+visible = false
+
+[node name="Gondola open" parent="balloon2" index="2"]
+visible = false
+
+[node name="gondola holder closed" parent="balloon2" index="3"]
+visible = false
+
+[node name="gondola holder open" parent="balloon2" index="4"]
+visible = false
+
+[node name="balloon full" parent="balloon2" index="5"]
+visible = false
+
+[node name="balloon empty" parent="balloon2" index="6"]
+visible = false
 
 [editable path="balloon2"]
