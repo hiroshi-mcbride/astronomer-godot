@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dc53frxasvbl"]
 
-[ext_resource type="ArrayMesh" uid="uid://dpkxrv4rg5mgl" path="res://models/House/meshes/house hole_Cylinder_012.res" id="1_bo6wf"]
+[ext_resource type="ArrayMesh" uid="uid://dpkxrv4rg5mgl" path="res://models/House/meshes/house hole_Cylinder_012.res" id="1_778rw"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_4vyef"]
 height = 7.06715
@@ -10,7 +10,7 @@ radius = 1.03518
 
 [node name="ElevatorMesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.81229, 0, 0, 0, 1.81229, 0, 0, 0, 1.81229, 0, -1.77411, 0)
-mesh = ExtResource("1_bo6wf")
+mesh = ExtResource("1_778rw")
 skeleton = NodePath("../../elevator")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

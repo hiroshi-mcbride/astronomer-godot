@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dfknun63c666o"
-path="res://.godot/imported/hangar.glb-188711f1a1d52dba924898330a4feb0e.scn"
+uid="uid://cqidxour4gsrd"
+path="res://.godot/imported/clipboardglb.glb-9c95492f4fda99f04f4a3984c4493cb0.scn"
 
 [deps]
 
-source_file="res://models/Furniture/hangar.glb"
-dest_files=["res://.godot/imported/hangar.glb-188711f1a1d52dba924898330a4feb0e.scn"]
+source_file="res://models/Furniture/clipboardglb.glb"
+dest_files=["res://.godot/imported/clipboardglb.glb-9c95492f4fda99f04f4a3984c4493cb0.scn"]
 
 [params]
 

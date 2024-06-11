@@ -1,8 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://bcct3bs1q8hf6"]
+[gd_scene load_steps=10 format=3 uid="uid://bcct3bs1q8hf6"]
 
-[ext_resource type="PackedScene" uid="uid://bwjegmjbjpfu1" path="res://models/Furniture/objects rest.glb" id="1_ca53u"]
-[ext_resource type="PackedScene" uid="uid://c4n472rfrxf4r" path="res://prop_scenes/moveable_object.tscn" id="2_av1jr"]
-[ext_resource type="PackedScene" uid="uid://du11am5qlm1lv" path="res://prop_scenes/bookcase.tscn" id="3_vm1sf"]
+[ext_resource type="PackedScene" uid="uid://bwjegmjbjpfu1" path="res://models/Furniture/objects rest.glb" id="1_ml2s6"]
+[ext_resource type="PackedScene" uid="uid://c4n472rfrxf4r" path="res://prop_scenes/moveable_object.tscn" id="2_eh4o3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_frvhc"]
 size = Vector3(0.847534, 0.94455, 3.17846)
@@ -26,7 +25,7 @@ size = Vector3(0.776489, 1.845, 0.764404)
 height = 0.215891
 radius = 0.107328
 
-[node name="objects rest" instance=ExtResource("1_ca53u")]
+[node name="objects rest" instance=ExtResource("1_ml2s6")]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="0"]
 
@@ -56,54 +55,38 @@ shape = SubResource("BoxShape3D_5t7hu")
 
 [node name="Node3D" type="Node3D" parent="." index="1"]
 
-[node name="ToiletPaper" parent="Node3D" index="0" instance=ExtResource("2_av1jr")]
+[node name="ToiletPaper" parent="Node3D" index="0" instance=ExtResource("2_eh4o3")]
 
 [node name="CollisionShape3D" parent="Node3D/ToiletPaper" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.0355, 0.863864, -0.691377)
 shape = SubResource("CylinderShape3D_hmwkq")
 
-[node name="Bookcase" parent="." index="119" instance=ExtResource("3_vm1sf")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.000155765, 1.1041, -5.74279)
-
-[node name="Cube_066" parent="." index="120"]
+[node name="Cube_066" parent="." index="119"]
 visible = false
 
-[node name="Cube_023" parent="." index="132"]
+[node name="Cube_023" parent="." index="131"]
 transform = Transform3D(-1.11681, 0.581926, -1.87654e-08, 1.87655e-08, 3.00247e-07, 1.25933, -0.581926, -1.11681, 3.00247e-07, 1.35988, 2.38019, -5.7128)
 
-[node name="Bookcase2" parent="." index="141" instance=ExtResource("3_vm1sf")]
-transform = Transform3D(0.249392, 0, -0.968403, 0, 1, 0, 0.968403, 0, 0.249392, -1.38104, 1.1041, -5.55002)
-
-[node name="Cube_040" parent="." index="142"]
+[node name="Cube_040" parent="." index="140"]
 transform = Transform3D(0.249392, 0, -0.968403, 0, 1, 0, 0.968403, 0, 0.249392, -1.38104, 1.1041, -5.55002)
 visible = false
 
-[node name="Bookcase3" parent="." index="153" instance=ExtResource("3_vm1sf")]
-transform = Transform3D(0.473997, 0, -0.880526, 0, 1, 0, 0.880526, 0, 0.473997, -2.66832, 1.1041, -5.07072)
-
-[node name="Cube_056" parent="." index="154"]
+[node name="Cube_056" parent="." index="151"]
 visible = false
 
-[node name="Bookcase4" parent="." index="158" instance=ExtResource("3_vm1sf")]
-transform = Transform3D(0.711395, 0, -0.702792, 0, 1, 0, 0.702792, 0, 0.711395, -3.77068, 1.1041, -4.23002)
-
-[node name="Cube_044" parent="." index="159"]
+[node name="Cube_044" parent="." index="155"]
 visible = false
 
-[node name="Cube_060" parent="." index="162"]
+[node name="Cube_060" parent="." index="158"]
 transform = Transform3D(0.671462, -0.598287, -0.246531, -5.62589e-08, 0.407644, -0.732565, 0.663343, 0.605611, 0.249549, -3.95352, 1.11548, -3.90576)
 
-[node name="Cube_062" parent="." index="164"]
+[node name="Cube_062" parent="." index="160"]
 visible = false
 
-[node name="Cube_065" parent="." index="167"]
+[node name="Cube_065" parent="." index="163"]
 visible = false
 
-[node name="Cube_069" parent="." index="170"]
+[node name="Cube_069" parent="." index="166"]
 visible = false
 
 [editable path="Node3D/ToiletPaper"]
-[editable path="Bookcase"]
-[editable path="Bookcase2"]
-[editable path="Bookcase3"]
-[editable path="Bookcase4"]
