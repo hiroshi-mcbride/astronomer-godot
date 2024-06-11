@@ -26,7 +26,7 @@ func _on_item_entered(body):
 		GlobalSignals.item_detected.emit() 
 	if item is CharacterBody3D and isTrigger == true:
 		print("player detected")
-		#sent signal to UI to display "Do you want to finish your workday? This will end the game."
+		GlobalSignals.drive_van.emit() #send signal to UI to display "Do you want to finish your workday? This will end the game."
 
 func _on_item_exited(body):
 	GlobalSignals.item_exited.emit() #held item can no longer be deposited

@@ -47,12 +47,19 @@ size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 56
 text = "Moving On"
 
-[node name="Label2" type="Label" parent="."]
-layout_mode = 0
-offset_left = 522.0
-offset_top = 645.0
-offset_right = 757.0
-offset_bottom = 668.0
+[node name="FullScreen" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -117.0
+offset_top = 165.0
+offset_right = 118.0
+offset_bottom = 188.0
+grow_horizontal = 2
+grow_vertical = 2
 text = "Press P to switch to full screen"
 horizontal_alignment = 1
 vertical_alignment = 1

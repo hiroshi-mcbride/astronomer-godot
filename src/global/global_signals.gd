@@ -21,6 +21,8 @@ enum Type {
 	BOX_DROPPED,
 	WRONG_ITEM,
 	TUTORIAL,
+	DRIVE_VAN,
+	END_GAME,
 }
 
 signal game_started()
@@ -43,6 +45,8 @@ signal box_held()
 signal box_dropped()
 signal wrong_item()
 signal tutorial()
+signal drive_van()
+signal end_game()
 
 var signals = { 
 	Type.START_GAME : game_started,
@@ -65,4 +69,6 @@ var signals = {
 	Type.BOX_DROPPED: box_dropped,
 	Type.WRONG_ITEM: wrong_item,
 	Type.TUTORIAL: tutorial,
+	Type.DRIVE_VAN: drive_van,
+	Type.END_GAME: end_game,
 }

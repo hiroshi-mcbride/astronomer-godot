@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4n472rfrxf4r"]
+
+[ext_resource type="Script" path="res://src/props/packable.gd" id="1_dbnwi"]
+
+[node name="MoveableObject" type="RigidBody3D"]
+script = ExtResource("1_dbnwi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
