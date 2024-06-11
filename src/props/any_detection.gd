@@ -7,6 +7,8 @@ var index = 0
 
 var puzzle = null
 var wrong_order = false
+var roof_opened = false #not used yet
+@export var last_index : int
 
 @export var isTrigger : bool = false
 @export var isPuzzle : bool = false
@@ -36,10 +38,18 @@ func puzzle_item():
 		#index = item.index
 		var i = puzzle.get_child(index) as Node3D
 		i.visible = true
-		
-		if index == 2:
+		if index == 0:
+			#close holder
+			i = puzzle.get_child(4) as Node3D 
+			i.visible = true
+			i = puzzle.get_child(5) as Node3D
+			i.visible = false
+		if index == 2: #TO DO:check if roof is opened!
+			#inflate balloon
 			i = puzzle.get_child(1) as Node3D
 			i.visible = false
+		if index == last_index:
+			GlobalSignals.puzzle_solved.emit()
 		item.pack(self)
 		item = null
 		index += 1

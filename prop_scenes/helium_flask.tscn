@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dnu8ooumqo5wv"]
 
+[ext_resource type="Script" path="res://src/props/PuzzleElement.gd" id="1_b6mcb"]
 [ext_resource type="PackedScene" uid="uid://cj7g2x4866xb4" path="res://models/Props/helium_tank.glb" id="1_c3hgo"]
-[ext_resource type="Script" path="res://src/props/packable.gd" id="1_tf5r2"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tnbu3"]
 radius = 0.101993
@@ -10,7 +10,8 @@ height = 0.862051
 [node name="helium_flask" type="RigidBody3D"]
 collision_layer = 3
 mass = 10.0
-script = ExtResource("1_tf5r2")
+script = ExtResource("1_b6mcb")
+index = 2
 
 [node name="helium_tank" parent="." instance=ExtResource("1_c3hgo")]
 

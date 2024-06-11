@@ -1,17 +1,15 @@
-[gd_scene load_steps=18 format=3 uid="uid://bli5oai7c5bwl"]
+[gd_scene load_steps=19 format=3 uid="uid://bli5oai7c5bwl"]
 
-[ext_resource type="PackedScene" uid="uid://dnu8ooumqo5wv" path="res://prop_scenes/helium_flask.tscn" id="1_qrxle"]
-[ext_resource type="PackedScene" uid="uid://u405j31lvb2l" path="res://prop_scenes/urn.tscn" id="2_dm1dl"]
 [ext_resource type="ArrayMesh" uid="uid://g53772kuet5o" path="res://models/Furniture/BalloonMeshes/balloon_Sphere_004.res" id="2_k421r"]
 [ext_resource type="Script" path="res://src/props/PuzzleElement.gd" id="2_mdrff"]
 [ext_resource type="ArrayMesh" uid="uid://dto7tpgpgvxye" path="res://models/Furniture/BalloonMeshes/balloon_Cylinder_004.res" id="2_tamxr"]
 [ext_resource type="Script" path="res://src/props/any_detection.gd" id="4_qjuyu"]
 [ext_resource type="ArrayMesh" uid="uid://duhm6u2nsv05q" path="res://models/Furniture/BalloonMeshes/balloon_Cylinder_006.res" id="7_47ifk"]
-[ext_resource type="PackedScene" uid="uid://baeebak1cnej4" path="res://models/balloon.tscn" id="7_w0yyq"]
 [ext_resource type="ArrayMesh" uid="uid://bhdrii2c8ly34" path="res://models/Furniture/BalloonMeshes/balloon_Sphere.res" id="8_jjhbl"]
 [ext_resource type="ArrayMesh" uid="uid://d1ykquwjkn2x8" path="res://models/Furniture/BalloonMeshes/balloon_Cylinder_005.res" id="9_a02kj"]
 [ext_resource type="ArrayMesh" uid="uid://clg56gpkq4j4c" path="res://models/Furniture/BalloonMeshes/balloon_Cube_024.res" id="10_ts5gs"]
 [ext_resource type="ArrayMesh" uid="uid://d2go51jhrtjh3" path="res://models/Furniture/BalloonMeshes/balloon_Cube_027.res" id="11_w4a78"]
+[ext_resource type="Script" path="res://levels/BalloonCutScene.gd" id="12_kwjbe"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_q02kw"]
 height = 0.400615
@@ -28,10 +26,143 @@ size = Vector3(5.78657, 0.355957, 3.87448)
 [sub_resource type="BoxShape3D" id="BoxShape3D_qkao4"]
 size = Vector3(5.92486, 2.77295, 3.89621)
 
+[sub_resource type="Animation" id="Animation_sxs4d"]
+resource_name = "balloon_cutscene"
+length = 100.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WorkBench/Puzzle/HolderClosed:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WorkBench/Puzzle/Gondola:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("WorkBench/Puzzle/HolderOpen:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("WorkBench/Puzzle/GondolaClosed:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("WorkBench/Puzzle/BalloonFull:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(2, 30, 100),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.372636, 8.82623, -2.48578), Vector3(-0.372636, 69.8493, -2.48578), Vector3(-0.372636, 383.794, -2.48578)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("WorkBench/Puzzle/Urn:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(2, 30, 100),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.362755, 2.15414, -2.46139), Vector3(-0.362755, 63.1772, -2.46139), Vector3(-0.362755, 377.122, -2.46139)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("WorkBench/Puzzle/GondolaClosed:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(2, 30, 100),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.388564, 1.92557, -2.46683), Vector3(-0.388564, 62.9486, -2.46683), Vector3(-0.388564, 376.893, -2.46683)]
+}
+
+[sub_resource type="Animation" id="Animation_61vo3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WorkBench/Puzzle/BalloonFull:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.372636, 383.794, -2.48578)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WorkBench/Puzzle/Urn:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.362755, 377.122, -2.46139)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("WorkBench/Puzzle/GondolaClosed:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.388564, 376.893, -2.46683)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mwvcx"]
+_data = {
+"RESET": SubResource("Animation_61vo3"),
+"balloon_cutscene": SubResource("Animation_sxs4d")
+}
+
 [node name="BalloonScene" type="Node3D"]
 
 [node name="Balloon" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.634374, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.523929, 1.00916, 2.25553)
 collision_layer = 3
 script = ExtResource("2_mdrff")
 index = 1
@@ -45,7 +176,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0198056, -0.4284, -0.50119
 shape = SubResource("CylinderShape3D_q02kw")
 
 [node name="Gondola" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.99216, 1.35705, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.46823, 1.73184, 2.25553)
 collision_layer = 3
 script = ExtResource("2_mdrff")
 
@@ -55,16 +186,6 @@ mesh = ExtResource("2_tamxr")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Gondola"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0624354, 0)
 shape = SubResource("CylinderShape3D_ncxx3")
-
-[node name="helium_flask" parent="." instance=ExtResource("1_qrxle")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.29322, 0.634374, 0)
-script = ExtResource("2_mdrff")
-index = 2
-
-[node name="Urn" parent="." instance=ExtResource("2_dm1dl")]
-transform = Transform3D(1, -2.1165e-05, -0.000768421, 2.3637e-05, 0.999995, 0.00322578, 0.000768348, -0.0032258, 0.999995, -1.85307, 0.457182, 0)
-script = ExtResource("2_mdrff")
-index = 3
 
 [node name="WorkBench" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.42513, -4.77457)
@@ -80,6 +201,7 @@ shape = SubResource("BoxShape3D_ocnyl")
 [node name="Area3D" type="Area3D" parent="WorkBench"]
 collision_mask = 2
 script = ExtResource("4_qjuyu")
+last_index = 3
 isPuzzle = true
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="WorkBench/Area3D"]
@@ -87,7 +209,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.450015, 1.29627, -0.509476)
 shape = SubResource("BoxShape3D_qkao4")
 
 [node name="Puzzle" type="Node3D" parent="WorkBench"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.882506, 2.74409)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.882507, 2.74409)
 
 [node name="Gondola" type="MeshInstance3D" parent="WorkBench/Puzzle"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.388564, 1.92557, -2.46683)
@@ -102,13 +224,13 @@ mesh = ExtResource("2_k421r")
 skeleton = NodePath("")
 
 [node name="BalloonFull" type="MeshInstance3D" parent="WorkBench/Puzzle"]
-transform = Transform3D(2.07866, 0, 0, 0, 2.07866, 0, 0, 0, 2.07866, -0.372636, 8.82623, -2.48578)
+transform = Transform3D(2.07866, 0, 0, 0, 2.07866, 0, 0, 0, 2.07866, -0.372636, 383.794, -2.48578)
 visible = false
 mesh = ExtResource("8_jjhbl")
 skeleton = NodePath("")
 
 [node name="Urn" type="MeshInstance3D" parent="WorkBench/Puzzle"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.362755, 2.15414, -2.46139)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.362755, 377.122, -2.46139)
 visible = false
 mesh = ExtResource("9_a02kj")
 
@@ -122,33 +244,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.186, 0.55, 12.557)
 mesh = ExtResource("11_w4a78")
 
 [node name="GondolaClosed" type="MeshInstance3D" parent="WorkBench/Puzzle"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.388564, 1.92557, -2.46683)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.388564, 376.893, -2.46683)
 visible = false
 mesh = ExtResource("2_tamxr")
 skeleton = NodePath("")
 
-[node name="balloon2" parent="." instance=ExtResource("7_w0yyq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.1811, 0.0890927, 6.55174)
-
-[node name="urn" parent="balloon2" index="0"]
-visible = false
-
-[node name="Gondola closed" parent="balloon2" index="1"]
-visible = false
-
-[node name="Gondola open" parent="balloon2" index="2"]
-visible = false
-
-[node name="gondola holder closed" parent="balloon2" index="3"]
-visible = false
-
-[node name="gondola holder open" parent="balloon2" index="4"]
-visible = false
-
-[node name="balloon full" parent="balloon2" index="5"]
-visible = false
-
-[node name="balloon empty" parent="balloon2" index="6"]
-visible = false
-
-[editable path="balloon2"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_mwvcx")
+}
+script = ExtResource("12_kwjbe")

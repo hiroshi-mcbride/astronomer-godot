@@ -111,6 +111,30 @@ light_energy = 0.717
 shadow_enabled = true
 omni_range = 17.977
 
+[node name="OmniLight3D5" type="OmniLight3D" parent="LightingInside"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.27109, 3.14228, -0.936499)
+light_energy = 0.717
+shadow_enabled = true
+omni_range = 17.977
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="LightingInside"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.96457, 2.7625, -14.6984)
+light_energy = 0.614
+shadow_enabled = true
+omni_range = 4096.0
+
+[node name="OmniLight3D8" type="OmniLight3D" parent="LightingInside"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.96457, 2.7625, -12.796)
+light_energy = 0.614
+shadow_enabled = true
+omni_range = 4096.0
+
+[node name="OmniLight3D7" type="OmniLight3D" parent="LightingInside"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.96457, 2.7625, -9.53618)
+light_energy = 1.566
+shadow_enabled = true
+omni_range = 4096.0
+
 [node name="OmniLight3D2" type="OmniLight3D" parent="LightingInside"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.40511, 0)
 light_energy = 0.898
@@ -124,7 +148,7 @@ light_energy = 2.231
 omni_range = 2.782
 
 [node name="Player" parent="." instance=ExtResource("1_xbrf3")]
-transform = Transform3D(0.902698, 0, -0.430275, 0, 1, 0, 0.430275, 0, 0.902698, 11.7595, 0, 4.6465)
+transform = Transform3D(0.99071, 0, 0.135992, 0, 1, 0, -0.135992, 0, 0.99071, 7.99684, 0, 7.34634)
 
 [node name="BoxSpawner" parent="." instance=ExtResource("3_t04rl")]
 
@@ -171,7 +195,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.00064, 6.0334, -1.73459)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.25592, 6.0334, -1.73459)
 
 [node name="van" parent="." instance=ExtResource("15_v3rwe")]
-transform = Transform3D(-0.989354, 0, -0.145531, 0, 1, 0, 0.145531, 0, -0.989354, 14.84, 0.25, 4.86236)
+transform = Transform3D(0.160449, 0, 0.987044, 0, 1, 0, -0.987044, 0, 0.160449, 6.35982, 0.25, 10.3818)
 
 [node name="OmniLight3D4" type="OmniLight3D" parent="van"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.0916147, 2.14602, -0.421857)
@@ -221,6 +245,6 @@ spot_range = 9.01271
 spot_angle = 14.9951
 
 [node name="BalloonScene" parent="." instance=ExtResource("16_hc2fb")]
-transform = Transform3D(-0.992405, 0, 0.123013, 0, 1, 0, -0.123013, 0, -0.992405, 6.57191, 0, 11.9832)
+transform = Transform3D(0.99986, 0, 0.0167366, 0, 1, 0, -0.0167366, 0, 0.99986, 2.99409, 0.254146, -10.257)
 
 [editable path="Player"]

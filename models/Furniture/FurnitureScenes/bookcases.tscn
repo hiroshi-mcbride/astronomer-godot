@@ -50,7 +50,7 @@ visible = false
 visible = false
 
 [node name="Bookcase0" type="StaticBody3D" parent="." index="6"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.61875, 1.1041, -5.75567)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4636, 1.1041, -5.75567)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Bookcase0" index="0"]
 mesh = ExtResource("4_8lugr")

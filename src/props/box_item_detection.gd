@@ -35,7 +35,7 @@ func _on_item_exited(body):
 	GlobalSignals.item_exited.emit() #held item can no longer be deposited
 
 func pack_item():
-	if item is Packable and item_count < max_items:
+	if item != null and item is Packable and item_count < max_items:
 		
 		var i = contents.get_child(item_count) as Node3D
 		i.visible = true

@@ -307,13 +307,13 @@ transform = Transform3D(0.694658, -6.0729e-08, 0.71934, -8.74228e-08, -1, 0, 0.7
 [node name="Furniture" type="Node" parent="." index="61"]
 
 [node name="Chair" parent="Furniture" index="0" instance=ExtResource("8_uasfu")]
-transform = Transform3D(0.0013264, 0, 0.999999, 0, 1, 0, -0.999999, 0, 0.0013264, 0.0298105, 0.372633, 0.119803)
+transform = Transform3D(0.0013264, 0, 0.999999, 0, 1, 0, -0.999999, 0, 0.0013264, 0.0298105, 0.475696, 0.119803)
 
 [node name="Desk" parent="Furniture" index="1" instance=ExtResource("9_bhag0")]
-transform = Transform3D(0.0013264, 0, 0.999999, 0, 1, 0, -0.999999, 0, 0.0013264, 0.0298105, 0.372633, 0.119803)
+transform = Transform3D(0.0013264, 0, 0.999999, 0, 1, 0, -0.999999, 0, 0.0013264, 0.0298105, 0.452356, 0.119803)
 
 [node name="Telescope" parent="Furniture" index="2" instance=ExtResource("10_4d4fs")]
-transform = Transform3D(-0.979554, 0, 0.20118, 0, 1, 0, -0.20118, 0, -0.979554, 0.696688, 0.334467, 0.675796)
+transform = Transform3D(-0.979554, 0, 0.20118, 0, 1, 0, -0.20118, 0, -0.979554, 0.696688, 0.448258, 0.675796)
 
 [node name="objects rest" parent="." index="62" instance=ExtResource("10_skm1s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0394688, 0)
@@ -323,6 +323,7 @@ visible = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.140502, 0)
 
 [node name="hangar" parent="." index="64" instance=ExtResource("12_sm7ch")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.496326, 0)
 
 [editable path="bookcases"]
 [editable path="bookcases/books (1)"]

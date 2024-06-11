@@ -61,7 +61,31 @@ shape = SubResource("BoxShape3D_5t7hu")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.0355, 0.863864, -0.691377)
 shape = SubResource("CylinderShape3D_hmwkq")
 
+[node name="urn" parent="." index="2"]
+visible = false
+
+[node name="Gondola closed" parent="." index="53"]
+visible = false
+
+[node name="Gondola open" parent="." index="54"]
+visible = false
+
+[node name="gondola holder closed" parent="." index="55"]
+visible = false
+
+[node name="gondola holder open" parent="." index="56"]
+visible = false
+
+[node name="balloon full" parent="." index="57"]
+visible = false
+
+[node name="balloon empty" parent="." index="58"]
+visible = false
+
 [node name="Cube_066" parent="." index="119"]
+visible = false
+
+[node name="Cube_009" parent="." index="120"]
 visible = false
 
 [node name="Cube_023" parent="." index="131"]

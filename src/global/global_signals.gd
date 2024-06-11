@@ -23,6 +23,7 @@ enum Type {
 	TUTORIAL,
 	DRIVE_VAN,
 	END_GAME,
+	PUZZLE_SOLVED,
 }
 
 signal game_started()
@@ -47,6 +48,7 @@ signal wrong_item()
 signal tutorial()
 signal drive_van()
 signal end_game()
+signal puzzle_solved()
 
 var signals = { 
 	Type.START_GAME : game_started,
@@ -71,4 +73,5 @@ var signals = {
 	Type.TUTORIAL: tutorial,
 	Type.DRIVE_VAN: drive_van,
 	Type.END_GAME: end_game,
+	Type.PUZZLE_SOLVED: puzzle_solved,
 }
