@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://cu5vnwkm462k0"]
+
+[ext_resource type="PackedScene" uid="uid://bnp204q8fp173" path="res://models/Furniture/seating_area.glb" id="1_wo2os"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6fdvr"]
+size = Vector3(0.699585, 0.408554, 0.983826)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cvfxq"]
+size = Vector3(1.00891, 0.869629, 0.913574)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kxl8m"]
+size = Vector3(0.907837, 0.865723, 2.74289)
+
+[node name="seating_area" instance=ExtResource("1_wo2os")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="4"]
+
+[node name="Table" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(0.932463, 0, -0.361267, 0, 1, 0, 0.361267, 0, 0.932463, -3.63051, 0.264122, -1.3119)
+shape = SubResource("BoxShape3D_6fdvr")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" index="1"]
+transform = Transform3D(0.577459, 0, -0.81642, 0, 1, 0, 0.81642, 0, 0.577459, -2.51275, 0.499164, -2.33849)
+shape = SubResource("BoxShape3D_cvfxq")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" index="2"]
+transform = Transform3D(-0.983502, 0, 0.180897, 0, 1, 0, -0.180897, 0, -0.983502, -3.88296, 0.499164, 0.504612)
+shape = SubResource("BoxShape3D_cvfxq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="3"]
+transform = Transform3D(0.939842, 0, -0.34161, 0, 1, 0, 0.34161, 0, 0.939842, -5.02363, 0.480106, -1.81619)
+shape = SubResource("BoxShape3D_kxl8m")

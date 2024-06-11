@@ -1,0 +1,55 @@
+[gd_scene load_steps=10 format=3 uid="uid://b838ndbhntaxk"]
+
+[ext_resource type="PackedScene" uid="uid://dpxu1m2mlsc80" path="res://models/Furniture/kitchen.glb" id="1_i2mim"]
+[ext_resource type="PackedScene" uid="uid://dpn2y4n8gaaeo" path="res://models/Furniture/table.glb" id="2_qhfry"]
+[ext_resource type="PackedScene" uid="uid://d0bssqgdyyiys" path="res://models/House/toilet.tscn" id="3_5i7ms"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dm3cy"]
+size = Vector3(0.847534, 0.94455, 3.17846)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ojmi6"]
+size = Vector3(4.15894, 0.929565, 0.820679)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c2gkk"]
+size = Vector3(0.963745, 0.968872, 0.900391)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6fg8e"]
+size = Vector3(1.96277, 0.925659, 1.40442)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8si8p"]
+size = Vector3(0.625854, 0.492737, 1.20361)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s6ff5"]
+size = Vector3(0.776489, 1.845, 0.764404)
+
+[node name="kitchen" instance=ExtResource("1_i2mim")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="0"]
+
+[node name="Counter1" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0432, 0.521598, -4.48516)
+shape = SubResource("BoxShape3D_dm3cy")
+
+[node name="Counter2" type="CollisionShape3D" parent="StaticBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.45853, 0.531791, -5.66255)
+shape = SubResource("BoxShape3D_ojmi6")
+
+[node name="Stove" type="CollisionShape3D" parent="StaticBody3D" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.86814, 0.516227, -5.61274)
+shape = SubResource("BoxShape3D_c2gkk")
+
+[node name="DiningTable" type="CollisionShape3D" parent="StaticBody3D" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.57448, 0.479057, -1.89609)
+shape = SubResource("BoxShape3D_6fg8e")
+
+[node name="Toilet" type="CollisionShape3D" parent="StaticBody3D" index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.2132, 0.333396, -0.257308)
+shape = SubResource("BoxShape3D_8si8p")
+
+[node name="Fridge" type="CollisionShape3D" parent="StaticBody3D" index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0466, 0.938728, -2.46243)
+shape = SubResource("BoxShape3D_s6ff5")
+
+[node name="table2" parent="." index="29" instance=ExtResource("2_qhfry")]
+
+[node name="toilet" parent="." index="30" instance=ExtResource("3_5i7ms")]

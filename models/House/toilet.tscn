@@ -1,0 +1,101 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0bssqgdyyiys"]
+
+[ext_resource type="PackedScene" uid="uid://dpgxugarb2vg" path="res://models/Furniture/toilet.glb" id="1_03ycf"]
+[ext_resource type="PackedScene" uid="uid://c4n472rfrxf4r" path="res://prop_scenes/moveable_object.tscn" id="2_roadx"]
+[ext_resource type="ArrayMesh" uid="uid://df75pmvucq7rt" path="res://models/Furniture/ToiletMeshes/toilet_Cylinder_009.res" id="3_4enva"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ulbdj"]
+height = 0.124746
+radius = 0.0639929
+
+[node name="toilet" instance=ExtResource("1_03ycf")]
+
+[node name="toilet paper" parent="." index="1"]
+visible = false
+
+[node name="toilet paper_001" parent="." index="2"]
+visible = false
+
+[node name="toilet paper_002" parent="." index="3"]
+visible = false
+
+[node name="toilet paper_003" parent="." index="4"]
+visible = false
+
+[node name="toilet paper_004" parent="." index="5"]
+visible = false
+
+[node name="toilet paper_005" parent="." index="6"]
+visible = false
+
+[node name="ToiletPaper" parent="." index="8" instance=ExtResource("2_roadx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.2775, 1.79706, -0.683131)
+
+[node name="CollisionShape3D" parent="ToiletPaper" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.105279, 0)
+shape = SubResource("CylinderShape3D_ulbdj")
+
+[node name="MeshInstance3D" parent="ToiletPaper" index="1"]
+transform = Transform3D(0.174195, 0, 0, 0, 0.174195, 0, 0, 0, 0.174195, 0, 0.105279, 0)
+mesh = ExtResource("3_4enva")
+
+[node name="ToiletPaper2" parent="." index="9" instance=ExtResource("2_roadx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.3133, 1.79706, -0.535547)
+
+[node name="CollisionShape3D" parent="ToiletPaper2" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.105279, 0)
+shape = SubResource("CylinderShape3D_ulbdj")
+
+[node name="MeshInstance3D" parent="ToiletPaper2" index="1"]
+transform = Transform3D(0.174195, 0, 0, 0, 0.174195, 0, 0, 0, 0.174195, 0, 0.105279, 0)
+mesh = ExtResource("3_4enva")
+
+[node name="ToiletPaper3" parent="." index="10" instance=ExtResource("2_roadx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.2291, 1.79706, -0.426577)
+
+[node name="CollisionShape3D" parent="ToiletPaper3" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.105279, 0)
+shape = SubResource("CylinderShape3D_ulbdj")
+
+[node name="MeshInstance3D" parent="ToiletPaper3" index="1"]
+transform = Transform3D(0.174195, 0, 0, 0, 0.174195, 0, 0, 0, 0.174195, 0, 0.105279, 0)
+mesh = ExtResource("3_4enva")
+
+[node name="ToiletPaper4" parent="." index="11" instance=ExtResource("2_roadx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.2614, 1.92587, -0.492125)
+
+[node name="CollisionShape3D" parent="ToiletPaper4" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.105279, 0)
+shape = SubResource("CylinderShape3D_ulbdj")
+
+[node name="MeshInstance3D" parent="ToiletPaper4" index="1"]
+transform = Transform3D(0.174195, 0, 0, 0, 0.174195, 0, 0, 0, 0.174195, 0, 0.105279, 0)
+mesh = ExtResource("3_4enva")
+
+[node name="ToiletPaper5" parent="." index="12" instance=ExtResource("2_roadx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.3368, 1.79706, -0.303892)
+
+[node name="CollisionShape3D" parent="ToiletPaper5" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.105279, 0)
+shape = SubResource("CylinderShape3D_ulbdj")
+
+[node name="MeshInstance3D" parent="ToiletPaper5" index="1"]
+transform = Transform3D(0.174195, 0, 0, 0, 0.174195, 0, 0, 0, 0.174195, 0, 0.105279, 0)
+mesh = ExtResource("3_4enva")
+
+[node name="ToiletPaper6" parent="." index="13" instance=ExtResource("2_roadx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.0821, 0.653666, -0.727643)
+
+[node name="CollisionShape3D" parent="ToiletPaper6" index="0"]
+shape = SubResource("CylinderShape3D_ulbdj")
+
+[node name="MeshInstance3D" parent="ToiletPaper6" index="1"]
+transform = Transform3D(0.174195, 0, 0, 0, 0.174195, 0, 0, 0, 0.174195, 0, 0, 0)
+mesh = ExtResource("3_4enva")
+
+[editable path="ToiletPaper"]
+[editable path="ToiletPaper2"]
+[editable path="ToiletPaper3"]
+[editable path="ToiletPaper4"]
+[editable path="ToiletPaper5"]
+[editable path="ToiletPaper6"]
