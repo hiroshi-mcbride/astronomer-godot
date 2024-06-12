@@ -1,10 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://c8u8ct3pr0atm"]
+[gd_scene load_steps=18 format=3 uid="uid://c8u8ct3pr0atm"]
 
 [ext_resource type="Script" path="res://src/world.gd" id="1_2i7x0"]
 [ext_resource type="PackedScene" uid="uid://ceui73yjsebp0" path="res://player/player.tscn" id="1_xbrf3"]
 [ext_resource type="PackedScene" uid="uid://c4k1ds7c31w2c" path="res://prop_scenes/box_spawner.tscn" id="3_t04rl"]
 [ext_resource type="PackedScene" uid="uid://cahbrik61swll" path="res://prop_scenes/box.tscn" id="4_30gx1"]
 [ext_resource type="PackedScene" uid="uid://u405j31lvb2l" path="res://prop_scenes/urn.tscn" id="10_mmw61"]
+[ext_resource type="Script" path="res://levels/score_manager.gd" id="11_h5q3n"]
 [ext_resource type="PackedScene" uid="uid://bmuvphbx6qjih" path="res://models/House/house.tscn" id="11_ikium"]
 [ext_resource type="PackedScene" uid="uid://cwg0o4ekrvb5r" path="res://prop_scenes/cane.tscn" id="11_pwgms"]
 [ext_resource type="PackedScene" uid="uid://dnu8ooumqo5wv" path="res://prop_scenes/helium_flask.tscn" id="12_kva7c"]
@@ -236,5 +237,8 @@ spot_angle = 14.9951
 
 [node name="BalloonScene" parent="." instance=ExtResource("16_hc2fb")]
 transform = Transform3D(0.99986, 0, 0.0167366, 0, 1, 0, -0.0167366, 0, 0.99986, 2.99409, 0.254146, -10.257)
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("11_h5q3n")
 
 [editable path="Player"]

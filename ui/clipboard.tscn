@@ -31,6 +31,7 @@ world_3d = SubResource("World3D_qx3dm")
 transparent_bg = true
 handle_input_locally = false
 size = Vector2i(1920, 1080)
+render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="Clipboard/SubViewportContainer/SubViewport"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.998, 3.24578, 24.3836)
@@ -106,10 +107,10 @@ anchor_left = 0.35
 anchor_top = 0.125
 anchor_right = 0.646
 anchor_bottom = 0.859
-offset_left = 755.0
-offset_top = 210.0
-offset_right = 813.16
-offset_bottom = 203.64
+offset_left = 752.0
+offset_top = 477.0
+offset_right = 810.16
+offset_bottom = 470.64
 grow_horizontal = 2
 scale = Vector2(1.655, 1.655)
 text = "Controls:
@@ -123,10 +124,10 @@ anchor_left = 0.356
 anchor_top = 0.125
 anchor_right = 0.647
 anchor_bottom = 0.866
-offset_left = 754.76
-offset_top = 272.0
-offset_right = 1138.12
-offset_bottom = 426.36
+offset_left = 751.76
+offset_top = 539.0
+offset_right = 1135.12
+offset_bottom = 763.36
 text = "-> Lclick = interact (picking, placing, using, opening)
 -> Q = get moving box
 
@@ -135,6 +136,35 @@ text = "-> Lclick = interact (picking, placing, using, opening)
 
 -> WASD = move
 -> mouse movement = look around"
+label_settings = SubResource("LabelSettings_agyvh")
+
+[node name="Boxes used" type="Label" parent="Control/Pages/Controls"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.356
+anchor_top = 0.125
+anchor_right = 0.647
+anchor_bottom = 0.866
+offset_left = 751.76
+offset_top = 206.0
+offset_right = 1135.12
+offset_bottom = 203.36
+text = "Boxes used:
+"
+label_settings = SubResource("LabelSettings_agyvh")
+
+[node name="Objects packed" type="Label" parent="Control/Pages/Controls"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.356
+anchor_top = 0.125
+anchor_right = 0.647
+anchor_bottom = 0.866
+offset_left = 752.76
+offset_top = 233.0
+offset_right = 1136.12
+offset_bottom = 230.36
+text = "Objects packed:"
 label_settings = SubResource("LabelSettings_agyvh")
 
 [node name="Objective" type="Control" parent="Control/Pages"]

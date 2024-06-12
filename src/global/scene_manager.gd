@@ -28,6 +28,9 @@ func _on_game_started():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
 	GlobalSignals.game_quit.connect(_on_game_quit)
+	
+	await get_tree().create_timer(20.0).timeout
+	GlobalSignals.tutorial.emit()
 
 func _on_game_quit():
 	GlobalSignals.game_quit.disconnect(_on_game_quit)

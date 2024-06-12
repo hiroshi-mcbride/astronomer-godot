@@ -9,7 +9,7 @@ func _on_dropped():
 	super._on_dropped()
 
 func pack(box : Node3D):
-
+	GlobalSignals.item_packed.emit()
 	queue_free()
 	#set_collision_layer_value(1, false)
 	#set_collision_layer_value(2, false)

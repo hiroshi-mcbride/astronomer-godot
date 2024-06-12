@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://cna6soy52kwhf"]
+[gd_scene load_steps=5 format=3 uid="uid://cna6soy52kwhf"]
 
 [ext_resource type="Script" path="res://ui/hud.gd" id="1_du6my"]
 [ext_resource type="Texture2D" uid="uid://guesfwbbr2ul" path="res://ui/dot.png" id="1_piso6"]
 [ext_resource type="Script" path="res://ui/mouse_over_text.gd" id="2_m23u7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_n8hyp"]
+font_size = 30
 
 [node name="HUD" type="Control"]
 layout_mode = 3
@@ -131,6 +134,7 @@ theme_override_font_sizes/font_size = 32
 text = "No Boxes Left"
 
 [node name="Boxes Left" type="Label" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 25.0
 offset_top = 31.0
@@ -138,6 +142,7 @@ offset_right = 102.0
 offset_bottom = 54.0
 
 [node name="Closed Boxes" type="Label" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 24.0
 offset_top = 76.0
@@ -157,4 +162,20 @@ offset_right = 51.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
+horizontal_alignment = 1
+
+[node name="AnnouncementsR" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 0.253
+anchor_right = 1.0
+anchor_bottom = 0.253
+offset_left = -245.0
+offset_top = -11.24
+offset_right = -143.0
+offset_bottom = 11.76
+grow_horizontal = 0
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_n8hyp")
 horizontal_alignment = 1

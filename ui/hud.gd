@@ -3,8 +3,8 @@ extends Control
 var closed_boxes = 0
 
 func _ready():
-	GlobalSignals.box_count.connect(_on_box_count)
-	GlobalSignals.box_closed.connect(_on_close_box)
+	#GlobalSignals.box_count.connect(_on_box_count)
+	#GlobalSignals.box_closed.connect(_on_close_box)
 	GlobalSignals.wrong_item.connect(_on_wrong_item)
 	GlobalSignals.tutorial.connect(_on_tutorial)
 
@@ -24,4 +24,6 @@ func _on_wrong_item(wrong_order):
 	get_node("Announcements").text = " "
 
 func _on_tutorial():
-	get_node("Announcements").text = "Press TAB to open your clipboard" #not implemented 
+	get_node("AnnouncementsR").text = "Press E to open your clipboard" #not implemented 
+	await get_tree().create_timer(30.0).timeout
+	get_node("AnnouncementsR").text = " "

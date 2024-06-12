@@ -11,9 +11,11 @@ enum Type {
 	BOX_FULL,
 	ITEM_DETECTED,
 	ITEM_EXITED,
+	ITEM_PACKED,
 	SPAWN_BOX,
 	HOLD_BOX,
 	NO_BOX_LEFT,
+	COUNT_BOXES,
 	BOX_COUNT,
 	CLOSE_BOX,
 	BOX_CLOSED,
@@ -38,12 +40,14 @@ signal game_quit()
 signal mouse_over_entered()
 signal mouse_over_exited()
 signal deposit_item()
+signal item_packed()
 signal box_full()
 signal item_detected()
 signal item_exited()
 signal spawn_box()
 signal hold_box()
 signal no_box_left()
+signal count_boxes()
 signal box_count()
 signal close_box()
 signal box_closed()
@@ -74,11 +78,13 @@ var signals = {
 	Type.SPAWN_BOX: spawn_box,
 	Type.HOLD_BOX: hold_box,
 	Type.NO_BOX_LEFT: no_box_left,
+	Type.COUNT_BOXES: count_boxes,
 	Type.BOX_COUNT: box_count,
 	Type.CLOSE_BOX: close_box,
 	Type.BOX_CLOSED: box_closed,
 	Type.BOX_HELD: box_held,
 	Type.BOX_DROPPED: box_dropped,
+	Type.ITEM_PACKED: item_packed,
 	Type.WRONG_ITEM: wrong_item,
 	Type.TUTORIAL: tutorial,
 	Type.DRIVE_VAN: drive_van,

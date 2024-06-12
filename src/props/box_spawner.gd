@@ -6,10 +6,12 @@ extends Node
 var max_boxes = 3
 var boxes_in_scene = 0
 var boxes_left
+var boxes_used = 0
 
 func _ready():
 	GlobalSignals.spawn_box.connect(_on_spawn_box)
 	GlobalSignals.close_box.connect(close_box)
+	GlobalSignals.count_boxes.connect(count_boxes)
 	#boxes_in_scene = get all boxes currently in the scene
 	count_boxes()
 
@@ -20,13 +22,14 @@ func _on_spawn_box(handPos):
 		add_child(instance)
 		GlobalSignals.hold_box.emit(instance)
 		boxes_in_scene += 1
+		boxes_used += 1
 		count_boxes()
 	else:
 		GlobalSignals.no_box_left.emit()
 
 func count_boxes():
-	boxes_left = max_boxes - boxes_in_scene
-	GlobalSignals.box_count.emit(boxes_left)
+	#boxes_left = max_boxes - boxes_in_scene
+	GlobalSignals.box_count.emit(boxes_used)
 
 func close_box(box_instance, handPos):
 	GlobalSignals.box_closed.emit()
