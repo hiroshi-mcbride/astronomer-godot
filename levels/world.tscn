@@ -238,7 +238,7 @@ spot_angle = 14.9951
 [node name="BalloonScene" parent="." instance=ExtResource("16_hc2fb")]
 transform = Transform3D(0.99986, 0, 0.0167366, 0, 1, 0, -0.0167366, 0, 0.99986, 2.99409, 0.254146, -10.257)
 
-[node name="Node" type="Node" parent="."]
+[node name="ScoreManager" type="Node" parent="."]
 script = ExtResource("11_h5q3n")
 
 [editable path="Player"]

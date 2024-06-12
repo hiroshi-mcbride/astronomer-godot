@@ -31,6 +31,8 @@ enum Type {
 	DISPLAY_CLIPBOARD,
 	PREVIOUS_PAGE,
 	NEXT_PAGE,
+	COUNT_OBJECTS,
+	OBJECT_COUNT,
 }
 
 signal game_started()
@@ -63,6 +65,8 @@ signal operate_lever()
 signal display_clipboard()
 signal prev_page()
 signal next_page()
+signal count_objects()
+signal object_count()
 
 var signals = { 
 	Type.START_GAME : game_started,
@@ -95,4 +99,6 @@ var signals = {
 	Type.DISPLAY_CLIPBOARD: display_clipboard,
 	Type.PREVIOUS_PAGE: prev_page,
 	Type.NEXT_PAGE: next_page,
+	Type.COUNT_OBJECTS: count_objects,
+	Type.OBJECT_COUNT: object_count,
 }
