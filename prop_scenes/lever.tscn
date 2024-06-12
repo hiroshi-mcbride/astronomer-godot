@@ -1,0 +1,94 @@
+[gd_scene load_steps=10 format=3 uid="uid://1sebpfmg0gcr"]
+
+[ext_resource type="ArrayMesh" uid="uid://dx61x5do085ko" path="res://models/Furniture/RestMeshes/lever_Cube_119.res" id="1_mssd6"]
+[ext_resource type="ArrayMesh" uid="uid://b66utpxadrrpm" path="res://models/Furniture/RestMeshes/lever_Cube_121.res" id="2_7bhfc"]
+[ext_resource type="ArrayMesh" uid="uid://b1whh4owcm7to" path="res://models/Furniture/RestMeshes/lever_Cube_120.res" id="3_qerlo"]
+[ext_resource type="Script" path="res://src/props/lever_operator.gd" id="4_iov57"]
+[ext_resource type="PackedScene" uid="uid://oyeetf15p6g5" path="res://prop_scenes/trigger.tscn" id="5_ov03n"]
+
+[sub_resource type="Animation" id="Animation_a6clr"]
+resource_name = "LeverAnim"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StaticBody3D/MeshInstance3D2:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("StaticBody3D/MeshInstance3D3:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 1.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_m73fp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StaticBody3D/MeshInstance3D3:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dmjww"]
+_data = {
+"LeverAnim": SubResource("Animation_a6clr"),
+"RESET": SubResource("Animation_m73fp")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_31xb7"]
+size = Vector3(0.683655, 0.60965, 0.442383)
+
+[node name="Lever" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15181, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = ExtResource("1_mssd6")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125061, 0.374756, 0.0772705)
+visible = false
+mesh = ExtResource("2_7bhfc")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.181122, 0.345703, -0.110596)
+visible = false
+mesh = ExtResource("3_qerlo")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_dmjww")
+}
+script = ExtResource("4_iov57")
+
+[node name="Trigger" parent="." instance=ExtResource("5_ov03n")]
+
+[node name="Area3D" parent="Trigger" index="0"]
+isLever = true
+
+[node name="CollisionShape3D" parent="Trigger/Area3D" index="0"]
+transform = Transform3D(0.804749, 0, -0.593616, 0, 1, 0, 0.593616, 0, 0.804749, -0.0124103, 0.55304, 0.00575716)
+shape = SubResource("BoxShape3D_31xb7")
+
+[editable path="Trigger"]

@@ -3,9 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://d077ck7rd1dxr" path="res://models/Props/Urn.glb" id="1_v76to"]
 [ext_resource type="Script" path="res://src/props/PuzzleElement.gd" id="1_w7huw"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nycik"]
-radius = 0.186123
-height = 0.48519
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_nh5e0"]
+height = 0.490862
+radius = 0.207043
 
 [node name="Urn" type="RigidBody3D"]
 transform = Transform3D(1, -2.1165e-05, -0.000768421, 2.3637e-05, 0.999995, 0.00322578, 0.000768348, -0.0032258, 0.999995, 0, 0, 0)
@@ -16,7 +16,7 @@ index = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.247234, 0)
-shape = SubResource("CapsuleShape3D_nycik")
+shape = SubResource("CylinderShape3D_nh5e0")
 
 [node name="UrnModel" parent="CollisionShape3D" instance=ExtResource("1_v76to")]
 transform = Transform3D(1, 4.54747e-13, 0, -2.27374e-13, 1, 0, 0, 0, 1, -2.27374e-13, -0.247234, 0)

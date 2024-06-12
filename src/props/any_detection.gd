@@ -12,6 +12,7 @@ var roof_opened = false #not used yet
 
 @export var isTrigger : bool = false
 @export var isPuzzle : bool = false
+@export var isLever : bool = false
 
 func _ready():
 	if isPuzzle ==true:
@@ -24,7 +25,8 @@ func _enter_tree():
 	
 func _on_item_entered(body):
 	item = body
-	if isPuzzle == true:
+	if item == Holdable and isPuzzle == true or isLever == true:
+		print("item detected")
 		GlobalSignals.item_detected.emit() 
 	if item is CharacterBody3D and isTrigger == true:
 		print("player detected")
@@ -34,27 +36,31 @@ func _on_item_exited(body):
 	GlobalSignals.item_exited.emit() #held item can no longer be deposited
 
 func puzzle_item():
-	if item is PuzzleElement and item.index == index:
-		#index = item.index
-		var i = puzzle.get_child(index) as Node3D
-		i.visible = true
-		if index == 0:
-			#close holder
-			i = puzzle.get_child(4) as Node3D 
+	if isPuzzle == true:
+		if item is PuzzleElement and item.index == index:
+			#index = item.index
+			var i = puzzle.get_child(index) as Node3D
 			i.visible = true
-			i = puzzle.get_child(5) as Node3D
-			i.visible = false
-		if index == 2: #TO DO:check if roof is opened!
-			#inflate balloon
-			i = puzzle.get_child(1) as Node3D
-			i.visible = false
-		if index == last_index:
-			GlobalSignals.puzzle_solved.emit()
-		item.pack(self)
-		item = null
-		index += 1
-	else:
-		incorrect_item()
+			if index == 0:
+				#close holder
+				i = puzzle.get_child(4) as Node3D 
+				i.visible = true
+				i = puzzle.get_child(5) as Node3D
+				i.visible = false
+			if index == 2: #TO DO:check if roof is opened!
+				#inflate balloon
+				i = puzzle.get_child(1) as Node3D
+				i.visible = false
+			if index == last_index:
+				GlobalSignals.puzzle_solved.emit()
+			item.pack(self)
+			item = null
+			index += 1
+		else:
+			incorrect_item()
+	if isLever == true and item is Lever:
+		print("lever")
+		GlobalSignals.attempt_lever.emit(item.index)
 
 		
 func incorrect_item():

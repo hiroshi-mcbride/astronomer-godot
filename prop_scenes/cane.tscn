@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cwg0o4ekrvb5r"]
+[gd_scene load_steps=8 format=3 uid="uid://cwg0o4ekrvb5r"]
 
-[ext_resource type="Script" path="res://src/props/packable.gd" id="1_0i2v6"]
 [ext_resource type="PackedScene" uid="uid://t7l7kvwshwat" path="res://models/Props/walking_cane.glb" id="1_62ltb"]
+[ext_resource type="Script" path="res://src/props/lever.gd" id="1_d05qw"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_7vpp1"]
 height = 0.807376
@@ -11,9 +11,34 @@ radius = 0.0321637
 height = 0.0511354
 radius = 0.109932
 
+[sub_resource type="Animation" id="Animation_a5lkj"]
+resource_name = "cane_lever"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("walking_cane:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_j1cyp"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5fhl2"]
+_data = {
+"RESET": SubResource("Animation_j1cyp"),
+"cane_lever": SubResource("Animation_a5lkj")
+}
+
 [node name="cane" type="RigidBody3D"]
 collision_layer = 3
-script = ExtResource("1_0i2v6")
+script = ExtResource("1_d05qw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.409281, 0)
@@ -24,3 +49,8 @@ shape = SubResource("CylinderShape3D_7vpp1")
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.11915, 0.78905, 0)
 shape = SubResource("CylinderShape3D_o4ofx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_5fhl2")
+}
