@@ -7,6 +7,7 @@ func _ready():
 	#GlobalSignals.box_closed.connect(_on_close_box)
 	GlobalSignals.wrong_item.connect(_on_wrong_item)
 	GlobalSignals.tutorial.connect(_on_tutorial)
+	GlobalSignals.puzzle_solved.connect(_on_puzzle_solved)
 
 func _on_box_count(box_count):
 	get_node("Boxes Left").text = str(box_count) + " boxes left"
@@ -27,3 +28,7 @@ func _on_tutorial():
 	get_node("AnnouncementsR").text = "Press E to open your clipboard" #not implemented 
 	await get_tree().create_timer(30.0).timeout
 	get_node("AnnouncementsR").text = " "
+
+func _on_puzzle_solved():
+	await get_tree().create_timer(5.0).timeout
+	get_node("AnnouncementsR").text = "When you're ready, go back to the van (drivers side) to end the game."

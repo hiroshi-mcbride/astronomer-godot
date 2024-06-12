@@ -238,7 +238,11 @@ spot_angle = 14.9951
 [node name="BalloonScene" parent="." instance=ExtResource("16_hc2fb")]
 transform = Transform3D(0.99986, 0, 0.0167366, 0, 1, 0, -0.0167366, 0, 0.99986, 2.99409, 0.254146, -10.257)
 
+[node name="CollisionShape3D2" parent="BalloonScene/WorkBench/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.578203, 1.1269, -0.127466)
+
 [node name="ScoreManager" type="Node" parent="."]
 script = ExtResource("11_vywnu")
 
 [editable path="Player"]
+[editable path="BalloonScene"]

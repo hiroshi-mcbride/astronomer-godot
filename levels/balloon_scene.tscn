@@ -24,7 +24,46 @@ height = 2.36732
 size = Vector3(5.78657, 0.355957, 3.87448)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qkao4"]
-size = Vector3(5.92486, 2.77295, 3.89621)
+size = Vector3(5.66848, 2.4342, 3.13219)
+
+[sub_resource type="Animation" id="Animation_61vo3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WorkBench/Puzzle/BalloonFull:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.372636, 8.82623, -2.48578)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WorkBench/Puzzle/Urn:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.362755, 2.15414, -2.46139)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("WorkBench/Puzzle/GondolaClosed:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.388564, 1.92557, -2.46683)]
+}
 
 [sub_resource type="Animation" id="Animation_sxs4d"]
 resource_name = "balloon_cutscene"
@@ -114,45 +153,6 @@ tracks/6/keys = {
 "values": [Vector3(-0.388564, 1.92557, -2.46683), Vector3(-0.388564, 62.9486, -2.46683), Vector3(-0.388564, 376.893, -2.46683)]
 }
 
-[sub_resource type="Animation" id="Animation_61vo3"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("WorkBench/Puzzle/BalloonFull:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-0.372636, 383.794, -2.48578)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("WorkBench/Puzzle/Urn:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-0.362755, 377.122, -2.46139)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("WorkBench/Puzzle/GondolaClosed:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-0.388564, 376.893, -2.46683)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mwvcx"]
 _data = {
 "RESET": SubResource("Animation_61vo3"),
@@ -224,13 +224,13 @@ mesh = ExtResource("2_k421r")
 skeleton = NodePath("")
 
 [node name="BalloonFull" type="MeshInstance3D" parent="WorkBench/Puzzle"]
-transform = Transform3D(2.07866, 0, 0, 0, 2.07866, 0, 0, 0, 2.07866, -0.372636, 383.794, -2.48578)
+transform = Transform3D(2.07866, 0, 0, 0, 2.07866, 0, 0, 0, 2.07866, -0.372636, 8.82623, -2.48578)
 visible = false
 mesh = ExtResource("8_jjhbl")
 skeleton = NodePath("")
 
 [node name="Urn" type="MeshInstance3D" parent="WorkBench/Puzzle"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.362755, 377.122, -2.46139)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.362755, 2.15414, -2.46139)
 visible = false
 mesh = ExtResource("9_a02kj")
 
@@ -244,7 +244,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.186, 0.55, 12.557)
 mesh = ExtResource("11_w4a78")
 
 [node name="GondolaClosed" type="MeshInstance3D" parent="WorkBench/Puzzle"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.388564, 376.893, -2.46683)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.388564, 1.92557, -2.46683)
 visible = false
 mesh = ExtResource("2_tamxr")
 skeleton = NodePath("")

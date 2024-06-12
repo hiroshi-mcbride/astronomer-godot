@@ -25,7 +25,7 @@ func _enter_tree():
 	
 func _on_item_entered(body):
 	item = body
-	if item == Holdable and isPuzzle == true or isLever == true:
+	if isPuzzle == true or isLever == true:
 		print("item detected")
 		GlobalSignals.item_detected.emit() 
 	if item is CharacterBody3D and isTrigger == true:
