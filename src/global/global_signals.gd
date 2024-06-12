@@ -27,6 +27,8 @@ enum Type {
 	ATTEMPT_LEVER,
 	OPERATE_LEVER,
 	DISPLAY_CLIPBOARD,
+	PREVIOUS_PAGE,
+	NEXT_PAGE,
 }
 
 signal game_started()
@@ -55,6 +57,8 @@ signal puzzle_solved()
 signal attempt_lever()
 signal operate_lever()
 signal display_clipboard()
+signal prev_page()
+signal next_page()
 
 var signals = { 
 	Type.START_GAME : game_started,
@@ -83,4 +87,6 @@ var signals = {
 	Type.ATTEMPT_LEVER: attempt_lever,
 	Type.OPERATE_LEVER: operate_lever,
 	Type.DISPLAY_CLIPBOARD: display_clipboard,
+	Type.PREVIOUS_PAGE: prev_page,
+	Type.NEXT_PAGE: next_page,
 }

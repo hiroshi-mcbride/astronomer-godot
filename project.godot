@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Strings="*res://src/global/strings.gd"
 GlobalSignals="*res://src/global/global_signals.gd"
+Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [debug]
 

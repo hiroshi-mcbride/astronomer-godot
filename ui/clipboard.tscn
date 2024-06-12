@@ -1,11 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://d1k5ryijh7ovl"]
+[gd_scene load_steps=7 format=3 uid="uid://d1k5ryijh7ovl"]
 
 [ext_resource type="Script" path="res://src/ui/clipboard_menu.gd" id="1_72e86"]
 [ext_resource type="PackedScene" uid="uid://cqidxour4gsrd" path="res://models/Furniture/clipboardglb.glb" id="1_icstt"]
+[ext_resource type="PackedScene" uid="uid://dwkbepo5glpuj" path="res://ui/btn_signal.tscn" id="3_c3l7r"]
 
 [sub_resource type="World3D" id="World3D_qx3dm"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5jroj"]
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_agyvh"]
+line_spacing = 10.0
 font_color = Color(0, 0, 0, 1)
 
 [node name="ClipboardMenu" type="CanvasLayer"]
@@ -52,25 +57,198 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="Control"]
+[node name="PreviousPage" parent="Control" instance=ExtResource("3_c3l7r")]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -189.0
-offset_top = -323.0
-offset_right = -149.0
-offset_bottom = -300.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(1.655, 1.655)
-text = "Test
-"
-label_settings = SubResource("LabelSettings_5jroj")
-horizontal_alignment = 1
+anchors_preset = -1
+anchor_left = 0.356
+anchor_top = 0.127
+anchor_right = 0.647
+anchor_bottom = 0.867
+offset_left = 78.48
+offset_top = 677.84
+offset_right = -360.24
+offset_bottom = -76.36
+text = "Previous Page"
+on_click = 26
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="NextPage" parent="Control" instance=ExtResource("3_c3l7r")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.353
+anchor_top = 0.125
+anchor_right = 0.647
+anchor_bottom = 0.865
+offset_left = 210.24
+offset_top = 680.0
+offset_right = -234.24
+offset_bottom = -74.2001
+text = "Next Page"
+on_click = 27
+
+[node name="Pages" type="Control" parent="Control"]
+anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="Controls" type="Control" parent="Control/Pages"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Title" type="Label" parent="Control/Pages/Controls"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.35
+anchor_top = 0.125
+anchor_right = 0.646
+anchor_bottom = 0.859
+offset_left = 755.0
+offset_top = 210.0
+offset_right = 813.16
+offset_bottom = 203.64
+grow_horizontal = 2
+scale = Vector2(1.655, 1.655)
+text = "Controls:
+"
+label_settings = SubResource("LabelSettings_5jroj")
+
+[node name="Body" type="Label" parent="Control/Pages/Controls"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.356
+anchor_top = 0.125
+anchor_right = 0.647
+anchor_bottom = 0.866
+offset_left = 754.76
+offset_top = 272.0
+offset_right = 1138.12
+offset_bottom = 426.36
+text = "-> Rclick = interact (picking, placing, using, opening)
+-> Q = get moving box
+
+->	TAB = open clipboard
+-> Esc = pause game
+
+-> WASD = move
+-> mouse movement = look around"
+label_settings = SubResource("LabelSettings_agyvh")
+
+[node name="Objective" type="Control" parent="Control/Pages"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Title" type="Label" parent="Control/Pages/Objective"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.35
+anchor_top = 0.125
+anchor_right = 0.646
+anchor_bottom = 0.859
+offset_left = 755.0
+offset_top = 210.0
+offset_right = 813.16
+offset_bottom = 203.64
+grow_horizontal = 2
+scale = Vector2(1.655, 1.655)
+text = "Objective:"
+label_settings = SubResource("LabelSettings_5jroj")
+
+[node name="Body" type="Label" parent="Control/Pages/Objective"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.356
+anchor_top = 0.125
+anchor_right = 0.647
+anchor_bottom = 0.866
+offset_left = 754.76
+offset_top = 272.0
+offset_right = 1182.12
+offset_bottom = 426.36
+text = "Your job as a Jagger Moving co. employee is to move  all of the client's belongings out of their house. You do this by packing them into boxes (read CONTROLS for more information). Be thorough, because your performance will be asessed.
+
+You can find information on your current client in the NOTES section of this document.
+"
+label_settings = SubResource("LabelSettings_agyvh")
+autowrap_mode = 2
+
+[node name="Notes" type="Control" parent="Control/Pages"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Title" type="Label" parent="Control/Pages/Notes"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.35
+anchor_top = 0.125
+anchor_right = 0.646
+anchor_bottom = 0.859
+offset_left = 755.0
+offset_top = 210.0
+offset_right = 813.16
+offset_bottom = 203.64
+grow_horizontal = 2
+scale = Vector2(1.655, 1.655)
+text = "Notes:"
+label_settings = SubResource("LabelSettings_5jroj")
+
+[node name="Body" type="Label" parent="Control/Pages/Notes"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.356
+anchor_top = 0.125
+anchor_right = 0.647
+anchor_bottom = 0.866
+offset_left = 754.76
+offset_top = 272.0
+offset_right = 1198.12
+offset_bottom = 426.36
+text = "Client: Elvis & Daughters Insurance Company
+
+Resident: Franz Lutz, recently deceased (age 102). No known living relatives. No will.
+Contact: Edith Curchod, neighbor.
+
+Location: Astzelberg Road 11b. 
+Description: House sits at the top of the hill and consists of two small buildings joint together by a small tower with an observatory. Formerly part of the Atzelbergschloss estate."
+label_settings = SubResource("LabelSettings_agyvh")
+autowrap_mode = 2
+
+[node name="Notes2" type="Control" parent="Control/Pages"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Title" type="Label" parent="Control/Pages/Notes2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.35
+anchor_top = 0.125
+anchor_right = 0.646
+anchor_bottom = 0.859
+offset_left = 755.0
+offset_top = 210.0
+offset_right = 813.16
+offset_bottom = 203.64
+grow_horizontal = 2
+scale = Vector2(1.655, 1.655)
+text = "Notes:"
+label_settings = SubResource("LabelSettings_5jroj")
+
+[node name="Body" type="Label" parent="Control/Pages/Notes2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.356
+anchor_top = 0.125
+anchor_right = 0.647
+anchor_bottom = 0.866
+offset_left = 754.76
+offset_top = 272.0
+offset_right = 1198.12
+offset_bottom = 426.36
+label_settings = SubResource("LabelSettings_agyvh")
+autowrap_mode = 2
