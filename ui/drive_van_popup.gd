@@ -6,7 +6,7 @@ extends Control
 func _enter_tree():
 	GlobalSignals.game_resumed.connect(_on_resume)
 	#GlobalSignals.drive_van.connect(_on_drive_van)
-	GlobalSignals.end_game.connect(end_cutscene)
+	GlobalSignals.game_quit.connect(_on_game_quit)
 
 func _ready():
 	#overlay.visible = false
@@ -27,5 +27,5 @@ func _on_drive_van():
 	else:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
-func end_cutscene():
-	print("end the game!")
+func _on_game_quit():
+	queue_free()
