@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=3 uid="uid://dyqtveiw55ju3"]
+
+[ext_resource type="PackedScene" uid="uid://c2uvy75bxv4q" path="res://models/Furniture/drawing_table.glb" id="1_12ddy"]
+[ext_resource type="Texture2D" uid="uid://bbg7mgqaaytpx" path="res://2D art/Balloon Blueprint V2.png" id="2_mmwpc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rdgn1"]
+size = Vector3(0.26384, 0.891663, 1.23218)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wuhc2"]
+size = Vector3(0.862427, 0.312622, 1.47565)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lsmt8"]
+size = Vector3(0.119568, 0.0536346, 1.47357)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_loaq7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uosct"]
+render_priority = 1
+albedo_texture = ExtResource("2_mmwpc")
+
+[node name="drawing_table" instance=ExtResource("1_12ddy")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(0.964888, 0, -0.262661, 0, 1, 0, 0.262661, 0, 0.964888, 0.131356, 0.45042, -11.08)
+shape = SubResource("BoxShape3D_rdgn1")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" index="1"]
+transform = Transform3D(0.677227, 0.701064, -0.223324, -0.71947, 0.694522, -0.00152274, 0.154036, 0.161706, 0.974743, 0.0980319, 0.918073, -11.0631)
+shape = SubResource("BoxShape3D_wuhc2")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" index="2"]
+transform = Transform3D(0.975627, 0, -0.219438, 0, 1, 0, 0.219438, 0, 0.975627, 0.506153, 0.666975, -10.9616)
+shape = SubResource("BoxShape3D_lsmt8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="2"]
+transform = Transform3D(0.148294, 0.681373, 0.293921, -0.00148765, 0.714924, -0.295288, -0.637271, 0.156888, 0.0690855, 0.217546, 1.01348, -11.026)
+mesh = SubResource("PlaneMesh_loaq7")
+surface_material_override/0 = SubResource("StandardMaterial3D_uosct")
