@@ -79,6 +79,10 @@ func _unhandled_input(event):
 			
 	if Input.is_action_just_pressed("fullscreen"):
 		swap_fullscreen_mode()
+		
+	if Input.is_action_just_pressed("clipboard"):
+		print("clipboard")
+		GlobalSignals.display_clipboard.emit()
 
 func swap_fullscreen_mode(): #credits to jeroenheijmans on de godotengine forum https://forum.godotengine.org/t/how-to-toggle-fullscreen-from-code/27368/2
 	if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_MAXIMIZED:

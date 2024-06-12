@@ -1,7 +1,7 @@
 class_name PauseMenu extends Control
 
-@onready var overlay = $Overlay
-@onready var btn_resume = $Overlay/VBoxContainer/BtnResume
+@onready var overlay = $CanvasLayer/Overlay
+@onready var btn_resume = $CanvasLayer/Overlay/VBoxContainer/BtnResume
 
 func _enter_tree():
 	GlobalSignals.game_resumed.connect(_on_resume)
