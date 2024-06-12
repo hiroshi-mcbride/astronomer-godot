@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://djqjxljraxo8a"]
+
+[ext_resource type="PackedScene" uid="uid://fcnbressctuh" path="res://models/Furniture/chair_upstairs.glb" id="1_xybb8"]
+[ext_resource type="PackedScene" uid="uid://c7qhtel584pgr" path="res://models/Props/book.tscn" id="2_iqhio"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tyauc"]
+size = Vector3(0.572266, 0.497559, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gjrsp"]
+size = Vector3(0.980591, 0.872681, 1.01904)
+
+[node name="chair_upstairs" instance=ExtResource("1_xybb8")]
+
+[node name="Cube_046" parent="." index="2"]
+visible = false
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(0.754778, 0, 0.65598, 0, 1, 0, -0.65598, 0, 0.754778, -2.28986, 5.93464, -3.51285)
+shape = SubResource("BoxShape3D_tyauc")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" index="1"]
+transform = Transform3D(0.715607, 0, 0.698503, 0, 1, 0, -0.698503, 0, 0.715607, -3.34991, 6.1318, -2.52423)
+shape = SubResource("BoxShape3D_gjrsp")
+
+[node name="Book" parent="." index="4" instance=ExtResource("2_iqhio")]
+transform = Transform3D(-0.0965233, 0.995331, 0, 4.35073e-08, 4.21917e-09, -1, -0.995331, -0.0965233, -4.37114e-08, -2.45896, 6.24119, -3.61717)

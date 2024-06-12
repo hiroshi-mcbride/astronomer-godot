@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://byiv76nebvg17"]
+
+[ext_resource type="PackedScene" uid="uid://c4n472rfrxf4r" path="res://prop_scenes/moveable_object.tscn" id="1_6csy6"]
+[ext_resource type="ArrayMesh" uid="uid://bd5y3c4ku50q3" path="res://models/Furniture/RestMeshes/soap_Cube_083.res" id="2_yudpn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pjks0"]
+size = Vector3(0.0873413, 0.185257, 0.130547)
+
+[node name="Soap" type="Node3D"]
+
+[node name="MoveableObject" parent="." instance=ExtResource("1_6csy6")]
+
+[node name="CollisionShape3D" parent="MoveableObject" index="0"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.00279999, 0.0449718, -0.000934601)
+shape = SubResource("BoxShape3D_pjks0")
+
+[node name="MeshInstance3D" parent="MoveableObject" index="1"]
+transform = Transform3D(0.113035, 0, 0, 0, 0.0538363, 0, 0, 0, 0.0932452, 0, 0.043615, 0)
+mesh = ExtResource("2_yudpn")
+
+[editable path="MoveableObject"]
