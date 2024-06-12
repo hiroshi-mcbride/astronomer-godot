@@ -11,6 +11,9 @@ radius = 0.0321637
 height = 0.0511354
 radius = 0.109932
 
+[sub_resource type="Animation" id="Animation_j1cyp"]
+length = 0.001
+
 [sub_resource type="Animation" id="Animation_a5lkj"]
 resource_name = "cane_lever"
 length = 2.0
@@ -26,9 +29,6 @@ tracks/0/keys = {
 "update": 1,
 "values": [false, true]
 }
-
-[sub_resource type="Animation" id="Animation_j1cyp"]
-length = 0.001
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5fhl2"]
 _data = {
