@@ -31,7 +31,6 @@ world_3d = SubResource("World3D_qx3dm")
 transparent_bg = true
 handle_input_locally = false
 size = Vector2i(1920, 1080)
-render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="Clipboard/SubViewportContainer/SubViewport"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.998, 3.24578, 24.3836)
@@ -60,28 +59,32 @@ grow_vertical = 2
 [node name="PreviousPage" parent="Control" instance=ExtResource("3_c3l7r")]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.356
-anchor_top = 0.127
-anchor_right = 0.647
-anchor_bottom = 0.867
-offset_left = 78.48
-offset_top = 677.84
-offset_right = -360.24
-offset_bottom = -76.36
+anchor_left = 0.5
+anchor_top = 0.866
+anchor_right = 0.5
+anchor_bottom = 0.866
+offset_left = -193.0
+offset_top = -115.28
+offset_right = -73.0
+offset_bottom = -70.2801
+grow_horizontal = 2
+grow_vertical = 0
 text = "Previous Page"
 on_click = 26
 
 [node name="NextPage" parent="Control" instance=ExtResource("3_c3l7r")]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.353
-anchor_top = 0.125
-anchor_right = 0.647
-anchor_bottom = 0.865
-offset_left = 210.24
-offset_top = 680.0
-offset_right = -234.24
-offset_bottom = -74.2001
+anchor_left = 0.498
+anchor_top = 0.87
+anchor_right = 0.498
+anchor_bottom = 0.87
+offset_left = -59.16
+offset_top = -120.6
+offset_right = 60.84
+offset_bottom = -75.6001
+grow_horizontal = 2
+grow_vertical = 0
 text = "Next Page"
 on_click = 27
 
@@ -124,10 +127,10 @@ offset_left = 754.76
 offset_top = 272.0
 offset_right = 1138.12
 offset_bottom = 426.36
-text = "-> Rclick = interact (picking, placing, using, opening)
+text = "-> Lclick = interact (picking, placing, using, opening)
 -> Q = get moving box
 
-->	TAB = open clipboard
+->	E = open clipboard
 -> Esc = pause game
 
 -> WASD = move
