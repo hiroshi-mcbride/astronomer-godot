@@ -210,7 +210,7 @@ transform = Transform3D(0.119275, 0, 0, 0, 0.119275, 0, 0, 0, 0.119275, 0, 0, 0)
 mesh = ExtResource("9_ei6uf")
 
 [node name="Paint2" parent="." index="23" instance=ExtResource("2_0ry2l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.0495, 1.92108, -10.6751)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.0495, 1.93342, -10.6751)
 
 [node name="CollisionShape3D" parent="Paint2" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0270833, 0)
@@ -221,7 +221,7 @@ transform = Transform3D(0.119275, 0, 0, 0, 0.119275, 0, 0, 0, 0.119275, 0, 0, 0)
 mesh = ExtResource("10_eg2yk")
 
 [node name="Paint3" parent="." index="24" instance=ExtResource("2_0ry2l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.07235, 1.92108, -10.368)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.07235, 1.93342, -10.368)
 
 [node name="CollisionShape3D" parent="Paint3" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0270833, 0)
@@ -232,7 +232,7 @@ transform = Transform3D(0.119275, 0, 0, 0, 0.119275, 0, 0, 0, 0.119275, 0, 0, 0)
 mesh = ExtResource("11_7o0nh")
 
 [node name="Paint4" parent="." index="25" instance=ExtResource("2_0ry2l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.03408, 1.92108, -10.0541)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.03408, 1.93342, -10.0541)
 
 [node name="CollisionShape3D" parent="Paint4" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0270833, 0)
@@ -243,7 +243,7 @@ transform = Transform3D(0.119275, 0, 0, 0, 0.119275, 0, 0, 0, 0.119275, 0, 0, 0)
 mesh = ExtResource("12_1sslg")
 
 [node name="Paint5" parent="." index="26" instance=ExtResource("2_0ry2l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.0944, 1.92108, -9.7952)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.0944, 1.93411, -9.7952)
 
 [node name="CollisionShape3D" parent="Paint5" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0270833, 0)

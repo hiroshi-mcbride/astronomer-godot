@@ -88,8 +88,10 @@ libraries = {
 script = ExtResource("5_jq2qt")
 
 [node name="workbench2" parent="." index="8" instance=ExtResource("6_6ohbk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.234065, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.257754, 0)
 
 [node name="boxes" parent="." index="9" instance=ExtResource("7_8ujif")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.251494, 0)
 
 [node name="drawing_table" parent="." index="10" instance=ExtResource("8_ye68p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.268575, 0)

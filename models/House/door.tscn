@@ -6,15 +6,14 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_02qki"]
 size = Vector3(1.02979, 1.93701, 0.106476)
 
-[node name="Door" type="RigidBody3D"]
+[node name="Door" type="StaticBody3D"]
 axis_lock_linear_x = true
 axis_lock_linear_y = true
 axis_lock_linear_z = true
 axis_lock_angular_x = true
 axis_lock_angular_z = true
-center_of_mass_mode = 1
 
-[node name="DoorPivot" type="RigidBody3D" parent="."]
+[node name="DoorPivot" type="StaticBody3D" parent="."]
 axis_lock_linear_x = true
 axis_lock_linear_y = true
 axis_lock_linear_z = true

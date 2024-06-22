@@ -165,7 +165,7 @@ transform = Transform3D(0.99393, 0, -0.110012, 0, 1, 0, 0.110012, 0, 0.99393, 4.
 [node name="Moveable Objects" type="Node" parent="."]
 
 [node name="Urn" parent="Moveable Objects" instance=ExtResource("10_mmw61")]
-transform = Transform3D(0.0013264, 0, 0.999999, 0, 1, 0, -0.999999, 0, 0.0013264, -0.456764, 1.35188, -0.735496)
+transform = Transform3D(0.0013264, 0, 0.999999, 0, 1, 0, -0.999999, 0, 0.0013264, -3.65829, 0.801939, -1.53741)
 
 [node name="cane" parent="Moveable Objects" instance=ExtResource("11_pwgms")]
 transform = Transform3D(0.410195, -0.209662, -0.887571, -0.127359, 0.95051, -0.283389, 0.903061, 0.229285, 0.363192, 5.17978, 0.478543, 1.15889)
@@ -238,8 +238,17 @@ spot_angle = 14.9951
 [node name="BalloonScene" parent="." instance=ExtResource("16_hc2fb")]
 transform = Transform3D(0.99986, 0, 0.0167366, 0, 1, 0, -0.0167366, 0, 0.99986, 2.99409, 0.254146, -10.257)
 
+[node name="Balloon" parent="BalloonScene" index="0"]
+transform = Transform3D(0.678698, 0, -0.734417, 0, 1, 0, 0.734417, 0, 0.678698, -0.828599, 0.879898, 13.0395)
+
+[node name="CollisionShape3D2" parent="BalloonScene/Balloon" index="1"]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -0.0198054, -0.458155, -0.501199)
+
+[node name="Gondola" parent="BalloonScene" index="1"]
+transform = Transform3D(-0.611085, 0, -0.791565, 0, 1, 0, 0.791565, 0, -0.611085, 3.25309, 1.73184, 1.65855)
+
 [node name="CollisionShape3D2" parent="BalloonScene/WorkBench/Area3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.578203, 1.1269, -0.127466)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.396008, 1.1269, -0.127468)
 
 [node name="ScoreManager" type="Node" parent="."]
 script = ExtResource("11_vywnu")

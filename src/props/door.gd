@@ -1,4 +1,4 @@
-class_name Door extends RigidBody3D
+class_name Door extends StaticBody3D
 
 var open = false
 

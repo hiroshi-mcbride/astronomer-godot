@@ -57,6 +57,21 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -279.0
+offset_top = -345.0
+offset_right = 282.0
+offset_bottom = 390.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 0.905882, 0.705882)
+
 [node name="PreviousPage" parent="Control" instance=ExtResource("3_c3l7r")]
 layout_mode = 1
 anchors_preset = -1
@@ -71,7 +86,7 @@ offset_bottom = -70.2801
 grow_horizontal = 2
 grow_vertical = 0
 text = "Previous Page"
-on_click = 26
+on_click = 28
 
 [node name="NextPage" parent="Control" instance=ExtResource("3_c3l7r")]
 layout_mode = 1
@@ -87,7 +102,7 @@ offset_bottom = -75.6001
 grow_horizontal = 2
 grow_vertical = 0
 text = "Next Page"
-on_click = 27
+on_click = 29
 
 [node name="Pages" type="Control" parent="Control"]
 anchors_preset = 0
@@ -95,7 +110,6 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Controls" type="Control" parent="Control/Pages"]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -108,9 +122,9 @@ anchor_top = 0.125
 anchor_right = 0.646
 anchor_bottom = 0.859
 offset_left = 752.0
-offset_top = 477.0
+offset_top = 341.0
 offset_right = 810.16
-offset_bottom = 470.64
+offset_bottom = 334.64
 grow_horizontal = 2
 scale = Vector2(1.655, 1.655)
 text = "Controls:
@@ -125,9 +139,9 @@ anchor_top = 0.125
 anchor_right = 0.647
 anchor_bottom = 0.866
 offset_left = 751.76
-offset_top = 539.0
+offset_top = 403.0
 offset_right = 1135.12
-offset_bottom = 763.36
+offset_bottom = 627.36
 text = "-> Lclick = interact (picking, placing, using, opening)
 -> Q = get moving box
 
@@ -242,7 +256,7 @@ offset_right = 1198.12
 offset_bottom = 426.36
 text = "Client: Elvis & Daughters Insurance Company
 
-Resident: Franz Lutz, recently deceased (age 102). No known living relatives. No will.
+Resident: Franz Lutz, astronomer. Recently deceased (age 102). No known living relatives. No will.
 Contact: Edith Curchod, neighbor.
 
 Location: Astzelberg Road 11b. 
@@ -283,5 +297,8 @@ offset_left = 754.76
 offset_top = 272.0
 offset_right = 1198.12
 offset_bottom = 426.36
+text = "According to his neighbor Lutz had one single obsession: space. He dreamed of going to space and was always busy in the workshop at the back of the house or looking up at the stars from his telescope.
+
+Unfortunately he never managed to make his dream come true in the end."
 label_settings = SubResource("LabelSettings_agyvh")
 autowrap_mode = 2
