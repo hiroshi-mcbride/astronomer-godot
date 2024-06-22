@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://b838ndbhntaxk"]
+[gd_scene load_steps=27 format=3 uid="uid://b838ndbhntaxk"]
 
 [ext_resource type="PackedScene" uid="uid://dpxu1m2mlsc80" path="res://models/Furniture/kitchen.glb" id="1_i2mim"]
 [ext_resource type="PackedScene" uid="uid://dpn2y4n8gaaeo" path="res://models/Furniture/table.glb" id="2_qhfry"]
@@ -8,6 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://byiv76nebvg17" path="res://prop_scenes/soap.tscn" id="4_co2ir"]
 [ext_resource type="ArrayMesh" uid="uid://663rgqmn1q1u" path="res://models/Furniture/KitchenMeshes/kitchen_Cube_112.res" id="7_2lj53"]
 [ext_resource type="ArrayMesh" uid="uid://cxr8kcihutpib" path="res://models/Furniture/KitchenMeshes/kitchen_Cube_116.res" id="8_tl0fp"]
+[ext_resource type="ArrayMesh" uid="uid://bmjsu05eq7u15" path="res://models/Furniture/KitchenMeshes/kitchen_Cube_118.res" id="9_7i1lm"]
+[ext_resource type="ArrayMesh" uid="uid://dg1sp44fxc5vd" path="res://models/Furniture/KitchenMeshes/kitchen_Cube_117.res" id="10_8ymaj"]
+[ext_resource type="ArrayMesh" uid="uid://bgjaps0s80hcp" path="res://models/Furniture/KitchenMeshes/kitchen_Cylinder_020.res" id="11_x4psm"]
+[ext_resource type="ArrayMesh" uid="uid://bcxjn1bm0golk" path="res://models/Furniture/KitchenMeshes/kitchen_Cylinder_021.res" id="12_4b0f5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dm3cy"]
 size = Vector3(0.847534, 0.94455, 3.17846)
@@ -35,6 +39,23 @@ size = Vector3(0.0736084, 0.0356598, 0.466599)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rkhqx"]
 size = Vector3(0.0666504, 0.0320435, 0.287079)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d2vgw"]
+size = Vector3(0.266968, 0.02034, 0.406982)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yqm7q"]
+size = Vector3(0.372566, 0.026062, 0.572296)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ltk2l"]
+height = 0.040534
+radius = 0.174071
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fnfuy"]
+size = Vector3(0.0485687, 0.0222837, 0.19812)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_h81xe"]
+height = 0.0317198
+radius = 0.125966
 
 [node name="kitchen" instance=ExtResource("1_i2mim")]
 
@@ -90,6 +111,21 @@ visible = false
 visible = false
 
 [node name="knife 5" parent="." index="12"]
+visible = false
+
+[node name="cuttingboard side 2" parent="." index="13"]
+visible = false
+
+[node name="cuttingboard side 1" parent="." index="14"]
+visible = false
+
+[node name="pan rack 1" parent="." index="15"]
+visible = false
+
+[node name="pan rack 2" parent="." index="16"]
+visible = false
+
+[node name="pot stove 2" parent="." index="18"]
 visible = false
 
 [node name="soap" parent="." index="29"]
@@ -168,6 +204,73 @@ shape = SubResource("BoxShape3D_52lei")
 transform = Transform3D(0.0397752, 0, 0, 0, 0.0101061, 0, 0, 0, 0.0328936, 0, 0.0235803, 0)
 mesh = ExtResource("8_tl0fp")
 
+[node name="Cuttingboard2" parent="." index="39" instance=ExtResource("2_rugn4")]
+transform = Transform3D(-1, -1.16579e-07, -9.79319e-08, 7.85488e-08, 0.155984, -0.98776, 1.30427e-07, -0.98776, -0.155984, 11.1428, 1.19443, -2.95344)
+
+[node name="CollisionShape3D" parent="Cuttingboard2" index="0"]
+transform = Transform3D(1, 0, 1.77636e-15, 0, 1, 0, -3.55271e-15, 0, 1, 0.00201416, -0.0072751, -0.00305271)
+shape = SubResource("BoxShape3D_d2vgw")
+
+[node name="MeshInstance3D" parent="Cuttingboard2" index="1"]
+transform = Transform3D(0.539235, 0, 0, 0, 0.539235, 0, 0, 0, 0.539235, 0, 0, 0)
+mesh = ExtResource("9_7i1lm")
+
+[node name="Cuttingboard1" parent="." index="40" instance=ExtResource("2_rugn4")]
+transform = Transform3D(-1.99888e-09, 7.67491e-08, 1, -0.98776, 0.155984, -1.3946e-08, -0.155984, -0.98776, 7.54979e-08, 11.0512, 1.18805, -2.93218)
+
+[node name="CollisionShape3D" parent="Cuttingboard1" index="0"]
+transform = Transform3D(1, 6.10958e-07, 2.48687e-14, -6.10958e-07, 1, -1.20084e-12, -2.48694e-14, 1.20084e-12, 1, 0.000305772, -0.0104537, 0.0013876)
+shape = SubResource("BoxShape3D_yqm7q")
+
+[node name="MeshInstance3D" parent="Cuttingboard1" index="1"]
+transform = Transform3D(0.753586, 0, 0, 0, 0.753586, 0, 0, 0, 0.753586, 0, 0, 0)
+mesh = ExtResource("10_8ymaj")
+
+[node name="Pan" parent="." index="41" instance=ExtResource("2_rugn4")]
+transform = Transform3D(0.674809, -0.00115472, 0.737991, -5.60016e-07, 0.999999, 0.00156518, -0.737992, -0.00105661, 0.674809, 7.1876, 1.04822, -5.3142)
+
+[node name="CollisionShape3D" parent="Pan" index="0"]
+transform = Transform3D(1, 6.10958e-07, 2.48687e-14, -6.10958e-07, 1, -1.20084e-12, -2.48694e-14, 1.20084e-12, 1, 0.000305772, -0.00560578, -0.121158)
+shape = SubResource("CylinderShape3D_ltk2l")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Pan" index="1"]
+transform = Transform3D(1, 6.10958e-07, 2.48687e-14, -6.10958e-07, 1, -1.20084e-12, -2.48694e-14, 1.20084e-12, 1, -0.000728934, 0.00733612, 0.150021)
+shape = SubResource("BoxShape3D_fnfuy")
+
+[node name="MeshInstance3D" parent="Pan" index="2"]
+transform = Transform3D(0.175975, 0, 0, 0, 0.021949, 0, 0, 0, 0.175975, 0, 0, 0)
+mesh = ExtResource("11_x4psm")
+
+[node name="Pan2" parent="." index="42" instance=ExtResource("2_rugn4")]
+transform = Transform3D(-1, -1.90731e-07, 2.83095e-07, 2.77254e-07, 0.0299593, 0.999551, -1.99127e-07, 0.999551, -0.0299593, 9.40526, 1.73393, -6.05713)
+
+[node name="CollisionShape3D" parent="Pan2" index="0"]
+transform = Transform3D(1, 6.10958e-07, 2.48687e-14, -6.10958e-07, 1, -1.20084e-12, -2.48694e-14, 1.20084e-12, 1, 0.000305772, -0.00560578, -0.121158)
+shape = SubResource("CylinderShape3D_ltk2l")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Pan2" index="1"]
+transform = Transform3D(1, 6.10958e-07, 2.48687e-14, -6.10958e-07, 1, -1.20084e-12, -2.48694e-14, 1.20084e-12, 1, -0.000728934, 0.00733612, 0.150021)
+shape = SubResource("BoxShape3D_fnfuy")
+
+[node name="MeshInstance3D" parent="Pan2" index="2"]
+transform = Transform3D(0.175975, 0, 0, 0, 0.021949, 0, 0, 0, 0.175975, 0, 0, 0)
+mesh = ExtResource("11_x4psm")
+
+[node name="Pan3" parent="." index="43" instance=ExtResource("2_rugn4")]
+transform = Transform3D(-1, -1.90731e-07, 2.83114e-07, 2.77273e-07, 0.0299613, 0.999551, -1.99127e-07, 0.999551, -0.0299613, 9.8895, 1.79309, -6.05748)
+
+[node name="CollisionShape3D" parent="Pan3" index="0"]
+transform = Transform3D(1, 6.10831e-07, 0, -6.10715e-07, 1, 0, 2.98023e-08, -8.14907e-10, 1, 0.000303268, -0.00278032, -0.0872004)
+shape = SubResource("CylinderShape3D_h81xe")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Pan3" index="1"]
+transform = Transform3D(1, 6.10889e-07, 0, -6.10948e-07, 1, 0, 2.98023e-08, -2.32831e-10, 1, -0.000729561, 0.00733614, 0.0898092)
+shape = SubResource("BoxShape3D_fnfuy")
+
+[node name="MeshInstance3D" parent="Pan3" index="2"]
+transform = Transform3D(0.130679, 0, 0, 0, 0.0162994, 0, 0, 0, 0.130679, 0, 0, 0)
+mesh = ExtResource("12_4b0f5")
+
 [editable path="CuttingBoard"]
 [editable path="Knife1"]
 [editable path="Knife2"]
@@ -175,3 +278,8 @@ mesh = ExtResource("8_tl0fp")
 [editable path="Knife4"]
 [editable path="Knife5"]
 [editable path="Knife6"]
+[editable path="Cuttingboard2"]
+[editable path="Cuttingboard1"]
+[editable path="Pan"]
+[editable path="Pan2"]
+[editable path="Pan3"]
