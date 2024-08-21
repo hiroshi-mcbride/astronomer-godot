@@ -21,13 +21,13 @@
 [ext_resource type="ArrayMesh" uid="uid://x2vlro4jnju8" path="res://models/Furniture/KitchenMeshes/kitchen_Cylinder_034.res" id="19_vd4th"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dm3cy"]
-size = Vector3(0.847534, 0.94455, 3.17846)
+size = Vector3(0.847534, 0.961968, 3.17846)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ojmi6"]
-size = Vector3(4.15894, 0.929565, 0.820679)
+size = Vector3(4.15894, 0.954697, 0.820679)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_c2gkk"]
-size = Vector3(0.963745, 0.968872, 0.900391)
+size = Vector3(0.963745, 0.979553, 0.900391)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6fg8e"]
 size = Vector3(1.96277, 0.925659, 1.40442)
@@ -54,7 +54,7 @@ size = Vector3(0.266968, 0.02034, 0.406982)
 size = Vector3(0.372566, 0.026062, 0.572296)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_ltk2l"]
-height = 0.040534
+height = 0.051414
 radius = 0.174071
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fnfuy"]
@@ -93,15 +93,15 @@ radius = 0.0433919
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="0"]
 
 [node name="Counter1" type="CollisionShape3D" parent="StaticBody3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0432, 0.521598, -4.48516)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0432, 0.530307, -4.48516)
 shape = SubResource("BoxShape3D_dm3cy")
 
 [node name="Counter2" type="CollisionShape3D" parent="StaticBody3D" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.45853, 0.531791, -5.66255)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.45853, 0.544357, -5.66255)
 shape = SubResource("BoxShape3D_ojmi6")
 
 [node name="Stove" type="CollisionShape3D" parent="StaticBody3D" index="2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.86814, 0.516227, -5.61274)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.86814, 0.521568, -5.61274)
 shape = SubResource("BoxShape3D_c2gkk")
 
 [node name="DiningTable" type="CollisionShape3D" parent="StaticBody3D" index="3"]
@@ -291,10 +291,10 @@ transform = Transform3D(0.753586, 0, 0, 0, 0.753586, 0, 0, 0, 0.753586, 0, 0, 0)
 mesh = ExtResource("10_8ymaj")
 
 [node name="Pan" parent="." index="41" instance=ExtResource("2_rugn4")]
-transform = Transform3D(0.674809, -0.00115472, 0.737991, -5.60016e-07, 0.999999, 0.00156518, -0.737992, -0.00105661, 0.674809, 7.1876, 1.04822, -5.3142)
+transform = Transform3D(0.674809, -0.00115472, 0.737991, -5.60016e-07, 0.999999, 0.00156518, -0.737992, -0.00105661, 0.674809, 7.1876, 1.05221, -5.3142)
 
 [node name="CollisionShape3D" parent="Pan" index="0"]
-transform = Transform3D(1, 6.10958e-07, 2.48687e-14, -6.10958e-07, 1, -1.20084e-12, -2.48694e-14, 1.20084e-12, 1, 0.000305772, -0.00560578, -0.121158)
+transform = Transform3D(1, 6.1054e-07, 2.08616e-07, -6.11064e-07, 1, -5.82077e-11, -2.98023e-08, -4.07454e-10, 1, 0.000307083, -0.00803781, -0.121159)
 shape = SubResource("CylinderShape3D_ltk2l")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Pan" index="1"]
