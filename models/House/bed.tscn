@@ -1,0 +1,112 @@
+[gd_scene load_steps=14 format=3 uid="uid://bbx88td4xjct1"]
+
+[ext_resource type="PackedScene" uid="uid://bwpud8c0sexr" path="res://models/Furniture/bed.glb" id="1_4btmm"]
+[ext_resource type="PackedScene" uid="uid://c4n472rfrxf4r" path="res://prop_scenes/moveable_object.tscn" id="2_aeln6"]
+[ext_resource type="ArrayMesh" uid="uid://b643t6wmsdrsr" path="res://models/Furniture/BedMeshes/clothing_Cube_124.res" id="3_0dnw3"]
+[ext_resource type="ArrayMesh" uid="uid://bcyu088ivpq1r" path="res://models/Furniture/BedMeshes/clothing_Cube_127.res" id="4_25py3"]
+[ext_resource type="ArrayMesh" uid="uid://dc8nrnttmd4fi" path="res://models/Furniture/BedMeshes/clothing_Cube_133.res" id="5_g0r38"]
+[ext_resource type="ArrayMesh" uid="uid://b5s5nw1p070oj" path="res://models/Furniture/BedMeshes/clothing_Cube_134.res" id="6_ouhol"]
+[ext_resource type="ArrayMesh" uid="uid://433qx6vbc8s6" path="res://models/Furniture/BedMeshes/clothing_Cube_138.res" id="7_e3cf3"]
+[ext_resource type="ArrayMesh" uid="uid://drmjvyx0dg6xy" path="res://models/Furniture/BedMeshes/clothing_Cube_139.res" id="8_jhotn"]
+[ext_resource type="ArrayMesh" uid="uid://l5lx7kisydlt" path="res://models/Furniture/BedMeshes/clothing_Cube_145.res" id="9_t20tp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y55kl"]
+size = Vector3(0.190071, 0.0939789, 0.15926)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bdhmj"]
+size = Vector3(0.155029, 0.117203, 0.194763)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vxijq"]
+size = Vector3(0.211868, 0.106384, 0.18895)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j6aif"]
+size = Vector3(0.165588, 0.0701294, 0.182861)
+
+[node name="Bed" type="Node3D"]
+
+[node name="bed" parent="." instance=ExtResource("1_4btmm")]
+
+[node name="Clothes1" parent="." instance=ExtResource("2_aeln6")]
+transform = Transform3D(0.716162, 0, 0.697934, 0, 1, 0, -0.697934, 0, 0.716162, -3.28142, 7.17862, 4.37753)
+
+[node name="CollisionShape3D" parent="Clothes1" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00348186, -0.0100751, -0.00146055)
+shape = SubResource("BoxShape3D_y55kl")
+
+[node name="MeshInstance3D" parent="Clothes1" index="1"]
+transform = Transform3D(0.11499, 0, 0, 0, 0.0242462, 0, 0, 0, 0.0943551, 0, 0, 0)
+mesh = ExtResource("3_0dnw3")
+
+[node name="Clothes2" parent="." instance=ExtResource("2_aeln6")]
+transform = Transform3D(0.697934, 0, -0.716162, 0, 1, 0, 0.716162, 0, 0.697934, -3.42822, 7.1856, 4.23064)
+
+[node name="CollisionShape3D" parent="Clothes2" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00627398, -0.00289917, -0.00303984)
+shape = SubResource("BoxShape3D_bdhmj")
+
+[node name="MeshInstance3D" parent="Clothes2" index="1"]
+transform = Transform3D(0.0908371, 0, 0, 0, 0.0184595, 0, 0, 0, 0.0997991, 0, 0, 0)
+mesh = ExtResource("4_25py3")
+
+[node name="Clothes3" parent="." instance=ExtResource("2_aeln6")]
+transform = Transform3D(0.745072, 0, -0.666985, 0, 1, 0, 0.666985, 0, 0.745072, -3.57788, 7.17575, 4.08107)
+
+[node name="CollisionShape3D" parent="Clothes3" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00348186, -0.00288582, -0.00146055)
+shape = SubResource("BoxShape3D_y55kl")
+
+[node name="MeshInstance3D" parent="Clothes3" index="1"]
+transform = Transform3D(0.0973086, 0, 0, 0, 0.0197747, 0, 0, 0, 0.106909, 0, 0, 0)
+mesh = ExtResource("5_g0r38")
+
+[node name="Clothes4" parent="." instance=ExtResource("2_aeln6")]
+transform = Transform3D(0.504603, 0, -0.863352, 0, 1, 0, 0.863352, 0, 0.504603, -3.77093, 7.17866, 3.93352)
+
+[node name="CollisionShape3D" parent="Clothes4" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000921011, -0.00516176, -0.00520754)
+shape = SubResource("BoxShape3D_vxijq")
+
+[node name="MeshInstance3D" parent="Clothes4" index="1"]
+transform = Transform3D(0.118588, 0, 0, 0, 0.0250048, 0, 0, 0, 0.0973071, 0, 0, 0)
+mesh = ExtResource("6_ouhol")
+
+[node name="Clothes5" parent="." instance=ExtResource("2_aeln6")]
+transform = Transform3D(-0.666985, 0, -0.745072, 0, 1, 0, 0.745072, 0, -0.666985, -3.92786, 7.15858, 3.7311)
+
+[node name="CollisionShape3D" parent="Clothes5" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0052824, 0.00128078, 0.00575423)
+shape = SubResource("BoxShape3D_j6aif")
+
+[node name="MeshInstance3D" parent="Clothes5" index="1"]
+transform = Transform3D(0.0973086, 0, 0, 0, 0.0197747, 0, 0, 0, 0.106909, 0, 0, 0)
+mesh = ExtResource("7_e3cf3")
+
+[node name="Clothes6" parent="." instance=ExtResource("2_aeln6")]
+transform = Transform3D(-0.716162, 0, -0.697934, 0, 1, 0, 0.697934, 0, -0.716162, -4.07757, 7.1856, 3.58125)
+
+[node name="CollisionShape3D" parent="Clothes6" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00627398, -0.00289917, -0.00303984)
+shape = SubResource("BoxShape3D_bdhmj")
+
+[node name="MeshInstance3D" parent="Clothes6" index="1"]
+transform = Transform3D(0.0908371, 0, 0, 0, 0.0184595, 0, 0, 0, 0.0997991, 0, 0, 0)
+mesh = ExtResource("8_jhotn")
+
+[node name="Clothes7" parent="." instance=ExtResource("2_aeln6")]
+transform = Transform3D(-0.666985, 0, -0.745072, 0, 1, 0, 0.745072, 0, -0.666985, -4.22505, 7.17575, 3.43382)
+
+[node name="CollisionShape3D" parent="Clothes7" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00348186, -0.00288582, -0.00146055)
+shape = SubResource("BoxShape3D_y55kl")
+
+[node name="MeshInstance3D" parent="Clothes7" index="1"]
+transform = Transform3D(0.0973086, 0, 0, 0, 0.0197747, 0, 0, 0, 0.106909, 0, 0, 0)
+mesh = ExtResource("9_t20tp")
+
+[editable path="Clothes1"]
+[editable path="Clothes2"]
+[editable path="Clothes3"]
+[editable path="Clothes4"]
+[editable path="Clothes5"]
+[editable path="Clothes6"]
+[editable path="Clothes7"]

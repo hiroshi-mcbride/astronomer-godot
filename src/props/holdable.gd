@@ -7,7 +7,7 @@ signal dropped()
 
 func _ready():
 	can_sleep = false
-	freeze_mode = RigidBody3D.FREEZE_MODE_STATIC
+	freeze_mode = RigidBody3D.FREEZE_MODE_KINEMATIC
 	freeze = true
 	picked.connect(_on_picked)
 	dropped.connect(_on_dropped)
