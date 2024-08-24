@@ -11,6 +11,7 @@ var pull_power = 4
 var rotation_power = 0.05
 
 var depositable_item = false
+var last_input = 0
 
 func _ready():
 	GlobalSignals.item_detected.connect(_on_item_near_box)
@@ -27,7 +28,9 @@ func pick_object():
 		if picked_object is MovingBox:
 			GlobalSignals.box_held.emit()
 	if collider != null and collider is Door:
-		collider.interact()
+		if abs(Time.get_ticks_msec() - last_input) > 200: #make sure the door wasn't just opened
+			last_input = Time.get_ticks_msec()
+			collider.interact()
 
 func drop_object():
 	if picked_object != null:
