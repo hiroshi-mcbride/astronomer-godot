@@ -28,9 +28,7 @@ func pick_object():
 		if picked_object is MovingBox:
 			GlobalSignals.box_held.emit()
 	if collider != null and collider is Door:
-		if abs(Time.get_ticks_msec() - last_input) > 200: #make sure the door wasn't just opened
-			last_input = Time.get_ticks_msec()
-			collider.interact()
+		collider.interact()
 
 func drop_object():
 	if picked_object != null:
@@ -61,14 +59,16 @@ func _physics_process(delta):
 
 func _unhandled_input(event):
 	if Input.is_action_just_pressed("interact"):
-		if picked_object == null:
-			pick_object()
-		
-		elif picked_object != null and depositable_item == true: #check if item is depositable
-			GlobalSignals.deposit_item.emit()
+		if abs(Time.get_ticks_msec() - last_input) > 200: #prevent input from registering multiple times
+			last_input = Time.get_ticks_msec()
+			if picked_object == null:
+				pick_object()
 			
-		elif picked_object != null and depositable_item == false:
-			drop_object()
+			elif picked_object != null and depositable_item == true: #check if item is depositable
+				GlobalSignals.deposit_item.emit()
+				
+			elif picked_object != null and depositable_item == false:
+				drop_object()
 	
 	if Input.is_action_just_pressed("grab_box"):
 		if picked_object == null:
