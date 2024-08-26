@@ -10,3 +10,5 @@ func _on_operate_lever(index):
 	if index == leverIndex and is_playing() == false:
 		GlobalSignals.operate_lever.emit()
 		play("LeverAnim")
+	if index == 1:
+		GlobalSignals.start_elevator.emit()

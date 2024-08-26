@@ -81,10 +81,12 @@ libraries = {
 "": SubResource("AnimationLibrary_dmjww")
 }
 script = ExtResource("4_iov57")
+leverIndex = 1
 
 [node name="Trigger" parent="." instance=ExtResource("5_ov03n")]
 
 [node name="Area3D" parent="Trigger" index="0"]
+last_index = 1
 isLever = true
 
 [node name="CollisionShape3D" parent="Trigger/Area3D" index="0"]

@@ -302,7 +302,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2726, 0.127285, -5.86852)
 transform = Transform3D(0.614986, 0, 0, 0, 0.614986, 0, 0, 0, 0.614986, 0, 0.0988932, 0)
 
 [node name="Elevator" parent="." index="56" instance=ExtResource("4_cjgrp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0988932, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="Door" parent="." index="57" instance=ExtResource("5_iwymr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.386, 0.190358, 1.988)
@@ -349,6 +349,7 @@ transform = Transform3D(-0.00748739, 0, 0.999972, 0, 1, 0, -0.999972, 0, -0.0074
 [node name="Bed" parent="." index="69" instance=ExtResource("17_c2kc3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
 
+[editable path="Elevator"]
 [editable path="bookcases"]
 [editable path="bookcases/books (1)"]
 [editable path="bookcases/Row/ShortRow5"]

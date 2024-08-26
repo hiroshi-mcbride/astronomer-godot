@@ -35,6 +35,7 @@ enum Type {
 	OBJECT_COUNT,
 	GET_SCORE,
 	SEND_SCORE,
+	START_ELEVATOR,
 }
 
 signal game_started()
@@ -71,6 +72,7 @@ signal count_objects()
 signal object_count()
 signal get_score()
 signal send_score()
+signal start_elevator()
 
 var signals = { 
 	Type.START_GAME : game_started,
@@ -107,4 +109,5 @@ var signals = {
 	Type.OBJECT_COUNT: object_count,
 	Type.GET_SCORE: get_score,
 	Type.SEND_SCORE: send_score,
+	Type.START_ELEVATOR: start_elevator,
 }

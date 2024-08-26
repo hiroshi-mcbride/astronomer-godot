@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://c8u8ct3pr0atm"]
+[gd_scene load_steps=19 format=3 uid="uid://c8u8ct3pr0atm"]
 
 [ext_resource type="Script" path="res://src/world.gd" id="1_2i7x0"]
 [ext_resource type="PackedScene" uid="uid://ceui73yjsebp0" path="res://player/player.tscn" id="1_xbrf3"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bmuvphbx6qjih" path="res://models/House/house.tscn" id="11_ikium"]
 [ext_resource type="PackedScene" uid="uid://cwg0o4ekrvb5r" path="res://prop_scenes/cane.tscn" id="11_pwgms"]
 [ext_resource type="Script" path="res://src/global/score_manager.gd" id="11_vywnu"]
+[ext_resource type="PackedScene" uid="uid://1sebpfmg0gcr" path="res://prop_scenes/lever.tscn" id="12_1slls"]
 [ext_resource type="PackedScene" uid="uid://dnu8ooumqo5wv" path="res://prop_scenes/helium_flask.tscn" id="12_kva7c"]
 [ext_resource type="PackedScene" uid="uid://b284ht6hyonvl" path="res://models/Van/van.tscn" id="15_v3rwe"]
 [ext_resource type="PackedScene" uid="uid://bli5oai7c5bwl" path="res://levels/balloon_scene.tscn" id="16_hc2fb"]
@@ -252,6 +253,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.396008, 1.1269, -0.127468)
 
 [node name="ScoreManager" type="Node" parent="."]
 script = ExtResource("11_vywnu")
+
+[node name="Lever" parent="." instance=ExtResource("12_1slls")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.69596, 0.315616, 0.637908)
 
 [editable path="Player"]
 [editable path="BalloonScene"]
