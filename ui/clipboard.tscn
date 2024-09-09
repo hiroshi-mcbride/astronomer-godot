@@ -86,7 +86,7 @@ offset_bottom = -70.2801
 grow_horizontal = 2
 grow_vertical = 0
 text = "Previous Page"
-on_click = 28
+on_click = 29
 
 [node name="NextPage" parent="Control" instance=ExtResource("3_c3l7r")]
 layout_mode = 1
@@ -102,7 +102,7 @@ offset_bottom = -75.6001
 grow_horizontal = 2
 grow_vertical = 0
 text = "Next Page"
-on_click = 29
+on_click = 30
 
 [node name="Pages" type="Control" parent="Control"]
 anchors_preset = 0
