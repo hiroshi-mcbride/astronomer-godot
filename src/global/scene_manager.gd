@@ -4,8 +4,8 @@ const MAIN_MENU_SCENE : PackedScene = preload("res://ui/main_menu.tscn")
 const WORLD_SCENE : PackedScene = preload("res://levels/world.tscn")
 const PAUSE_MENU_SCENE : PackedScene = preload("res://ui/pause_menu.tscn")
 const HUD = preload("res://ui/hud.tscn")
-const VAN_MENU_SCENE : PackedScene = preload("res://ui/drive_van_popup.tscn")
-const CLIPBOARD_MENU_SCENE : PackedScene = preload("res://ui/clipboard.tscn")
+#const VAN_MENU_SCENE : PackedScene = preload("res://ui/drive_van_popup.tscn")
+#const CLIPBOARD_MENU_SCENE : PackedScene = preload("res://ui/clipboard.tscn")
 const ENDGAME_MENU_SCENE : PackedScene = preload("res://ui/end_game_menu.tscn")
 
 @onready var canvas_layer = $CanvasLayer
@@ -18,8 +18,8 @@ func _enter_tree():
 	GlobalSignals.game_started.connect(_on_game_started)
 	GlobalSignals.load_scene.connect(load_scene)
 	
-	GlobalSignals.drive_van.connect(display_van_UI)
-	GlobalSignals.display_clipboard.connect(display_clipboard)
+	#GlobalSignals.drive_van.connect(display_van_UI)
+	#GlobalSignals.display_clipboard.connect(display_clipboard)
 	GlobalSignals.end_game.connect(_on_end_game)
 
 func _ready():
@@ -53,7 +53,7 @@ func display_van_UI():
 	
 func display_clipboard():
 	if clipboard_open == false:
-		load_scene(CLIPBOARD_MENU_SCENE, canvas_layer)
+		#load_scene(CLIPBOARD_MENU_SCENE, canvas_layer)
 		clipboard_open = true
 	elif clipboard_open == true:
 		clipboard_open = false

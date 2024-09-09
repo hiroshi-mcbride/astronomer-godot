@@ -1,5 +1,8 @@
 extends Node3D
 
+const CLIPBOARD_MENU_SCENE : PackedScene = preload("res://ui/clipboard.tscn")
+@onready var canvas_layer = get_node("/root/GameRoot/CanvasLayer")
+
 @onready var camera_controller = $"../CameraController"
 @onready var interaction_raycast = $InteractionRaycast
 @onready var hand = $Hand
@@ -12,6 +15,8 @@ var rotation_power = 0.05
 
 var depositable_item = false
 var last_input = 0
+
+var clipboard_open = false
 
 func _ready():
 	GlobalSignals.item_detected.connect(_on_item_near_box)
@@ -84,8 +89,12 @@ func _unhandled_input(event):
 		swap_fullscreen_mode()
 		
 	if Input.is_action_just_pressed("clipboard"):
-		print("clipboard")
-		GlobalSignals.display_clipboard.emit()
+		if clipboard_open == false:
+			#GlobalSignals.display_clipboard.emit()
+			GlobalSignals.load_scene.emit(CLIPBOARD_MENU_SCENE, canvas_layer)
+			clipboard_open = true
+		elif clipboard_open == true:
+			clipboard_open = false
 
 func swap_fullscreen_mode(): #credits to jeroenheijmans on de godotengine forum https://forum.godotengine.org/t/how-to-toggle-fullscreen-from-code/27368/2
 	if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_MAXIMIZED:
