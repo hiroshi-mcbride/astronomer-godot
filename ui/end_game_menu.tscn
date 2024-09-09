@@ -41,7 +41,7 @@ focus_neighbor_top = NodePath("../BtnResume")
 focus_neighbor_bottom = NodePath("../BtnQuitGame")
 text = "Main Menu
 "
-on_click = 3
+on_click = 4
 
 [node name="BtnQuitGame" parent="VBoxContainer" instance=ExtResource("2_3p7kw")]
 layout_mode = 2

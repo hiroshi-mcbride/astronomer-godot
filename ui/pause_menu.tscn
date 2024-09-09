@@ -53,14 +53,14 @@ layout_mode = 2
 focus_neighbor_top = NodePath("../BtnQuitGame")
 focus_neighbor_bottom = NodePath("../BtnMainMenu")
 text = "Resume"
-on_click = 2
+on_click = 3
 
 [node name="BtnMainMenu" parent="CanvasLayer/Overlay/VBoxContainer" instance=ExtResource("2_xhpm1")]
 layout_mode = 2
 focus_neighbor_top = NodePath("../BtnResume")
 focus_neighbor_bottom = NodePath("../BtnQuitGame")
 text = "Quit Game"
-on_click = 3
+on_click = 4
 
 [node name="BtnQuitGame" parent="CanvasLayer/Overlay/VBoxContainer" instance=ExtResource("3_42tlf")]
 layout_mode = 2

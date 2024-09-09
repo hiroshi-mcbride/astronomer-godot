@@ -1,7 +1,10 @@
 extends Node
+#WARNING! Only add things at the BOTTOM of the list. 
+#Adding things higher up might mess up UI buttons!!!
 
 enum Type {
 	START_GAME,
+	LOAD_SCENE,
 	PAUSE,
 	RESUME,
 	QUIT_TO_MAIN_MENU,
@@ -39,6 +42,7 @@ enum Type {
 }
 
 signal game_started()
+signal load_scene()
 signal game_paused()
 signal game_resumed()
 signal game_quit()
@@ -76,6 +80,7 @@ signal start_elevator()
 
 var signals = { 
 	Type.START_GAME : game_started,
+	Type.LOAD_SCENE : load_scene,
 	Type.PAUSE : game_paused,
 	Type.RESUME : game_resumed,
 	Type.QUIT_TO_MAIN_MENU : game_quit,

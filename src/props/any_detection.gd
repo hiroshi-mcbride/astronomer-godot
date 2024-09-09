@@ -2,6 +2,9 @@ extends Area3D
 #functions like a trigger, can be used for both item detection (puzzles) and player detection
 #Don't forget to set either isTrigger (for player) or isPuzzle to true in the inspector. It won't work otherwise!
 
+const VAN_MENU_SCENE : PackedScene = preload("res://ui/drive_van_popup.tscn")
+@onready var canvas_layer = get_node("/root/GameRoot/CanvasLayer")
+
 var item = null
 var index = 0
 
@@ -30,7 +33,8 @@ func _on_item_entered(body):
 		GlobalSignals.item_detected.emit() 
 	if item is CharacterBody3D and isTrigger == true:
 		print("player detected")
-		GlobalSignals.drive_van.emit() #send signal to UI to display "Do you want to finish your workday? This will end the game."
+		#GlobalSignals.drive_van.emit() #send signal to UI to display "Do you want to finish your workday? This will end the game."
+		GlobalSignals.load_scene.emit(VAN_MENU_SCENE, canvas_layer)
 
 func _on_item_exited(body):
 	GlobalSignals.item_exited.emit() #held item can no longer be deposited

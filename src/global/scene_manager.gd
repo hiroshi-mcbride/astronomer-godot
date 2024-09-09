@@ -16,6 +16,8 @@ var ending_scene
 
 func _enter_tree():
 	GlobalSignals.game_started.connect(_on_game_started)
+	GlobalSignals.load_scene.connect(load_scene)
+	
 	GlobalSignals.drive_van.connect(display_van_UI)
 	GlobalSignals.display_clipboard.connect(display_clipboard)
 	GlobalSignals.end_game.connect(_on_end_game)
@@ -46,7 +48,8 @@ func load_scene(scene:PackedScene, parent:Node):
 	#DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN) #give better location
 
 func display_van_UI():
-	load_scene(VAN_MENU_SCENE, canvas_layer)
+	#load_scene(VAN_MENU_SCENE, canvas_layer)
+	pass
 	
 func display_clipboard():
 	if clipboard_open == false:

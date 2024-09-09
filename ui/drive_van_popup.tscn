@@ -52,10 +52,10 @@ theme_override_constants/separation = 10
 layout_mode = 2
 focus_neighbor_bottom = NodePath("../BtnEndGame")
 text = "No, I'm not ready."
-on_click = 2
+on_click = 3
 
 [node name="BtnEndGame" parent="Overlay/VBoxContainer" instance=ExtResource("2_06twu")]
 layout_mode = 2
 focus_neighbor_top = NodePath("../BtnResume")
 text = "Yes, I'm done here!"
-on_click = 23
+on_click = 24
