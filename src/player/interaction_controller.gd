@@ -43,13 +43,6 @@ func drop_object():
 		picked_object = null
 		joint.set_node_b(joint.get_path())
 
-func rotate_object(event):
-	if picked_object != null:
-		if event is InputEventMouseMotion:
-			print("rotating")
-			staticbody.rotate_x(deg_to_rad(event.relative.y * rotation_power))
-			staticbody.rotate_y(deg_to_rad(event.relative.x * rotation_power))
-
 func _physics_process(delta):
 	var collider = interaction_raycast.get_collider()
 	if collider != null and picked_object == null and collider is Holdable:
