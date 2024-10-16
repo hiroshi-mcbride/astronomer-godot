@@ -11,10 +11,12 @@ func _ready():
 	freeze = true
 	picked.connect(_on_picked)
 	dropped.connect(_on_dropped)
+	if self is MovingBox:
+		freeze = false
 
 func _on_picked():
-	is_held = true
-	freeze = false
+		is_held = true
+		freeze = false
 
 func _on_dropped():
 	is_held = false
