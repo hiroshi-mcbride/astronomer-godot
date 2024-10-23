@@ -32,8 +32,9 @@ func pick_object():
 		joint.set_node_b(picked_object.get_path())
 		if picked_object is MovingBox:
 			GlobalSignals.box_held.emit()
-	if collider != null and collider is Door:
-		collider.interact()
+	if collider != null:
+		if collider is Door or collider is BookLever:
+			collider.interact()
 
 func drop_object():
 	if picked_object != null:

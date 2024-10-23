@@ -39,6 +39,7 @@ enum Type {
 	GET_SCORE,
 	SEND_SCORE,
 	START_ELEVATOR,
+	OPEN_BOOKSHELF,
 }
 
 signal game_started()
@@ -77,6 +78,7 @@ signal object_count()
 signal get_score()
 signal send_score()
 signal start_elevator()
+signal open_bookshelf()
 
 var signals = { 
 	Type.START_GAME : game_started,
@@ -115,4 +117,5 @@ var signals = {
 	Type.GET_SCORE: get_score,
 	Type.SEND_SCORE: send_score,
 	Type.START_ELEVATOR: start_elevator,
+	Type.OPEN_BOOKSHELF: open_bookshelf,
 }
